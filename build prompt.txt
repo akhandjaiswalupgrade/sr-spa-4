@@ -1,0 +1,3299 @@
+MASTER BUILD SPECIFICATION
+Shirui Wellness Spa — Premium Single-Page Website
+Location: Neknampur, Hyderabad, Telangana, India
+
+Build a complete, production-ready, responsive, premium single-page website for:
+
+Brand: Shirui Wellness Spa
+Location: Neknampur, Hyderabad
+Business Type: Premium Wellness Spa / Massage & Relaxation Center
+Primary Conversion Goals:
+
+WhatsApp enquiries
+Phone calls
+Appointment requests
+Google Maps direction clicks
+Treatment discovery
+
+This is NOT a simple brochure website.
+
+This must feel like a premium, immersive wellness experience that allows a visitor to understand the spa, discover treatments, explore how massage affects common muscle-tension areas, select a suitable experience, trust the business, and convert.
+
+The website must be visually sophisticated, highly responsive, conversion-oriented and production quality.
+
+Do NOT simplify this brief.
+
+Do NOT build only a hero section.
+
+Do NOT build only the anatomical interaction.
+
+Do NOT return only screenshots or mockups.
+
+Build the complete working website from hero to footer.
+
+1. OVERALL EXPERIENCE
+
+The user should feel that the website itself is part of the spa experience.
+
+The emotional flow should be:
+
+DISCOVER
+
+↓
+
+FEEL
+
+↓
+
+UNDERSTAND
+
+↓
+
+EXPLORE
+
+↓
+
+TRUST
+
+↓
+
+PERSONALIZE
+
+↓
+
+BOOK
+
+The page must gradually reveal information rather than showing everything at once.
+
+The website should feel calm, premium, elegant, cinematic and intentional.
+
+Avoid generic wellness-template design.
+
+2. PRIMARY MESSAGE
+
+The overall brand idea is:
+
+A quiet escape from the pace of Hyderabad.
+
+Supporting idea:
+
+Shirui Wellness Spa gives people a premium space to slow down, relax, release everyday muscular tension and take time for themselves.
+
+Use calm, confident language.
+
+Do not make exaggerated medical claims.
+
+3. BRAND STYLE
+
+The visual identity should feel:
+
+premium
+luxurious
+minimal
+warm
+calming
+modern
+private
+sophisticated
+natural
+elegant
+trustworthy
+relaxing
+
+The website should NOT look:
+
+flashy
+cheap
+overly colorful
+clinical
+overly feminine
+overly masculine
+nightclub-like
+discount-heavy
+cluttered
+4. COLOR SYSTEM
+
+Use this palette throughout the website.
+
+Main Background
+
+#0E0F0D
+
+Use for:
+
+hero
+large dark sections
+footer
+navigation background after scrolling
+Secondary Background
+
+#151511
+
+Use for:
+
+treatment sections
+content blocks
+alternating section background
+Raised Surface
+
+#1C1915
+
+Use for:
+
+cards
+configurator
+FAQ
+booking modal
+interactive panels
+Primary Text
+
+#F4EEE4
+
+Secondary Text
+
+#B7AFA3
+
+Muted Text
+
+#8E887F
+
+Accent Champagne
+
+#C9A96B
+
+Use carefully for:
+
+buttons
+micro labels
+active states
+selected treatment
+slider indicators
+
+Do NOT overuse gold.
+
+Botanical Accent
+
+#283229
+
+Use occasionally in:
+
+subtle gradients
+decorative backgrounds
+hover states
+Border
+
+Use:
+
+rgba(255,255,255,0.08)
+
+Do not use bright white borders.
+
+5. TYPOGRAPHY
+
+Use two type families only.
+
+Headlines
+
+Use:
+
+Cormorant Garamond
+
+Fallback:
+
+Georgia, serif
+
+Weights:
+
+400
+500
+
+Do not use heavy bold serif.
+
+Interface + Body
+
+Use:
+
+Inter
+
+Fallback:
+
+system sans-serif
+
+Weights:
+
+400
+500
+600
+
+6. TYPOGRAPHIC SCALE
+
+Desktop hero:
+
+72–92px
+
+Tablet hero:
+
+58–70px
+
+Mobile hero:
+
+42–50px
+
+Desktop section heading:
+
+48–58px
+
+Mobile section heading:
+
+34–42px
+
+Body:
+
+16–18px
+
+Small body:
+
+14px
+
+Labels:
+
+11–12px uppercase
+
+Letter spacing for labels:
+
+0.16em–0.25em
+
+Line height:
+
+1.45–1.7 depending on text size.
+
+7. LAYOUT SYSTEM
+
+Maximum content width:
+
+1280px
+
+Standard desktop horizontal padding:
+
+64px
+
+Tablet:
+
+32px
+
+Mobile:
+
+20px
+
+Section desktop vertical padding:
+
+110px–140px
+
+Mobile section padding:
+
+72px–88px
+
+Use lots of whitespace.
+
+Do not place every section inside cards.
+
+Large photography should extend beyond normal content widths where useful.
+
+8. CORNER RADIUS
+
+Buttons:
+
+999px
+
+Small cards:
+
+16px
+
+Standard cards:
+
+20px
+
+Large visual containers:
+
+28px
+
+Feature sections:
+
+32px
+
+Do not round every text block.
+
+9. BUTTON SYSTEM
+
+Create reusable:
+
+PrimaryButton
+
+SecondaryButton
+
+TextLink
+
+Primary button:
+
+background:
+#C9A96B
+
+text:
+#15130F
+
+height desktop:
+52px
+
+mobile:
+50px
+
+horizontal padding:
+24–30px
+
+Secondary:
+
+transparent
+
+1px subtle border
+
+cream text
+
+Hover behavior:
+
+Primary:
+slight brightness increase
+translateY(-1px)
+
+Secondary:
+background rgba white 0.05
+
+Transition:
+
+180–240ms
+
+Do not use bouncing animation.
+
+10. NAVIGATION
+
+Create a top fixed navigation.
+
+At page load:
+
+transparent background.
+
+After user scrolls 40px:
+
+background:
+
+rgba(14,15,13,0.86)
+
+with:
+
+backdrop-filter: blur(16px)
+
+and subtle bottom border.
+
+Height:
+
+Desktop:
+84px
+
+Mobile:
+68px
+
+11. LOGO
+
+Text logo:
+
+SHIRUI
+
+Underneath or beside it:
+
+WELLNESS SPA
+
+SHIRUI should use serif.
+
+WELLNESS SPA should use uppercase sans-serif with spacing.
+
+Do not invent a symbol logo unless specifically created.
+
+12. DESKTOP NAVIGATION LINKS
+
+Use:
+
+Experiences
+
+Inside the Massage
+
+Our Space
+
+Why Shirui
+
+Reviews
+
+Visit Us
+
+Right side:
+
+Book Experience
+
+Clicking navigation links should smoothly scroll to corresponding sections.
+
+13. MOBILE NAVIGATION
+
+Show logo left.
+
+Menu button right.
+
+Menu opens full-screen dark overlay.
+
+Mobile menu must show:
+
+Experiences
+
+Inside the Massage
+
+Our Space
+
+Why Shirui
+
+Reviews
+
+Visit Us
+
+Book Experience
+
+WhatsApp
+
+Call
+
+Close button top right.
+
+Add smooth open/close animation.
+
+14. MOBILE PERSISTENT CONVERSION BAR
+
+Show fixed bar at bottom on devices below 768px.
+
+Height:
+
+64–70px including safe area.
+
+Three equal actions:
+
+CALL
+
+WHATSAPP
+
+DIRECTIONS
+
+Icons above or beside text.
+
+Use Lucide icons.
+
+Background:
+
+rgba(15,15,13,.95)
+
+Top border.
+
+Respect:
+
+env(safe-area-inset-bottom)
+
+Hide or reduce when booking modal is open.
+
+15. HERO SECTION
+
+Height:
+
+minimum 100svh.
+
+Must be the most visually impressive section.
+
+Background:
+
+full-bleed premium spa photography or optimized muted video.
+
+Scene direction:
+
+premium massage room
+warm indirect lighting
+dark timber
+neutral natural stone
+premium massage table
+subtle towels
+minimal candles
+elegant shadows
+realistic luxury wellness environment
+
+No cheap stock aesthetic.
+
+16. HERO OVERLAY
+
+Use multiple gradients:
+
+dark left/right vignette
+
+dark bottom gradient
+
+very subtle warm central glow
+
+Ensure hero text is readable.
+
+17. HERO CONTENT POSITION
+
+Desktop:
+
+content should sit slightly left of center.
+
+Maximum width:
+
+720px.
+
+Mobile:
+
+center aligned or slightly left aligned depending on composition.
+
+18. HERO COPY
+
+Use exactly this initial structure:
+
+Eyebrow:
+
+PREMIUM WELLNESS · NEKNAMPUR, HYDERABAD
+
+Headline:
+
+Leave the noise behind.
+
+Second line:
+
+Feel yourself again.
+
+Description:
+
+“Thoughtfully designed massage and wellness experiences for the moments when your body asks you to slow down.”
+
+Buttons:
+
+Explore Experiences
+
+Book Your Session
+
+Below:
+
+small trust row.
+
+Examples:
+
+Private Treatment Rooms
+
+Professional Care
+
+Open 7 Days
+
+Only use factual claims that can be configured.
+
+19. HERO SCROLL INDICATOR
+
+Bottom center.
+
+Small line + label:
+
+SCROLL TO EXPERIENCE
+
+Animate line slowly downward.
+
+Remove animation when reduced motion enabled.
+
+20. HERO INTERACTION
+
+Desktop only:
+
+Add extremely subtle image movement based on pointer.
+
+Maximum translate:
+
+8–12px.
+
+Do not rotate image.
+
+Do not implement exaggerated parallax.
+
+Mobile:
+
+disable pointer movement.
+
+21. EXPERIENCE SNAPSHOT SECTION
+
+Immediately below hero.
+
+Dark minimal horizontal section.
+
+Purpose:
+
+communicate important spa details quickly.
+
+Create four metrics.
+
+Default editable placeholders:
+
+10+
+Wellness Experiences
+
+45–120 MIN
+Session Options
+
+7 DAYS
+Open Weekly
+
+PRIVATE
+Treatment Rooms
+
+Store values in configuration file.
+
+Do not hardcode in multiple components.
+
+Desktop:
+
+4 columns.
+
+Mobile:
+
+2x2.
+
+Use subtle separators.
+
+22. BRAND INTRODUCTION SECTION
+
+Section ID:
+
+about
+
+Layout:
+
+Desktop:
+45% copy
+55% image
+
+Mobile:
+image first
+copy second
+
+Eyebrow:
+
+THE SHIRUI EXPERIENCE
+
+Headline:
+
+Wellness should feel like an experience, not an appointment.
+
+Body copy:
+
+“Shirui Wellness Spa is designed as a quiet escape from the pace of the city. Every detail — from the atmosphere and treatment room to pressure preferences and session duration — is intended to help you slow down and feel comfortable.”
+
+Add second short paragraph emphasizing:
+
+privacy
+professional care
+clean environment
+personalized comfort
+
+CTA:
+
+Discover Shirui
+
+23. INTRO IMAGE
+
+Use premium treatment-room or guest-arrival imagery.
+
+Image ratio desktop:
+
+4:5
+
+Radius:
+
+28px
+
+Use gentle reveal animation.
+
+24. TREATMENT DISCOVERY SECTION
+
+Section ID:
+
+experiences
+
+Eyebrow:
+
+CHOOSE YOUR EXPERIENCE
+
+Heading:
+
+What does your body need today?
+
+Subheading:
+
+“Different days call for different ways to unwind.”
+
+25. EXPERIENCE CATEGORY SELECTOR
+
+Create category tabs/buttons:
+
+RELAX
+
+RESTORE
+
+RELEASE
+
+REJUVENATE
+
+RECOVER
+
+COUPLES
+
+Selected state:
+
+champagne background or champagne border.
+
+Non-selected:
+
+dark surface.
+
+Clicking updates the treatment cards below.
+
+26. TREATMENT DATA STRUCTURE
+
+Treatments must be stored in:
+
+data/treatments.ts
+
+Each treatment object must have:
+
+id
+slug
+name
+category
+shortDescription
+longDescription
+durations
+priceFrom
+image
+pressure
+tags
+recommendedFor
+featured
+
+Do not hardcode cards manually.
+
+27. DEFAULT TREATMENT EXAMPLES
+
+Create editable placeholder treatments:
+
+Swedish Relaxation Massage
+
+Deep Tissue Massage
+
+Aromatherapy Massage
+
+Balinese Massage
+
+Thai Massage
+
+Signature Shirui Massage
+
+Couple Wellness Experience
+
+Head, Neck & Shoulder Massage
+
+Foot Relaxation
+
+Clearly comment in data file:
+
+“Verify actual service availability before production launch.”
+
+28. TREATMENT CARD DESIGN
+
+Desktop:
+
+3 cards visible.
+
+Tablet:
+
+
+
+
+Mobile:
+
+
+
+
+Card image height:
+
+300–360px desktop
+
+260px mobile.
+
+On image:
+
+small category label.
+
+Below:
+
+Treatment name.
+
+Short description.
+
+Duration.
+
+Starting price.
+
+Pressure indicator.
+
+CTA:
+
+Explore Experience →
+
+29. PRESSURE INDICATOR
+
+Display:
+
+LIGHT
+
+MEDIUM
+
+FIRM
+
+with 5 small dots.
+
+Examples:
+
+Swedish:
+
+2/5
+
+Deep Tissue:
+
+4/5
+
+Thai:
+
+4/5
+
+Aromatherapy:
+
+2/5
+
+Do not imply medical intensity.
+
+30. TREATMENT CARD HOVER
+
+Desktop:
+
+image scales:
+
+1 → 1.035
+
+card raises:
+
+translateY(-4px)
+
+border opacity increases.
+
+Duration:
+
+350ms.
+
+No dramatic effects.
+
+31. TREATMENT DETAILS DRAWER
+
+Click:
+
+Explore Experience
+
+Open side drawer desktop.
+
+Bottom sheet mobile.
+
+Include:
+
+large image
+
+name
+
+description
+
+available durations
+
+price
+
+pressure
+
+recommended experience tags
+
+Book Experience button
+
+WhatsApp About This Treatment button
+
+Close button.
+
+32. ANATOMICAL EXPERIENCE SECTION
+
+Section ID:
+
+inside-massage
+
+This is the signature interactive section.
+
+Do not make it resemble a medical website.
+
+It should still feel luxurious.
+
+Background:
+
+deep black/brown.
+
+Use large heading.
+
+Eyebrow:
+
+INSIDE THE MASSAGE
+
+Heading:
+
+See what happens beneath the surface.
+
+Supporting copy:
+
+“Explore common muscle areas people often ask therapists to focus on during a massage.”
+
+Include disclaimer immediately below.
+
+33. ANATOMICAL DISCLAIMER
+
+Display:
+
+“Educational wellness visualization only. Massage may help with temporary muscle tension, stiffness and relaxation. It is not a substitute for medical diagnosis or treatment.”
+
+Font:
+
+11–12px.
+
+Muted.
+
+Visible but not dominant.
+
+34. ANATOMY MAIN VISUAL
+
+The main image/3D scene must show:
+
+one adult person
+
+lying FACE DOWN
+
+on a premium massage table
+
+head inside face cradle
+
+body professionally draped
+
+upper back exposed appropriately
+
+one therapist positioned beside the table
+
+therapist hands massaging the upper back
+
+camera at elevated 3/4 rear angle
+
+viewer should clearly see:
+
+shoulders
+
+upper back
+
+mid back
+
+lower back
+
+muscle visualization
+
+No sexualized pose.
+
+No nudity.
+
+No gore.
+
+35. ANATOMICAL LAYER
+
+The anatomical reveal must visualize:
+
+Trapezius
+
+Posterior deltoids
+
+Rhomboids
+
+Latissimus dorsi
+
+Erector spinae
+
+Lower back musculature
+
+Gluteal region only if appropriate and professionally covered
+
+Do not show internal organs.
+
+Do not show blood vessels.
+
+Do not show bones prominently.
+
+Focus on muscles.
+
+36. REVEAL SLIDER
+
+Create a horizontal interactive slider beneath or over visual.
+
+Range:
+
+0–100.
+
+The slider controls skin transparency and muscular visualization.
+
+Desktop:
+
+drag mouse.
+
+Mobile:
+
+touch drag.
+
+Keyboard:
+
+left/right arrow support.
+
+ARIA:
+
+label:
+“Reveal muscle visualization”
+
+37. FOUR SLIDER PHASES
+
+0–24:
+
+TENSION
+
+25–49:
+
+TREATMENT
+
+50–74:
+
+RELEASE
+
+75–100:
+
+RELAXED
+
+Update content automatically based on slider position.
+
+38. PHASE 1 COPY
+
+Label:
+
+TENSION
+
+Headline:
+
+Where tension can build.
+
+Body:
+
+“Long periods of sitting, commuting, working at a screen, exercise and everyday stress can leave common muscle groups feeling tight or fatigued.”
+
+Visual:
+
+skin mostly visible.
+
+Muscles underneath faintly highlighted.
+
+Use soft amber/red highlight.
+
+Do not show painful inflammation.
+
+39. PHASE 2 COPY
+
+Label:
+
+TREATMENT
+
+Headline:
+
+The treatment begins.
+
+Body:
+
+“A trained therapist can adapt pressure and technique around selected areas based on your comfort and preferences.”
+
+Visual:
+
+skin becomes partially transparent.
+
+Muscles become clearer.
+
+Therapist hand motion can subtly move.
+
+40. PHASE 3 COPY
+
+Label:
+
+RELEASE
+
+Headline:
+
+Tension may start to ease.
+
+Body:
+
+“Massage may help reduce the feeling of temporary muscular tightness and stiffness for some people.”
+
+Visual:
+
+muscle highlight softens.
+
+Use subtle relaxation wave animation.
+
+No fake toxin animation.
+
+No particles leaving the body.
+
+41. PHASE 4 COPY
+
+Label:
+
+RELAXED
+
+Headline:
+
+A calmer state.
+
+Body:
+
+“Many people seek massage to feel looser, calmer and more comfortable after a session.”
+
+Visual:
+
+muscles transition toward neutral warm tone.
+
+Skin returns partially.
+
+Environment becomes subtly warmer.
+
+42. MUSCLE REGION SELECTOR
+
+Below anatomy scene.
+
+Buttons:
+
+Neck & Shoulders
+
+Upper Back
+
+Mid Back
+
+Lower Back
+
+Legs
+
+Feet
+
+Clicking a region:
+
+updates highlighted muscle
+
+updates title
+
+updates description
+
+updates recommended treatments.
+
+43. NECK & SHOULDERS CONTENT
+
+Heading:
+
+Neck & shoulders
+
+Text:
+
+“Commonly requested after long hours of screen use, driving or stressful workdays.”
+
+Recommended:
+
+Swedish Relaxation
+
+Deep Tissue
+
+Head, Neck & Shoulder
+
+44. UPPER BACK CONTENT
+
+Heading:
+
+Upper back
+
+Text:
+
+“The shoulder-blade region can feel fatigued after prolonged sitting, repetitive work or training.”
+
+Recommended:
+
+Deep Tissue
+
+Balinese
+
+Signature Shirui
+
+45. LOWER BACK CONTENT
+
+Heading:
+
+Lower back
+
+Text:
+
+“People commonly request focused attention here after prolonged sitting, standing or general muscular fatigue.”
+
+Recommended:
+
+Deep Tissue
+
+Swedish
+
+Signature Shirui
+
+Add:
+
+“A therapist should adapt the treatment according to comfort and avoid direct inappropriate pressure on the spine.”
+
+46. ANATOMICAL VISUAL IMPLEMENTATION
+
+Preferred implementation order:
+
+OPTION A:
+
+Pre-rendered aligned transparent image sequence.
+
+OPTION B:
+
+Layered PNG/WebP anatomical reveal.
+
+OPTION C:
+
+3D with React Three Fiber only if performance remains strong.
+
+Do not automatically choose WebGL.
+
+Use the simplest method that achieves a premium smooth effect.
+
+47. ANATOMY PERFORMANCE
+
+Do not load heavy anatomy assets during initial page load.
+
+Lazy load when section is approximately:
+
+600px before viewport.
+
+Show premium skeleton/loading state.
+
+Desktop asset target:
+
+under 5MB total if image sequence.
+
+Mobile:
+
+use lower-resolution asset.
+
+48. “FEEL THE DIFFERENCE” SECTION
+
+Section ID:
+
+experience-story
+
+Heading:
+
+The experience is in the details.
+
+Create tabs:
+
+THE SPACE
+
+THE RITUAL
+
+THE TOUCH
+
+THE CARE
+
+THE AFTER-FEELING
+
+49. THE SPACE TAB
+
+Headline:
+
+A space designed to quiet everything outside.
+
+Visual:
+
+premium private treatment room.
+
+Supporting copy:
+
+“Warm lighting, calm surroundings and a private treatment environment help set the tone before your session begins.”
+
+50. THE RITUAL TAB
+
+Headline:
+
+Your experience begins before the first touch.
+
+Visual:
+
+prepared towels/oil/room.
+
+Copy:
+
+“Your session starts with preparation, preferences and a moment to settle into the experience.”
+
+51. THE TOUCH TAB
+
+Headline:
+
+Pressure should work with your comfort.
+
+Visual:
+
+professional hand technique.
+
+Copy:
+
+“Your therapist can adjust pressure and focus areas according to your preferences.”
+
+52. THE CARE TAB
+
+Headline:
+
+Clean. Private. Thoughtfully prepared.
+
+Visual:
+
+fresh linen/room preparation.
+
+Copy:
+
+“Treatment rooms should feel clean, calm and ready before every session.”
+
+53. AFTER-FEELING TAB
+
+Headline:
+
+Leave feeling lighter than you arrived.
+
+Visual:
+
+relaxed guest sitting or calm exit moment.
+
+Copy:
+
+“The goal is simple: give your body and mind time to slow down.”
+
+54. CINEMATIC STORY SECTION
+
+Create three full-width visual chapters.
+
+Each chapter:
+
+minimum 80vh desktop.
+
+Mobile:
+
+auto height.
+
+Use sticky or crossfade effect only if performance is smooth.
+
+55. STORY CHAPTER ONE
+
+Label:
+
+01 · ARRIVE
+
+Headline:
+
+Leave Hyderabad outside for a while.
+
+Visual:
+
+guest entering spa / calming reception.
+
+56. STORY CHAPTER TWO
+
+Label:
+
+02 · BREATHE
+
+Headline:
+
+Your time starts slowing down here.
+
+Visual:
+
+treatment preparation.
+
+57. STORY CHAPTER THREE
+
+Label:
+
+03 · RESTORE
+
+Headline:
+
+For a while, your body has nothing else to do.
+
+Visual:
+
+professional massage experience.
+
+58. WHY SHIRUI SECTION
+
+Section ID:
+
+why-shirui
+
+Eyebrow:
+
+WHY SHIRUI
+
+Heading:
+
+The details you may not notice are the ones that matter most.
+
+Create 6 premium feature cards.
+
+59. TRUST CARDS
+
+Card 1:
+
+PRIVATE TREATMENT ROOMS
+
+“Spaces designed around comfort and privacy.”
+
+Card 2:
+
+PROFESSIONAL CARE
+
+“Treatments delivered with attention to comfort and preference.”
+
+Card 3:
+
+FRESH PREPARATION
+
+“Rooms and linens prepared before each session.”
+
+Card 4:
+
+PRESSURE PREFERENCE
+
+“Light, medium or firm according to your comfort.”
+
+Card 5:
+
+PREMIUM AMBIENCE
+
+“A calm environment built around relaxation.”
+
+Card 6:
+
+CLEAR EXPERIENCE
+
+“Understand the treatment, duration and price before booking.”
+
+Do not claim certifications unless verified.
+
+60. SESSION CONFIGURATOR
+
+Section ID:
+
+build-session
+
+Heading:
+
+Create your ideal session.
+
+Subheading:
+
+“Tell us what kind of experience you want.”
+
+Use 4-step configurator.
+
+61. CONFIGURATOR STEP 1
+
+Question:
+
+What are you looking for?
+
+Options:
+
+Relax
+
+Release Tension
+
+Recover
+
+Rejuvenate
+
+Couple Experience
+
+Cards must be selectable.
+
+62. CONFIGURATOR STEP 2
+
+Question:
+
+How much time do you want?
+
+Options:
+
+45 MIN
+
+60 MIN
+
+90 MIN
+
+120 MIN
+
+Only show durations supported by selected treatment.
+
+63. CONFIGURATOR STEP 3
+
+Question:
+
+Preferred pressure?
+
+Options:
+
+LIGHT
+
+MEDIUM
+
+FIRM
+
+Add:
+
+“You can always change your preference during the session.”
+
+64. CONFIGURATOR STEP 4
+
+Show recommendation.
+
+Example:
+
+YOUR SHIRUI EXPERIENCE
+
+Deep Relaxation Massage
+
+90 Minutes
+
+Medium Pressure
+
+Starting From ₹____
+
+Buttons:
+
+Book This Experience
+
+WhatsApp This Selection
+
+65. CONFIGURATOR WHATSAPP MESSAGE
+
+Generate dynamically:
+
+“Hi Shirui Wellness Spa, I would like to enquire about a session.
+
+Experience: [experience]
+Duration: [duration]
+Preferred pressure: [pressure]
+
+Please share available timings.”
+
+URL encode properly.
+
+Do not hardcode phone number in component.
+
+Use config.
+
+66. SIGNATURE EXPERIENCE SECTION
+
+Large editorial section.
+
+Eyebrow:
+
+SHIRUI SIGNATURE
+
+Heading:
+
+90 minutes of doing absolutely nothing.
+
+Supporting copy:
+
+“A longer session designed for guests who want time to fully settle into the experience.”
+
+Use a large cinematic image.
+
+Include configurable inclusions.
+
+Do not invent inclusions permanently.
+
+Example placeholders:
+
+Full-body massage
+
+Focused shoulder/back work
+
+Aromatic oil
+
+Relaxation finish
+
+Mark these in code as editable.
+
+CTA:
+
+Explore Signature Experience
+
+67. OFFERS SECTION
+
+Do not use cheap discount visuals.
+
+Heading:
+
+A little more time for yourself.
+
+Offer card example:
+
+WEEKDAY WELLNESS
+
+60-Minute Relaxation Experience
+
+₹____
+
+Monday–Friday
+
+Reserve Experience
+
+If no active offer:
+
+hide the entire section.
+
+Offer data stored in config.
+
+68. BEFORE / DURING / AFTER SECTION
+
+Heading:
+
+Know what to expect.
+
+Three cards.
+
+69. BEFORE CARD
+
+Title:
+
+BEFORE
+
+Content:
+
+Arrive a few minutes early.
+
+Share pressure preferences.
+
+Mention areas you want to focus on.
+
+Mention areas you want avoided.
+
+70. DURING CARD
+
+Title:
+
+DURING
+
+Content:
+
+Relax at your own pace.
+
+Communicate if pressure feels uncomfortable.
+
+Your comfort should remain the priority.
+
+71. AFTER CARD
+
+Title:
+
+AFTER
+
+Content:
+
+Take a moment before getting up.
+
+Hydrate normally.
+
+Enjoy the relaxed feeling.
+
+Do not mention toxins or detoxification.
+
+72. SPA GALLERY SECTION
+
+Section ID:
+
+our-space
+
+Heading:
+
+Step inside Shirui.
+
+Subheading:
+
+“A closer look at the spaces, details and atmosphere.”
+
+Desktop:
+
+horizontal draggable gallery.
+
+Mobile:
+
+native swipe carousel.
+
+Images:
+
+Reception
+
+Treatment Room
+
+Private Room
+
+Towels
+
+Aromatic Oils
+
+Lighting Detail
+
+Relaxation Area
+
+Interior Detail
+
+Use real Shirui photography when available.
+
+Until then use placeholders.
+
+73. GALLERY CARD SIZES
+
+Desktop:
+
+large image width:
+
+520–680px.
+
+Small image:
+
+320–420px.
+
+Alternate large/small rhythm.
+
+Do not create equal square Instagram-grid layout.
+
+74. LIGHTBOX
+
+Click gallery image.
+
+Open fullscreen dark lightbox.
+
+Show:
+
+image
+
+caption
+
+next
+
+previous
+
+close
+
+keyboard Escape closes.
+
+Arrow keys navigate.
+
+Swipe mobile.
+
+75. REVIEW SECTION
+
+Section ID:
+
+reviews
+
+Eyebrow:
+
+GUEST EXPERIENCES
+
+Heading:
+
+They came in carrying the day.
+
+Second line:
+
+They left feeling different.
+
+If real reviews unavailable:
+
+show development placeholders clearly marked.
+
+Never fabricate production testimonials.
+
+76. REVIEW CARD
+
+Include:
+
+rating
+
+review copy
+
+reviewer first name
+
+source
+
+review date
+
+Maximum visible text:
+
+approximately 220 characters.
+
+Expandable if longer.
+
+77. REVIEWS CAROUSEL
+
+Desktop:
+
+3 cards visible.
+
+Mobile:
+
+1 card.
+
+Slow drag/swipe.
+
+Do not autoplay quickly.
+
+If autoplay enabled:
+
+minimum 6 seconds.
+
+Pause on hover.
+
+Pause on interaction.
+
+Respect reduced motion.
+
+78. GOOGLE RATING BLOCK
+
+Only display if real data is provided.
+
+Example structure:
+
+★★★★★
+
+4.8 on Google
+
+Based on 250+ reviews
+
+View Google Reviews
+
+Never invent:
+
+rating
+
+number of reviews
+
+Google verification.
+
+79. LOCATION SECTION
+
+Section ID:
+
+visit
+
+Eyebrow:
+
+VISIT SHIRUI
+
+Heading:
+
+Your escape is closer than you think.
+
+Display:
+
+Shirui Wellness Spa
+
+Neknampur, Hyderabad
+
+Address placeholder
+
+Opening hours
+
+Nearest landmark placeholder
+
+Parking info placeholder
+
+Do not invent missing information.
+
+80. MAP
+
+Embed Google Maps.
+
+On desktop:
+
+50% information
+
+50% map.
+
+Mobile:
+
+information first.
+
+map second.
+
+Height mobile:
+
+320px.
+
+Directions CTA:
+
+Get Directions
+
+Open Google Maps app/browser.
+
+81. LOCATION BUTTONS
+
+Provide:
+
+Get Directions
+
+Call Shirui
+
+WhatsApp Shirui
+
+Request Appointment
+
+Use actual tel/WhatsApp/Maps links from config.
+
+82. FAQ SECTION
+
+Section ID:
+
+faq
+
+Heading:
+
+Before you visit.
+
+Use accordion.
+
+Questions:
+
+What massage should I choose?
+
+What happens during my first visit?
+
+Do I need an appointment?
+
+How early should I arrive?
+
+Can I choose my preferred pressure?
+
+What should I wear?
+
+Are the treatment rooms private?
+
+What session durations are available?
+
+Can I book through WhatsApp?
+
+Where is Shirui Wellness Spa located?
+
+What are your opening hours?
+
+Do you offer couple experiences?
+
+Which payment methods do you accept?
+
+Only one FAQ open at once on mobile.
+
+83. FINAL CTA SECTION
+
+Minimum desktop height:
+
+70vh.
+
+Dark cinematic background image.
+
+Large centered content.
+
+Eyebrow:
+
+YOUR TIME
+
+Headline:
+
+You've done enough for today.
+
+Supporting copy:
+
+“Give yourself an hour where nothing else needs your attention.”
+
+Buttons:
+
+Book Your Experience
+
+WhatsApp Shirui
+
+Call Now
+
+Below:
+
+Neknampur · Hyderabad
+
+84. FOOTER
+
+Background:
+
+#0A0A08
+
+Columns:
+
+Brand
+
+Explore
+
+Visit
+
+Contact
+
+85. FOOTER BRAND
+
+SHIRUI
+
+WELLNESS SPA
+
+Text:
+
+“A quieter way to experience wellness in Neknampur, Hyderabad.”
+
+86. FOOTER LINKS
+
+Experiences
+
+Inside the Massage
+
+Our Space
+
+Reviews
+
+Visit Us
+
+FAQs
+
+Privacy Policy
+
+Terms
+
+87. CONTACT DETAILS
+
+Phone
+
+WhatsApp
+
+Address
+
+Opening hours
+
+Instagram
+
+Google Maps
+
+Do not invent unavailable values.
+
+88. BOOKING MODAL
+
+Trigger from every Book button.
+
+Desktop modal:
+
+max width:
+
+600px.
+
+Mobile:
+
+full-screen sheet.
+
+89. BOOKING FORM FIELDS
+
+Name *
+
+Phone *
+
+Experience *
+
+Duration *
+
+Preferred Date *
+
+Preferred Time
+
+Number of Guests
+
+Special Preference
+
+Checkbox:
+
+“I agree to be contacted about this appointment request.”
+
+Submit CTA:
+
+REQUEST APPOINTMENT
+
+Do NOT say:
+
+CONFIRM BOOKING
+
+unless backend confirms availability.
+
+90. BOOKING SUCCESS STATE
+
+After successful submission:
+
+Headline:
+
+Your request has been received.
+
+Text:
+
+“Shirui Wellness Spa can now contact you regarding availability.”
+
+Buttons:
+
+Continue on WhatsApp
+
+Close
+
+Do not claim confirmation unless booking system confirms it.
+
+91. FORM VALIDATION
+
+Use:
+
+React Hook Form
+
+Zod
+
+Phone required.
+
+Validate Indian phone format reasonably.
+
+Do not block international numbers if configurable.
+
+Required field messages must be clear.
+
+92. BUSINESS CONFIG FILE
+
+Create:
+
+config/business.ts
+
+Include:
+
+businessName
+shortName
+phone
+whatsappNumber
+email
+addressLine1
+addressLine2
+area
+city
+state
+postalCode
+latitude
+longitude
+googleMapsUrl
+instagramUrl
+openingHours
+reviewRating
+reviewCount
+
+Anything unavailable should be:
+
+null
+
+Components must gracefully hide missing fields.
+
+93. CONTENT CONFIGURATION
+
+Create separate files:
+
+data/treatments.ts
+
+data/reviews.ts
+
+data/faqs.ts
+
+data/gallery.ts
+
+data/offers.ts
+
+Do not scatter copy across components unnecessarily.
+
+94. RECOMMENDED TECH STACK
+
+Use:
+
+Next.js
+
+TypeScript
+
+Tailwind CSS
+
+Framer Motion
+
+Lucide React
+
+React Hook Form
+
+Zod
+
+Use current stable versions.
+
+Use App Router.
+
+95. COMPONENT STRUCTURE
+
+Create:
+
+components/layout/Navbar.tsx
+
+components/layout/Footer.tsx
+
+components/layout/MobileConversionBar.tsx
+
+components/hero/Hero.tsx
+
+components/stats/ExperienceStats.tsx
+
+components/about/AboutShirui.tsx
+
+components/treatments/ExperienceSelector.tsx
+
+components/treatments/TreatmentCard.tsx
+
+components/treatments/TreatmentDrawer.tsx
+
+components/anatomy/AnatomyExperience.tsx
+
+components/anatomy/AnatomySlider.tsx
+
+components/anatomy/MuscleRegionSelector.tsx
+
+components/story/ExperienceTabs.tsx
+
+components/story/CinematicStory.tsx
+
+components/trust/WhyShirui.tsx
+
+components/configurator/SessionConfigurator.tsx
+
+components/signature/SignatureExperience.tsx
+
+components/offers/OfferSection.tsx
+
+components/journey/BeforeDuringAfter.tsx
+
+components/gallery/SpaGallery.tsx
+
+components/gallery/GalleryLightbox.tsx
+
+components/reviews/Reviews.tsx
+
+components/location/Location.tsx
+
+components/faq/FAQ.tsx
+
+components/cta/FinalCTA.tsx
+
+components/booking/BookingModal.tsx
+
+96. ANIMATION RULES
+
+Use animation only where meaningful.
+
+Allowed:
+
+fade-up
+
+image reveal
+
+clip reveal
+
+text line reveal
+
+subtle parallax
+
+horizontal drag
+
+slider interpolation
+
+tab crossfade
+
+navigation transition
+
+Do not animate:
+
+every paragraph
+
+every card continuously
+
+icons endlessly
+
+background constantly
+
+97. ANIMATION TIMINGS
+
+Small hover:
+
+180–250ms
+
+Card reveal:
+
+450ms
+
+Section reveal:
+
+600–800ms
+
+Large image transition:
+
+700–1000ms
+
+Use easing:
+
+cubic-bezier(0.22,1,0.36,1)
+
+Avoid bouncy spring effects.
+
+98. REDUCED MOTION
+
+Respect:
+
+prefers-reduced-motion: reduce
+
+When enabled:
+
+disable parallax
+
+disable autoplay animations
+
+use basic fades
+
+disable continuous movement
+
+Anatomy slider should still work.
+
+99. IMAGE REQUIREMENTS
+
+Use:
+
+AVIF preferred.
+
+WebP fallback.
+
+Responsive sizes.
+
+Never load original 4K images on mobile unnecessarily.
+
+Hero image:
+
+priority load.
+
+All below-fold images:
+
+lazy load.
+
+Set width and height to avoid CLS.
+
+100. IMAGE VISUAL DIRECTION
+
+Every image should feel like the same photoshoot.
+
+Use:
+
+warm amber lighting
+
+dark wood
+
+muted stone
+
+cream fabrics
+
+natural skin tones
+
+deep shadows
+
+soft diffusion
+
+high-end wellness interior
+
+Avoid:
+
+bright white clinics
+
+purple rooms
+
+rose petals everywhere
+
+random bamboo
+
+oversaturated candles
+
+obvious stock-photo smiles
+
+101. INTERACTION STATES
+
+Every interactive element must have:
+
+default
+
+hover
+
+focus
+
+active
+
+disabled
+
+loading if relevant.
+
+Keyboard focus must be visible.
+
+102. ACCESSIBILITY
+
+Target WCAG AA.
+
+Requirements:
+
+semantic headings
+
+one H1 only
+
+proper buttons
+
+keyboard support
+
+ARIA labels
+
+screen-reader-friendly modals
+
+focus trapping
+
+Escape closes modal/lightbox
+
+visible focus state
+
+sufficient contrast
+
+alt text
+
+touch targets minimum 44px.
+
+103. SEO PAGE TITLE
+
+Use:
+
+Shirui Wellness Spa | Premium Spa in Neknampur, Hyderabad
+
+104. META DESCRIPTION
+
+Use:
+
+“Discover premium massage and wellness experiences at Shirui Wellness Spa in Neknampur, Hyderabad. Explore treatments and request your appointment through WhatsApp or phone.”
+
+105. OPEN GRAPH
+
+Create:
+
+title
+
+description
+
+image
+
+site name
+
+locale:
+
+en_IN
+
+106. STRUCTURED DATA
+
+Add:
+
+LocalBusiness / DaySpa schema where appropriate.
+
+Include only real values.
+
+Possible fields:
+
+name
+
+url
+
+telephone
+
+address
+
+geo
+
+openingHoursSpecification
+
+sameAs
+
+priceRange
+
+Do NOT add AggregateRating unless rating data is verified.
+
+107. FAQ SCHEMA
+
+Generate FAQPage structured data using real visible FAQs.
+
+Do not include hidden questions.
+
+108. LOCAL SEO
+
+Naturally use phrases:
+
+spa in Neknampur
+
+wellness spa in Hyderabad
+
+massage spa in Neknampur
+
+premium wellness Hyderabad
+
+relaxation massage Hyderabad
+
+Do not keyword stuff.
+
+109. ANALYTICS EVENTS
+
+Create helper:
+
+trackEvent()
+
+Prepare:
+
+hero_explore_click
+
+book_click
+
+whatsapp_click
+
+call_click
+
+directions_click
+
+treatment_category_select
+
+treatment_view
+
+treatment_book_click
+
+anatomy_interaction
+
+muscle_region_select
+
+configurator_start
+
+configurator_complete
+
+gallery_open
+
+review_interaction
+
+faq_open
+
+booking_submit
+
+booking_success
+
+110. GOOGLE TAG MANAGER
+
+Prepare integration through environment variable.
+
+Example:
+
+NEXT_PUBLIC_GTM_ID
+
+Do not hardcode analytics ID.
+
+111. WHATSAPP TRACKING
+
+Every WhatsApp action must call:
+
+trackEvent("whatsapp_click", {...context})
+
+Include context:
+
+hero
+
+treatment
+
+configurator
+
+location
+
+footer
+
+mobile_bar
+
+112. CALL TRACKING
+
+Every tel link should track:
+
+call_click
+
+before navigation.
+
+113. DIRECTIONS TRACKING
+
+Every Maps link:
+
+directions_click
+
+Include location context.
+
+114. PERFORMANCE TARGET
+
+Aim for:
+
+Performance:
+90+
+
+Accessibility:
+95+
+
+Best Practices:
+95+
+
+SEO:
+95+
+
+on realistic production deployment.
+
+115. CORE WEB VITALS
+
+Avoid:
+
+huge JavaScript bundles
+
+blocking video
+
+unoptimized 3D
+
+layout shift
+
+multiple font families
+
+unnecessary animation libraries
+
+116. LAZY LOAD HEAVY COMPONENTS
+
+Lazy load:
+
+AnatomyExperience
+
+GalleryLightbox
+
+large review integrations
+
+map iframe
+
+Map iframe loads when near viewport.
+
+117. MOBILE DESIGN
+
+Mobile must feel intentionally designed.
+
+Do not simply stack desktop sections.
+
+Mobile hero:
+
+shorter copy.
+
+Cards:
+
+full-width swipe.
+
+Anatomy:
+
+simplified touch slider.
+
+Gallery:
+
+horizontal scroll.
+
+Configurator:
+
+one step per screen/card.
+
+FAQ:
+
+single column.
+
+Final CTA:
+
+large touch buttons.
+
+118. DESKTOP DESIGN
+
+Use asymmetry.
+
+Not every section should be centered.
+
+Alternate:
+
+text left/image right
+
+image left/text right
+
+full bleed image
+
+centered editorial text
+
+horizontal UI
+
+This prevents template-like appearance.
+
+119. MEDICAL LANGUAGE RULES
+
+Never say massage:
+
+cures
+
+heals medical conditions
+
+removes toxins
+
+fixes discs
+
+repairs injuries
+
+treats disease
+
+guarantees pain relief
+
+Instead use:
+
+may help reduce temporary muscular tension
+
+may promote relaxation
+
+people commonly seek massage for stiffness
+
+may support a relaxed feeling
+
+often chosen after long workdays or exercise
+
+120. DO NOT INVENT INFORMATION
+
+Never invent:
+
+address
+
+phone number
+
+WhatsApp number
+
+Google rating
+
+review count
+
+customer quotes
+
+therapist names
+
+certifications
+
+years in business
+
+number of customers
+
+awards
+
+prices
+
+opening hours
+
+services
+
+Instead:
+
+use clearly named editable placeholders.
+
+121. PLACEHOLDER BEHAVIOR
+
+If data is missing:
+
+phone null:
+hide call actions.
+
+WhatsApp null:
+hide WhatsApp actions.
+
+Maps URL null:
+hide directions.
+
+review data empty:
+hide reviews section.
+
+offer inactive:
+hide offer section.
+
+Do not display:
+
+“Coming soon”
+
+unless specifically configured.
+
+122. NO LOREM IPSUM
+
+Use complete real-quality development copy throughout.
+
+Even placeholders should be meaningful.
+
+123. FINAL PAGE ORDER
+
+The exact default order should be:
+
+Navbar
+Hero
+Experience Snapshot
+Shirui Introduction
+Choose Your Experience
+Treatment Explorer
+Inside the Massage
+Muscle Region Explorer
+Feel the Difference Tabs
+Cinematic Experience Story
+Why Shirui
+Session Configurator
+Signature Experience
+Offer Section if active
+Before / During / After
+Spa Gallery
+Guest Reviews if available
+Google Rating if available
+Visit Shirui / Maps
+FAQs
+Final CTA
+Footer
+Mobile Conversion Bar
+Booking Modal
+
+Do not reorder unless required for responsiveness.
+
+124. MOST IMPORTANT VISUAL MOMENTS
+
+The four strongest moments on the page should be:
+
+MOMENT 1
+
+The cinematic hero.
+
+MOMENT 2
+
+Treatment discovery.
+
+MOMENT 3
+
+The anatomy / inside-the-massage interaction.
+
+MOMENT 4
+
+The final booking CTA.
+
+These should not visually compete with each other.
+
+125. SECTION TRANSITIONS
+
+Avoid obvious hard cuts between every section.
+
+Use:
+
+background gradients
+
+image bleed
+
+subtle visual overlap
+
+small decorative transitions
+
+spacing hierarchy
+
+Do not create giant wave SVG separators.
+
+126. DESKTOP ANATOMY LAYOUT
+
+Use a two-column layout.
+
+Left:
+
+40%.
+
+Contains:
+
+eyebrow
+
+headline
+
+description
+
+phase information
+
+muscle buttons
+
+disclaimer
+
+Right:
+
+60%.
+
+Contains:
+
+large anatomical visual.
+
+Minimum visual height:
+
+650px.
+
+127. MOBILE ANATOMY LAYOUT
+
+Use:
+
+headline
+
+description
+
+anatomy visual
+
+slider
+
+phase title
+
+phase description
+
+muscle region selector
+
+disclaimer
+
+Do not place tiny text over the body.
+
+128. ANATOMY INTERACTION QUALITY
+
+The person must remain aligned while slider moves.
+
+Do not simply fade between unrelated photographs.
+
+Outer skin and internal muscle render must share identical body position.
+
+Slider reveal should look like one continuous body.
+
+Use clipping/masks where possible.
+
+129. ANATOMY SLIDER VISUAL
+
+Track:
+
+subtle dark line.
+
+Active portion:
+
+champagne.
+
+Handle:
+
+44px circle.
+
+Inside handle:
+
+left/right arrows.
+
+Desktop:
+
+cursor:
+ew-resize
+
+Mobile:
+
+touch-action:
+pan-y
+
+Prevent horizontal browser conflicts properly.
+
+130. ANATOMY LABELS
+
+Display current phase above slider.
+
+Examples:
+
+01 TENSION
+
+02 TREATMENT
+
+03 RELEASE
+
+04 RELAXED
+
+Update smoothly.
+
+131. CONTENT QUALITY
+
+Do not write paragraphs longer than approximately 4 lines on desktop.
+
+Use concise editorial writing.
+
+Prefer:
+
+“Your time starts slowing down here.”
+
+instead of:
+
+“At Shirui Wellness Spa we always strive to provide our valuable customers with high quality services…”
+
+Never use generic filler.
+
+132. DEVELOPMENT QUALITY
+
+Code must be:
+
+typed
+
+modular
+
+maintainable
+
+responsive
+
+accessible
+
+commented only where needed
+
+free from duplicated content
+
+free from console errors
+
+free from broken links
+
+free from hydration issues
+
+133. ERROR HANDLING
+
+Forms:
+
+display inline validation.
+
+Images:
+
+use fallback.
+
+Map unavailable:
+
+show address and directions CTA.
+
+Missing treatment image:
+
+use premium neutral placeholder.
+
+Booking API error:
+
+show:
+
+“We couldn’t send your request right now. Please contact Shirui through WhatsApp or phone.”
+
+134. ENVIRONMENT VARIABLES
+
+Prepare:
+
+NEXT_PUBLIC_SITE_URL=
+NEXT_PUBLIC_GTM_ID=
+NEXT_PUBLIC_WHATSAPP_NUMBER=
+NEXT_PUBLIC_PHONE=
+NEXT_PUBLIC_GOOGLE_MAPS_URL=
+
+Do not expose secrets client-side.
+
+135. PRODUCTION CHECKLIST
+
+Before declaring complete, verify:
+
+Desktop navigation works.
+
+Mobile menu works.
+
+All section anchors work.
+
+Booking modal works.
+
+Booking validation works.
+
+WhatsApp links generate correct messages.
+
+Call links work.
+
+Directions links work.
+
+Treatment filters work.
+
+Treatment drawer works.
+
+Anatomy slider works by mouse.
+
+Anatomy slider works by touch.
+
+Anatomy slider works by keyboard.
+
+Muscle selector changes content.
+
+Experience tabs work.
+
+Configurator works.
+
+Gallery swipes.
+
+Gallery lightbox works.
+
+FAQ works.
+
+Mobile conversion bar works.
+
+Reduced motion works.
+
+No layout overflow.
+
+No horizontal scroll.
+
+No fake business data is displayed.
+
+No medical cure claims exist.
+
+SEO metadata exists.
+
+Structured data validates.
+
+Images have alt text.
+
+Focus states are visible.
+
+Page loads without console errors.
+
+136. FINAL ACCEPTANCE CRITERIA
+
+Do NOT mark the project complete unless:
+
+the whole landing page is implemented,
+
+the design feels premium,
+
+the anatomy experience functions,
+
+treatments are discoverable,
+
+the user can configure a session,
+
+the booking request flow works,
+
+WhatsApp conversion works,
+
+phone conversion works,
+
+directions conversion works,
+
+mobile experience works,
+
+the page is responsive,
+
+the site uses configurable real business data,
+
+and the website visually feels custom-designed rather than generated from a generic template.
+
+137. FINAL DESIGN INTENTION
+
+A visitor should understand within the first few seconds:
+
+This is Shirui Wellness Spa.
+
+It is located in Neknampur, Hyderabad.
+
+It offers premium massage and wellness experiences.
+
+It feels trustworthy and professionally presented.
+
+Then the website should encourage the visitor to explore.
+
+As they continue scrolling, they should discover:
+
+what treatments exist,
+
+what each experience feels like,
+
+how massage relates to common muscle areas,
+
+what environment Shirui provides,
+
+what treatment may suit them,
+
+what guests say,
+
+where the spa is located,
+
+and how to book.
+
+The anatomical interaction should be memorable, but it must remain one part of a complete premium wellness journey.
+
+The final website should communicate:
+
+Shirui Wellness Spa does not simply list massages. It lets visitors understand and experience the feeling of Shirui before they arrive.
+
+138. FINAL INSTRUCTION TO THE CODING AGENT
+
+Build the complete application now.
+
+Do not shorten the brief.
+
+Do not omit sections because they require more work.
+
+Do not replace custom interactions with static text.
+
+Do not leave TODO placeholders for core functionality.
+
+Do not stop after building the first viewport.
+
+Do not return a plan instead of code.
+
+Implement the full responsive page, all stated interactions, all conversion elements, the booking flow, the anatomical visualization architecture, configuration-driven business data, accessibility, SEO and production-quality styling.
+
+For any business value that has not been supplied, use an obvious configuration placeholder and keep it hidden from the public UI until a real value is provided.
+
+The result must be immediately usable as the foundation of the production Shirui Wellness Spa website.
