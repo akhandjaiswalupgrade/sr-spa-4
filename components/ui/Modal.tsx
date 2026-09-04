@@ -14,7 +14,16 @@ export interface ModalProps {
   maxWidth?: "sm" | "md" | "lg" | "xl" | "2xl";
   className?: string;
   hideCloseButton?: boolean;
+  ariaLabel?: string;
 }
+
+const maxWidthClasses = {
+  sm: "max-w-md",
+  md: "max-w-lg",
+  lg: "max-w-2xl",
+  xl: "max-w-4xl",
+  "2xl": "max-w-5xl",
+};
 
 export function Modal({
   isOpen,
@@ -25,6 +34,7 @@ export function Modal({
   maxWidth = "lg",
   className,
   hideCloseButton = false,
+  ariaLabel,
 }: ModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -46,14 +56,6 @@ export function Modal({
     };
   }, [isOpen, onClose]);
 
-  const maxWidthClasses = {
-    sm: "max-w-sm",
-    md: "max-w-md",
-    lg: "max-w-lg",
-    xl: "max-w-xl",
-    "2xl": "max-w-2xl",
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -65,7 +67,7 @@ export function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 bg-black/85 backdrop-blur-md"
             aria-hidden="true"
           />
 
@@ -77,40 +79,43 @@ export function Modal({
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             role="dialog"
             aria-modal="true"
+            aria-label={ariaLabel || title || "Dialog window"}
             className={cn(
-              "relative w-full bg-surface-raised border border-white/10 rounded-visual shadow-2xl p-6 sm:p-8 z-10 my-auto text-cream max-h-[90vh] overflow-y-auto",
+              "relative w-full bg-surface-raised border border-rose/25 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-auto text-cream max-h-[90vh] overflow-y-auto",
               maxWidthClasses[maxWidth],
               className
             )}
           >
             {/* Header */}
-            <div className="flex items-start justify-between mb-5 gap-4">
-              <div>
-                {title && (
-                  <h3 className="font-serif text-2xl sm:text-3xl text-cream font-medium tracking-tight">
-                    {title}
-                  </h3>
-                )}
-                {subtitle && (
-                  <p className="text-sm text-taupe mt-1 leading-relaxed">
-                    {subtitle}
-                  </p>
+            {(title || !hideCloseButton) && (
+              <div className="flex items-start justify-between mb-5 gap-4">
+                <div>
+                  {title && (
+                    <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium tracking-tight">
+                      {title}
+                    </h3>
+                  )}
+                  {subtitle && (
+                    <p className="text-sm text-taupe mt-1 leading-relaxed">
+                      {subtitle}
+                    </p>
+                  )}
+                </div>
+
+                {!hideCloseButton && (
+                  <button
+                    type="button"
+                    onClick={onClose}
+                    className="p-2 rounded-xl text-taupe hover:text-rose hover:bg-surface-dark transition-colors focus:outline-none focus:ring-1 focus:ring-rose"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
                 )}
               </div>
+            )}
 
-              {!hideCloseButton && (
-                <button
-                  type="button"
-                  onClick={onClose}
-                  aria-label="Close dialog"
-                  className="p-2 -mr-2 -mt-2 rounded-full text-muted hover:text-cream hover:bg-white/5 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              )}
-            </div>
-
-            {/* Content */}
+            {/* Modal Body */}
             <div>{children}</div>
           </motion.div>
         </div>
