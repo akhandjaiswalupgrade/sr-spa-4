@@ -43,15 +43,15 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
   return (
     <section
       id="experiences"
-      className="relative bg-surface-dark py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]"
+      className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Choose Your Experience
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             What does your body need today?
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -61,7 +61,7 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-10 sm:mb-12 no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto pb-4 mb-10 sm:mb-14 no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0">
           {treatmentCategories.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
@@ -69,10 +69,10 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
                 key={cat.id}
                 type="button"
                 onClick={() => handleCategoryChange(cat.id)}
-                className={`relative flex-shrink-0 px-4 sm:px-5 py-2.5 rounded-full text-xs font-sans font-medium uppercase tracking-[0.14em] transition-all duration-300 ${
+                className={`relative flex-shrink-0 px-5 sm:px-6 py-2.5 rounded-xl text-xs font-sans font-bold uppercase tracking-[0.14em] transition-all duration-300 ${
                   isActive
-                    ? "bg-gold text-obsidian font-semibold shadow-luxury-glow scale-105"
-                    : "bg-surface-raised border border-white/10 text-taupe hover:text-cream hover:border-white/20"
+                    ? "bg-rose text-obsidian font-bold shadow-rose-glow scale-105 border border-rose"
+                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
                 }`}
               >
                 <span>{cat.label}</span>

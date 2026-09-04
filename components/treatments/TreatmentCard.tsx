@@ -26,7 +26,7 @@ export function TreatmentCard({
           <span
             key={dot}
             className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              dot <= level ? "bg-gold" : "bg-white/15"
+              dot <= level ? "bg-rose" : "bg-white/15"
             }`}
           />
         ))}
@@ -41,10 +41,10 @@ export function TreatmentCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col bg-surface-raised rounded-card border border-white/[0.08] hover:border-gold/30 transition-all duration-350 hover:-translate-y-1 hover:shadow-luxury overflow-hidden"
+      className="group relative flex flex-col bg-surface-raised rounded-2xl border border-rose/15 hover:border-rose/40 transition-all duration-350 hover:-translate-y-1 hover:shadow-rose-glow/20 overflow-hidden"
     >
       {/* Card Image Container */}
-      <div className="relative h-[260px] sm:h-[300px] lg:h-[320px] w-full overflow-hidden bg-surface-dark">
+      <div className="relative h-[260px] sm:h-[290px] lg:h-[310px] w-full overflow-hidden bg-surface-dark">
         <Image
           src={treatment.image}
           alt={treatment.name}
@@ -58,31 +58,31 @@ export function TreatmentCard({
 
         {/* Top Badges */}
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-          <span className="px-3 py-1 rounded-full bg-obsidian/85 backdrop-blur-md border border-white/10 text-[10px] uppercase tracking-[0.2em] font-sans font-medium text-cream">
+          <span className="px-3 py-1 rounded-full bg-obsidian/90 backdrop-blur-md border border-rose/25 text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-cream shadow-sm">
             {treatment.category}
           </span>
 
           {treatment.featured && (
-            <span className="px-2.5 py-1 rounded-full bg-gold text-obsidian text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1 shadow-sm">
+            <span className="px-2.5 py-1 rounded-full bg-rose text-obsidian text-[10px] uppercase tracking-wider font-bold flex items-center gap-1 shadow-sm">
               <Sparkles className="w-3 h-3" />
               Signature
             </span>
           )}
         </div>
 
-        {/* Bottom Image Overlay: Starting Price */}
+        {/* Bottom Image Overlay: Starting Price & Pressure */}
         <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
+          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-rose/20 shadow-sm">
             <span className="text-[10px] text-muted uppercase tracking-wider block font-sans">
               From
             </span>
-            <span className="text-sm font-semibold text-cream font-sans">
+            <span className="text-sm font-bold text-white font-sans">
               {formatPrice(treatment.priceFrom)}
             </span>
           </div>
 
           {/* Pressure indicator */}
-          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex flex-col items-end">
+          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-rose/20 shadow-sm flex flex-col items-end">
             <span className="text-[10px] text-taupe uppercase tracking-wider mb-1 font-sans">
               Pressure: <strong className="text-cream">{treatment.pressureLabel}</strong>
             </span>
@@ -94,7 +94,7 @@ export function TreatmentCard({
       {/* Card Content */}
       <div className="flex flex-col flex-1 p-5 sm:p-6 justify-between">
         <div>
-          <h3 className="font-serif text-xl sm:text-2xl text-cream font-medium tracking-tight mb-2 group-hover:text-gold transition-colors duration-200">
+          <h3 className="font-serif text-xl sm:text-2xl text-white font-medium tracking-tight mb-2 group-hover:text-rose transition-colors duration-200">
             {treatment.name}
           </h3>
 
@@ -104,12 +104,12 @@ export function TreatmentCard({
 
           {/* Durations Available */}
           <div className="flex items-center gap-2 mb-6">
-            <Clock className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+            <Clock className="w-3.5 h-3.5 text-rose flex-shrink-0" />
             <div className="flex flex-wrap gap-1.5">
               {treatment.durations.map((d) => (
                 <span
                   key={d.minutes}
-                  className="px-2 py-0.5 rounded text-[11px] font-sans font-medium bg-white/[0.04] border border-white/10 text-taupe"
+                  className="px-2.5 py-0.5 rounded-lg text-[11px] font-sans font-medium bg-surface-dark border border-rose/15 text-taupe"
                 >
                   {d.minutes} min
                 </span>
@@ -130,10 +130,10 @@ export function TreatmentCard({
               });
               onSelect(treatment);
             }}
-            className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.16em] font-medium text-cream hover:text-gold transition-colors group/btn py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.16em] font-bold text-rose hover:text-rose-light transition-colors group/btn py-1"
           >
             <span>Explore Details</span>
-            <ArrowRight className="w-3.5 h-3.5 text-gold group-hover/btn:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 text-rose group-hover/btn:translate-x-1 transition-transform" />
           </button>
 
           <button
@@ -145,7 +145,7 @@ export function TreatmentCard({
               });
               onQuickBook(treatment.name);
             }}
-            className="px-3.5 py-1.5 rounded-full text-xs font-sans font-semibold bg-white/[0.06] hover:bg-gold hover:text-obsidian border border-white/10 hover:border-gold text-cream transition-all duration-200"
+            className="px-4 py-1.5 rounded-xl text-xs font-sans font-bold bg-rose/15 hover:bg-rose hover:text-obsidian border border-rose/35 hover:border-rose text-rose transition-all duration-200 shadow-sm"
           >
             Book
           </button>

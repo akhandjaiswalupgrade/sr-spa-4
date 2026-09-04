@@ -15,17 +15,17 @@ export function MobileConversionBar({ hide = false }: MobileConversionBarProps) 
   return (
     <aside
       aria-label="Quick Actions"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-obsidian/95 backdrop-blur-xl border-t border-white/10 px-4 py-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] shadow-2xl transition-transform duration-300"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-obsidian/95 backdrop-blur-xl border-t border-rose/20 px-4 py-2.5 pb-[calc(0.6rem+env(safe-area-inset-bottom,0px))] shadow-2xl transition-transform duration-300"
     >
       <div className="grid grid-cols-3 gap-2 max-w-md mx-auto">
         {/* Call Button */}
         <a
           href={getCallUrl()}
           onClick={() => trackEvent("call_click", { context: "mobile_bar" })}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl text-taupe hover:text-cream hover:bg-white/5 active:scale-95 transition-all text-center"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl text-taupe hover:text-white hover:bg-white/5 active:scale-95 transition-all text-center"
         >
-          <Phone className="w-4 h-4 text-gold mb-1" />
-          <span className="text-[10px] tracking-wider uppercase font-semibold text-cream">
+          <Phone className="w-4 h-4 text-rose mb-1" />
+          <span className="text-[10px] tracking-wider uppercase font-bold text-cream">
             Call
           </span>
         </a>
@@ -36,10 +36,10 @@ export function MobileConversionBar({ hide = false }: MobileConversionBarProps) 
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("whatsapp_click", { context: "mobile_bar" })}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-gold/15 border border-gold/30 text-gold hover:bg-gold/25 active:scale-95 transition-all text-center"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl bg-rose/15 border border-rose/35 text-rose hover:bg-rose/25 active:scale-95 transition-all text-center shadow-sm"
         >
-          <MessageCircle className="w-4 h-4 text-gold mb-1" />
-          <span className="text-[10px] tracking-wider uppercase font-bold text-gold">
+          <MessageCircle className="w-4 h-4 text-rose mb-1" />
+          <span className="text-[10px] tracking-wider uppercase font-bold text-rose">
             WhatsApp
           </span>
         </a>
@@ -50,10 +50,10 @@ export function MobileConversionBar({ hide = false }: MobileConversionBarProps) 
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => trackEvent("directions_click", { context: "mobile_bar" })}
-          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl text-taupe hover:text-cream hover:bg-white/5 active:scale-95 transition-all text-center"
+          className="flex flex-col items-center justify-center py-2 px-1 rounded-xl text-taupe hover:text-white hover:bg-white/5 active:scale-95 transition-all text-center"
         >
-          <Navigation className="w-4 h-4 text-gold mb-1" />
-          <span className="text-[10px] tracking-wider uppercase font-semibold text-cream">
+          <Navigation className="w-4 h-4 text-rose mb-1" />
+          <span className="text-[10px] tracking-wider uppercase font-bold text-cream">
             Directions
           </span>
         </a>

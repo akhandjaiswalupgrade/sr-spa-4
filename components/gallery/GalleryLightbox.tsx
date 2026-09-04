@@ -67,7 +67,7 @@ export function GalleryLightbox({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-3 rounded-full bg-surface-raised/80 hover:bg-gold hover:text-obsidian text-cream border border-white/10 transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 p-3 rounded-xl bg-surface-raised/80 hover:bg-rose hover:text-obsidian text-cream border border-rose/25 transition-colors"
           aria-label="Close Lightbox (Esc)"
         >
           <X className="w-6 h-6" />
@@ -77,7 +77,7 @@ export function GalleryLightbox({
         <button
           type="button"
           onClick={handlePrev}
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-surface-raised/80 hover:bg-gold hover:text-obsidian text-cream border border-white/10 transition-colors shadow-2xl"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-xl bg-surface-raised/80 hover:bg-rose hover:text-obsidian text-cream border border-rose/25 transition-colors shadow-2xl"
           aria-label="Previous Image (Left Arrow)"
         >
           <ChevronLeft className="w-6 h-6" />
@@ -87,7 +87,7 @@ export function GalleryLightbox({
         <button
           type="button"
           onClick={handleNext}
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-full bg-surface-raised/80 hover:bg-gold hover:text-obsidian text-cream border border-white/10 transition-colors shadow-2xl"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-50 p-3 sm:p-4 rounded-xl bg-surface-raised/80 hover:bg-rose hover:text-obsidian text-cream border border-rose/25 transition-colors shadow-2xl"
           aria-label="Next Image (Right Arrow)"
         >
           <ChevronRight className="w-6 h-6" />
@@ -101,7 +101,7 @@ export function GalleryLightbox({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[70vh] rounded-visual overflow-hidden border border-white/10 shadow-2xl bg-surface-dark"
+            className="relative w-full aspect-[16/10] sm:aspect-[16/9] max-h-[70vh] rounded-2xl overflow-hidden border border-rose/25 shadow-2xl bg-surface-dark"
           >
             <Image
               src={currentItem.image}
@@ -116,16 +116,16 @@ export function GalleryLightbox({
           {/* Caption & Counter */}
           <div className="w-full text-center mt-4 sm:mt-6 px-4">
             <div className="flex items-center justify-center gap-2 mb-1">
-              <span className="text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-gold">
+              <span className="text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-rose">
                 {currentItem.category}
               </span>
               <span className="text-muted text-xs">·</span>
-              <span className="text-xs text-muted font-sans font-medium">
+              <span className="text-xs text-taupe font-sans font-semibold">
                 {currentIndex + 1} of {items.length}
               </span>
             </div>
 
-            <h3 className="font-serif text-xl sm:text-2xl text-cream font-medium">
+            <h3 className="font-serif text-xl sm:text-2xl text-white font-medium">
               {currentItem.title}
             </h3>
 

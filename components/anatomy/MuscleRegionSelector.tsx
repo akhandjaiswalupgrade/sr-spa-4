@@ -120,7 +120,7 @@ export function MuscleRegionSelector({
     <div className="space-y-4">
       {/* Zone Button Pills */}
       <div>
-        <span className="text-[11px] uppercase tracking-[0.16em] font-sans font-semibold text-muted block mb-2.5">
+        <span className="text-[11px] uppercase tracking-[0.16em] font-sans font-bold text-taupe block mb-2.5">
           Select Muscle Region to Explore:
         </span>
         <div className="flex flex-wrap gap-2">
@@ -134,10 +134,10 @@ export function MuscleRegionSelector({
                   trackEvent("muscle_region_select", { muscleRegion: region.name });
                   onSelectRegion(region);
                 }}
-                className={`px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-sans font-semibold transition-all ${
                   isSelected
-                    ? "bg-gold text-obsidian font-semibold shadow-gold-subtle scale-105"
-                    : "bg-surface-raised border border-white/10 text-taupe hover:text-cream hover:border-white/20"
+                    ? "bg-rose text-obsidian font-bold shadow-rose-subtle scale-105 border border-rose"
+                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
                 }`}
               >
                 {region.name}
@@ -148,12 +148,12 @@ export function MuscleRegionSelector({
       </div>
 
       {/* Selected Region Detailed Card */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-surface-raised/80 border border-white/10">
+      <div className="p-4 sm:p-5 rounded-2xl bg-surface-raised border border-rose/20 shadow-md">
         <div className="flex items-center justify-between gap-2 mb-1.5">
-          <h4 className="font-serif text-lg sm:text-xl text-cream font-medium">
+          <h4 className="font-serif text-lg sm:text-xl text-white font-medium">
             {activeRegion.name}
           </h4>
-          <span className="text-[11px] font-sans text-gold font-medium bg-gold/10 px-2 py-0.5 rounded-full">
+          <span className="text-[11px] font-sans text-rose font-bold bg-rose/15 px-2.5 py-0.5 rounded-lg border border-rose/25">
             {activeRegion.muscleName}
           </span>
         </div>
@@ -164,7 +164,7 @@ export function MuscleRegionSelector({
 
         {/* Recommended Therapies */}
         <div className="pt-3 border-t border-white/[0.07]">
-          <span className="text-[10px] uppercase tracking-[0.16em] font-sans font-semibold text-muted block mb-2">
+          <span className="text-[10px] uppercase tracking-[0.16em] font-sans font-bold text-taupe block mb-2">
             Recommended Experiences:
           </span>
           <div className="flex flex-wrap gap-2">
@@ -173,7 +173,7 @@ export function MuscleRegionSelector({
                 key={idx}
                 type="button"
                 onClick={() => onSelectTreatmentName(t.name)}
-                className="inline-flex items-center gap-1.5 text-xs font-sans font-medium text-gold hover:text-gold-light bg-white/[0.04] hover:bg-white/[0.08] px-2.5 py-1 rounded-lg border border-gold/20 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-sans font-bold text-rose hover:text-rose-light bg-surface-dark hover:bg-rose/15 px-3 py-1 rounded-xl border border-rose/25 transition-colors"
               >
                 <span>{t.name}</span>
                 <ArrowRight className="w-3 h-3" />

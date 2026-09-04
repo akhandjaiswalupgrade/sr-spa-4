@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, MessageCircle, ArrowRight } from "lucide-react";
-import { Button } from "@/lib/../components/ui/Button";
+import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
-import { businessConfig } from "@/config/business";
 import { getWhatsAppUrl, getCallUrl } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 
@@ -20,7 +20,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -57,31 +57,35 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? "bg-obsidian/85 backdrop-blur-xl border-b border-white/[0.07] shadow-lg py-3 sm:py-4"
-            : "bg-transparent py-5 sm:py-7"
+            ? "bg-obsidian/92 backdrop-blur-xl border-b border-rose/15 shadow-xl py-2.5 sm:py-3.5"
+            : "bg-gradient-to-b from-obsidian/90 via-obsidian/40 to-transparent py-4 sm:py-6"
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo Integration */}
           <Link
             href="#"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="group flex flex-col items-start focus:outline-none"
+            className="group flex items-center focus:outline-none transition-transform duration-300 hover:scale-[1.02]"
             aria-label="Shirui Wellness Spa Homepage"
           >
-            <span className="font-serif text-2xl sm:text-3xl tracking-wider text-cream font-medium leading-none group-hover:text-gold transition-colors duration-300">
-              SHIRUI
-            </span>
-            <span className="text-[9px] sm:text-[10px] tracking-[0.28em] text-taupe uppercase font-sans font-medium mt-1">
-              Wellness Spa
-            </span>
+            <div className="relative h-11 sm:h-14 w-auto flex items-center">
+              <Image
+                src="/srlogo.png"
+                alt="Shirui Wellness Spa"
+                width={190}
+                height={68}
+                priority
+                className="h-11 sm:h-14 w-auto object-contain filter drop-shadow-md"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-[13px] uppercase tracking-[0.14em] font-sans font-medium text-taupe">
+          <nav className="hidden lg:flex items-center gap-7 text-[13px] uppercase tracking-[0.14em] font-sans font-semibold text-taupe">
             {siteConfig.navLinks.map((link) => (
               <a
                 key={link.name}
@@ -90,7 +94,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="hover:text-cream transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-gold hover:after:w-full after:transition-all after:duration-300"
+                className="hover:text-cream transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-rose hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
               </a>
@@ -107,7 +111,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   trackEvent("book_click", { context: "navbar" });
                   onOpenBooking();
                 }}
-                className="shadow-sm"
+                className="shadow-rose-glow"
               >
                 Book Experience
               </Button>
@@ -117,7 +121,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-full text-cream hover:text-gold hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-gold"
+              className="lg:hidden p-2.5 rounded-xl text-cream hover:text-rose hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-rose"
               aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
               aria-expanded={mobileMenuOpen}
             >
@@ -139,23 +143,23 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 bg-obsidian/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10 lg:hidden"
+            className="fixed inset-0 z-50 bg-obsidian/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
           >
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between pb-6 border-b border-white/10">
-              <div className="flex flex-col">
-                <span className="font-serif text-2xl tracking-wider text-cream font-medium leading-none">
-                  SHIRUI
-                </span>
-                <span className="text-[9px] tracking-[0.28em] text-taupe uppercase font-sans font-medium mt-1">
-                  Wellness Spa
-                </span>
-              </div>
+            <div className="flex items-center justify-between pb-5 border-b border-rose/15">
+              <Image
+                src="/srlogo.png"
+                alt="Shirui Wellness Spa"
+                width={160}
+                height={56}
+                className="h-11 w-auto object-contain"
+                priority
+              />
 
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2.5 rounded-full text-taupe hover:text-cream hover:bg-white/5 transition-colors focus:outline-none"
+                className="p-2.5 rounded-xl text-taupe hover:text-cream hover:bg-white/5 transition-colors focus:outline-none"
                 aria-label="Close menu"
               >
                 <X className="w-6 h-6" />
@@ -163,7 +167,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
 
             {/* Mobile Navigation Links */}
-            <nav className="flex flex-col gap-6 my-auto py-6">
+            <nav className="flex flex-col gap-5 my-auto py-6">
               {siteConfig.navLinks.map((link, idx) => (
                 <motion.a
                   key={link.name}
@@ -175,16 +179,16 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="font-serif text-2xl sm:text-3xl text-cream/90 hover:text-gold transition-colors flex items-center justify-between"
+                  className="font-serif text-2xl sm:text-3xl text-cream/90 hover:text-rose transition-colors flex items-center justify-between py-1"
                 >
                   <span>{link.name}</span>
-                  <ArrowRight className="w-4 h-4 text-muted opacity-60" />
+                  <ArrowRight className="w-4 h-4 text-rose opacity-70" />
                 </motion.a>
               ))}
             </nav>
 
             {/* Mobile Menu Footer Actions */}
-            <div className="flex flex-col gap-3 pt-6 border-t border-white/10">
+            <div className="flex flex-col gap-3 pt-6 border-t border-rose/15">
               <Button
                 variant="primary"
                 fullWidth
@@ -204,18 +208,18 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("whatsapp_click", { context: "mobile_menu" })}
-                  className="flex items-center justify-center gap-2 py-3 rounded-full bg-white/[0.05] border border-white/10 text-xs tracking-wider uppercase font-medium text-cream hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-raised border border-rose/25 text-xs tracking-wider uppercase font-semibold text-cream hover:bg-rose/15 transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4 text-gold" />
+                  <MessageCircle className="w-4 h-4 text-rose" />
                   WhatsApp
                 </a>
 
                 <a
                   href={getCallUrl()}
                   onClick={() => trackEvent("call_click", { context: "mobile_menu" })}
-                  className="flex items-center justify-center gap-2 py-3 rounded-full bg-white/[0.05] border border-white/10 text-xs tracking-wider uppercase font-medium text-cream hover:bg-white/10 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-raised border border-rose/25 text-xs tracking-wider uppercase font-semibold text-cream hover:bg-rose/15 transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-gold" />
+                  <Phone className="w-4 h-4 text-rose" />
                   Call Spa
                 </a>
               </div>

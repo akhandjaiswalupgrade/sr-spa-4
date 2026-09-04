@@ -37,20 +37,20 @@ const chapters: StoryChapter[] = [
 
 export function CinematicStory() {
   return (
-    <section className="relative bg-obsidian py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]">
+    <section className="relative bg-obsidian py-24 sm:py-32 lg:py-36 border-t border-rose/15">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="max-w-2xl text-left mb-16 sm:mb-20">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+        <div className="max-w-2xl text-left mb-16 sm:mb-24">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             The Journey
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight">
             How your afternoon unfolds.
           </h2>
         </div>
 
-        {/* 3 Story Chapters Grid / Alternating flow */}
-        <div className="space-y-16 sm:space-y-24">
+        {/* 3 Story Chapters Grid */}
+        <div className="space-y-20 sm:space-y-28">
           {chapters.map((chap, idx) => {
             const isEven = idx % 2 === 1;
             return (
@@ -70,7 +70,7 @@ export function CinematicStory() {
                     isEven ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
-                  <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-visual overflow-hidden border border-white/10 shadow-2xl group">
+                  <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-rose/20 shadow-2xl group">
                     <Image
                       src={chap.image}
                       alt={chap.headline}
@@ -78,7 +78,7 @@ export function CinematicStory() {
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-luxury"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-black/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian/85 via-transparent to-black/20" />
                   </div>
                 </div>
 
@@ -88,10 +88,10 @@ export function CinematicStory() {
                     isEven ? "lg:order-1" : "lg:order-2"
                   } space-y-4`}
                 >
-                  <span className="text-xs font-sans font-bold uppercase tracking-[0.24em] text-gold">
+                  <span className="text-xs font-sans font-bold uppercase tracking-[0.24em] text-rose">
                     {chap.step}
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-cream font-normal leading-tight">
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-tight">
                     {chap.headline}
                   </h3>
                   <p className="text-sm sm:text-base text-taupe leading-relaxed text-pretty">

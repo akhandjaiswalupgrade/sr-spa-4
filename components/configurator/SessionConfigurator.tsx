@@ -100,15 +100,15 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
   return (
     <section
       id="build-session"
-      className="relative bg-obsidian py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]"
+      className="relative bg-obsidian py-24 sm:py-32 lg:py-36 border-t border-rose/15"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Interactive Journey
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             Create your ideal session.
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -118,16 +118,16 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
         </div>
 
         {/* Wizard Container */}
-        <div className="max-w-3xl mx-auto rounded-feature bg-surface-raised border border-white/10 p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div className="max-w-3xl mx-auto rounded-2xl bg-surface-raised border border-rose/20 p-6 sm:p-10 lg:p-12 shadow-2xl">
           {/* Progress Bar & Steps Indicator */}
-          <div className="flex items-center justify-between mb-8 pb-6 border-b border-white/10">
-            <div className="flex items-center gap-2">
-              <span className="w-8 h-8 rounded-full bg-gold text-obsidian flex items-center justify-center font-sans font-bold text-xs">
+          <div className="flex items-center justify-between mb-8 pb-6 border-b border-rose/15">
+            <div className="flex items-center gap-2.5">
+              <span className="w-8 h-8 rounded-full bg-rose text-obsidian flex items-center justify-center font-sans font-bold text-xs shadow-sm">
                 {step}
               </span>
               <span className="text-xs font-sans uppercase tracking-widest text-taupe font-semibold">
                 Step {step} of 4:{" "}
-                <strong className="text-cream">
+                <strong className="text-white">
                   {step === 1 && "Your Goal"}
                   {step === 2 && "Duration"}
                   {step === 3 && "Pressure"}
@@ -140,7 +140,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
               <button
                 type="button"
                 onClick={handleReset}
-                className="text-xs font-sans text-muted hover:text-gold flex items-center gap-1 transition-colors"
+                className="text-xs font-sans text-taupe hover:text-rose flex items-center gap-1.5 transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Start Over</span>
@@ -160,10 +160,10 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-cream font-medium mb-4">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
                   What are you looking for?
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {goals.map((goal) => {
                     const isSelected = selectedGoal.id === goal.id;
                     return (
@@ -171,18 +171,18 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={goal.id}
                         type="button"
                         onClick={() => setSelectedGoal(goal)}
-                        className={`p-4 sm:p-5 rounded-2xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
                           isSelected
-                            ? "bg-gold/15 border-gold shadow-gold-subtle scale-[1.02]"
-                            : "bg-surface-dark border-white/10 hover:border-white/20"
+                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
+                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-serif text-lg text-cream font-medium">
+                          <span className="font-serif text-lg text-white font-medium">
                             {goal.title}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-gold flex-shrink-0" />
+                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
                           )}
                         </div>
                         <span className="text-xs text-taupe block leading-relaxed">
@@ -205,10 +205,10 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-cream font-medium mb-4">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
                   How much time do you want?
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {durations.map((dur) => {
                     const isSelected = selectedDuration.minutes === dur.minutes;
                     return (
@@ -216,18 +216,18 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={dur.minutes}
                         type="button"
                         onClick={() => setSelectedDuration(dur)}
-                        className={`p-4 sm:p-5 rounded-2xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
                           isSelected
-                            ? "bg-gold/15 border-gold shadow-gold-subtle scale-[1.02]"
-                            : "bg-surface-dark border-white/10 hover:border-white/20"
+                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
+                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-serif text-xl text-cream font-medium">
+                          <span className="font-serif text-xl text-white font-medium">
                             {dur.label}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-gold flex-shrink-0" />
+                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
                           )}
                         </div>
                         <span className="text-xs text-taupe block leading-relaxed">
@@ -250,13 +250,13 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-cream font-medium mb-2">
+                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-2">
                   What is your preferred pressure?
                 </h3>
                 <p className="text-xs sm:text-sm text-taupe mb-4">
                   You can always adjust pressure dynamically at any moment during your therapy.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   {pressures.map((press) => {
                     const isSelected = selectedPressure.id === press.id;
                     return (
@@ -264,18 +264,18 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={press.id}
                         type="button"
                         onClick={() => setSelectedPressure(press)}
-                        className={`p-4 sm:p-5 rounded-2xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
                           isSelected
-                            ? "bg-gold/15 border-gold shadow-gold-subtle scale-[1.02]"
-                            : "bg-surface-dark border-white/10 hover:border-white/20"
+                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
+                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1.5">
-                          <span className="font-serif text-xl text-cream font-medium">
+                          <span className="font-serif text-xl text-white font-medium">
                             {press.label}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-gold flex-shrink-0" />
+                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
                           )}
                         </div>
                         <span className="text-xs text-taupe block leading-relaxed">
@@ -298,26 +298,26 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.4 }}
                 className="space-y-6"
               >
-                <div className="p-6 rounded-2xl bg-surface-dark border border-gold/40 shadow-luxury relative overflow-hidden">
-                  <div className="absolute top-0 right-0 px-3 py-1 bg-gold text-obsidian text-[10px] font-sans uppercase font-bold tracking-wider rounded-bl-xl">
+                <div className="p-6 rounded-2xl bg-surface-dark border border-rose/35 shadow-luxury relative overflow-hidden">
+                  <div className="absolute top-0 right-0 px-3.5 py-1 bg-rose text-obsidian text-[10px] font-sans uppercase font-bold tracking-wider rounded-bl-xl">
                     Tailored Match
                   </div>
 
-                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-gold font-semibold block mb-2">
+                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-rose font-bold block mb-2">
                     Your Shirui Experience
                   </span>
 
-                  <h3 className="font-serif text-2xl sm:text-3xl text-cream font-medium mb-4">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
                     {selectedGoal.treatment}
                   </h3>
 
                   {/* Config Summary Pills */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-white/10 text-xs">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-rose/15 text-xs">
                     <div>
                       <span className="text-muted block uppercase tracking-wider text-[10px]">
                         Duration
                       </span>
-                      <span className="font-semibold text-cream font-sans">
+                      <span className="font-semibold text-white font-sans">
                         {selectedDuration.label}
                       </span>
                     </div>
@@ -325,7 +325,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                       <span className="text-muted block uppercase tracking-wider text-[10px]">
                         Pressure
                       </span>
-                      <span className="font-semibold text-cream font-sans">
+                      <span className="font-semibold text-white font-sans">
                         {selectedPressure.label} Pressure
                       </span>
                     </div>
@@ -333,7 +333,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                       <span className="text-muted block uppercase tracking-wider text-[10px]">
                         Approx. Price
                       </span>
-                      <span className="font-bold text-gold font-sans text-sm">
+                      <span className="font-bold text-rose font-sans text-sm">
                         {formatPrice(estimatedPrice)}
                       </span>
                     </div>
@@ -372,9 +372,9 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                           treatment: selectedGoal.treatment,
                         })
                       }
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-sm font-sans font-medium text-cream hover:text-gold transition-colors flex-shrink-0"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-raised hover:bg-rose/15 border border-rose/25 text-sm font-sans font-semibold text-cream hover:text-rose transition-colors flex-shrink-0"
                     >
-                      <MessageCircle className="w-4 h-4 text-gold" />
+                      <MessageCircle className="w-4 h-4 text-rose" />
                       <span>WhatsApp Selection</span>
                     </a>
                   </div>
@@ -385,9 +385,9 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
 
           {/* Navigation Controls (Steps 1 to 3) */}
           {step < 4 && (
-            <div className="flex items-center justify-between pt-8 border-t border-white/10 mt-8">
+            <div className="flex items-center justify-between pt-8 border-t border-rose/15 mt-8">
               {step > 1 ? (
-                <Button variant="ghost" size="md" onClick={handlePrev}>
+                <Button variant="ghost" size="md" onClick={handlePrev} className="text-taupe hover:text-white">
                   ← Back
                 </Button>
               ) : (

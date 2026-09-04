@@ -59,19 +59,19 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
   return (
     <section
       id="inside-massage"
-      className="relative bg-obsidian py-20 sm:py-28 lg:py-36 border-t border-white/[0.07] overflow-hidden"
+      className="relative bg-obsidian py-24 sm:py-32 lg:py-36 border-t border-rose/15 overflow-hidden"
     >
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Subtle Background Glow in Soft Rose */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-rose/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             <Activity className="w-3.5 h-3.5" />
             Inside The Massage
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             See what happens beneath the surface.
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -80,13 +80,13 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
           </p>
         </div>
 
-        {/* 2-Column Responsive Layout (40% Left Controls / 60% Right Visual) */}
+        {/* 2-Column Responsive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Interactive Slider & Phase Information */}
           <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
             {/* Live Phase Text Box */}
-            <div className="p-6 rounded-visual bg-surface-raised border border-white/10 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-gold" />
+            <div className="p-6 sm:p-7 rounded-2xl bg-surface-raised border border-rose/20 relative overflow-hidden shadow-md">
+              <div className="absolute top-0 left-0 w-1.5 h-full bg-rose" />
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activePhaseCopy.label}
@@ -95,10 +95,10 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-gold block mb-1.5">
+                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-rose block mb-1.5">
                     Phase {activePhaseCopy.phase} · {activePhaseCopy.label}
                   </span>
-                  <h3 className="font-serif text-2xl text-cream font-medium mb-2.5">
+                  <h3 className="font-serif text-2xl text-white font-medium mb-2.5">
                     {activePhaseCopy.headline}
                   </h3>
                   <p className="text-xs sm:text-sm text-taupe leading-relaxed">
@@ -109,7 +109,7 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
             </div>
 
             {/* Interactive Anatomical Slider */}
-            <div className="p-5 rounded-visual bg-surface-dark border border-white/[0.08]">
+            <div className="p-5 rounded-2xl bg-surface-dark border border-rose/15 shadow-sm">
               <AnatomySlider value={sliderValue} onChange={setSliderValue} />
             </div>
 
@@ -121,17 +121,17 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
             />
 
             {/* Medical Wellness Disclaimer */}
-            <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] text-[11px] text-muted leading-normal">
-              <ShieldAlert className="w-4 h-4 text-taupe flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-surface-raised/60 border border-rose/15 text-[11px] text-taupe/90 leading-normal">
+              <ShieldAlert className="w-4 h-4 text-rose flex-shrink-0 mt-0.5" />
               <span>
-                <strong>Educational wellness visualization only.</strong> Massage may
+                <strong className="text-cream">Educational wellness visualization only.</strong> Massage may
                 help with temporary muscle tension, stiffness and relaxation. It
                 is not a substitute for medical diagnosis or clinical treatment.
               </span>
             </div>
           </div>
 
-          {/* Right Column: Visual Stage with Layer Crossfade & Pinpoint */}
+          {/* Right Column: Visual Stage */}
           <div className="lg:col-span-7 order-1 lg:order-2">
             <AnatomyVisual
               sliderValue={sliderValue}

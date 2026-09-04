@@ -56,10 +56,10 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
       {/* Phase Status Banner */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-serif text-sm text-gold font-bold">
+          <span className="font-serif text-sm text-rose font-bold">
             {currentPhase.phase}
           </span>
-          <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-cream">
+          <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-white">
             {currentPhase.label}
           </span>
         </div>
@@ -80,14 +80,14 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
         onKeyDown={handleKeyDown}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        className="relative h-12 w-full flex items-center cursor-ew-resize touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-full px-2"
+        className="relative h-12 w-full flex items-center cursor-ew-resize touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-rose rounded-full px-2"
         style={{ touchAction: "none" }}
       >
         {/* Track Line Background */}
-        <div className="absolute inset-x-0 h-2 bg-white/10 rounded-full overflow-hidden">
-          {/* Active Colored Fill */}
+        <div className="absolute inset-x-0 h-2.5 bg-white/10 rounded-full overflow-hidden">
+          {/* Active Colored Fill in Soft Pink */}
           <div
-            className="h-full bg-gradient-to-r from-gold/40 via-gold to-gold-light transition-all duration-75"
+            className="h-full bg-gradient-to-r from-rose/40 via-rose to-rose-light transition-all duration-75"
             style={{ width: `${value}%` }}
           />
         </div>
@@ -98,7 +98,7 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
             <div
               key={step}
               className={`w-1 h-3 rounded-full transition-colors ${
-                value >= step ? "bg-gold" : "bg-white/20"
+                value >= step ? "bg-rose" : "bg-white/20"
               }`}
             />
           ))}
@@ -106,12 +106,12 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
 
         {/* 44px Circular Drag Handle */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gold text-obsidian shadow-luxury-glow flex items-center justify-center -ml-5.5 transition-transform active:scale-110 pointer-events-none"
+          className="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-rose text-obsidian shadow-rose-glow flex items-center justify-center -ml-5.5 transition-transform active:scale-110 pointer-events-none"
           style={{ left: `${value}%` }}
         >
           <div className="flex items-center -space-x-1">
-            <ChevronLeft className="w-3.5 h-3.5" />
-            <ChevronRight className="w-3.5 h-3.5" />
+            <ChevronLeft className="w-4 h-4 text-obsidian font-bold" />
+            <ChevronRight className="w-4 h-4 text-obsidian font-bold" />
           </div>
         </div>
       </div>

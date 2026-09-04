@@ -60,15 +60,15 @@ export function WhyShirui() {
   return (
     <section
       id="why-shirui"
-      className="relative bg-surface-dark py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]"
+      className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Why Shirui
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             The details you may not notice are the ones that matter most.
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -77,7 +77,7 @@ export function WhyShirui() {
           </p>
         </div>
 
-        {/* 6 Trust Cards Grid */}
+        {/* 6 Trust Cards Grid with Contrast Surface */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {trustCards.map((card, idx) => {
             const Icon = card.icon;
@@ -88,14 +88,14 @@ export function WhyShirui() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className="p-6 sm:p-8 rounded-card bg-surface-raised border border-white/[0.08] hover:border-gold/30 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+                className="p-6 sm:p-8 rounded-2xl bg-surface-raised border border-rose/15 hover:border-rose/40 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between shadow-sm"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold mb-6 group-hover:bg-gold group-hover:text-obsidian transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-rose/15 border border-rose/25 flex items-center justify-center text-rose mb-6 group-hover:bg-rose group-hover:text-obsidian transition-colors duration-300">
                     <Icon className="w-6 h-6" />
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-2xl text-cream font-medium mb-3">
+                  <h3 className="font-serif text-xl sm:text-2xl text-white font-medium mb-3">
                     {card.title}
                   </h3>
 

@@ -49,14 +49,14 @@ const stages: JourneyStage[] = [
 
 export function BeforeDuringAfter() {
   return (
-    <section className="relative bg-surface-dark py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]">
+    <section className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Guest Etiquette & Flow
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             Know what to expect.
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -76,11 +76,11 @@ export function BeforeDuringAfter() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-card bg-surface-raised border border-white/[0.08] hover:border-gold/30 transition-all flex flex-col justify-between"
+                className="p-6 sm:p-8 rounded-2xl bg-surface-raised border border-rose/15 hover:border-rose/40 transition-all flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-10 h-10 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center text-gold">
+                    <div className="w-11 h-11 rounded-xl bg-rose/15 border border-rose/25 flex items-center justify-center text-rose">
                       <Icon className="w-5 h-5" />
                     </div>
                     <span className="font-serif text-2xl font-bold text-muted/60">
@@ -88,17 +88,17 @@ export function BeforeDuringAfter() {
                     </span>
                   </div>
 
-                  <h3 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-gold mb-5">
+                  <h3 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-rose mb-5">
                     {stage.title}
                   </h3>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-3.5">
                     {stage.guidelines.map((item, gIdx) => (
                       <li
                         key={gIdx}
                         className="text-xs sm:text-sm text-taupe flex items-start gap-2.5 leading-relaxed"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold/60 flex-shrink-0 mt-1.5" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-rose flex-shrink-0 mt-2" />
                         <span>{item}</span>
                       </li>
                     ))}

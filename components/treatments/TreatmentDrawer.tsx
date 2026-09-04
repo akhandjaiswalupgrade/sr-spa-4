@@ -66,7 +66,7 @@ export function TreatmentDrawer({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/85 backdrop-blur-sm"
             aria-hidden="true"
           />
 
@@ -80,7 +80,7 @@ export function TreatmentDrawer({
               role="dialog"
               aria-modal="true"
               aria-labelledby="drawer-title"
-              className="w-screen max-w-xl bg-surface-raised border-l border-white/10 shadow-2xl flex flex-col h-full overflow-y-auto text-cream"
+              className="w-screen max-w-xl bg-surface-raised border-l border-rose/20 shadow-2xl flex flex-col h-full overflow-y-auto text-cream"
             >
               {/* Image & Header */}
               <div className="relative h-64 sm:h-72 w-full bg-surface-dark flex-shrink-0">
@@ -97,7 +97,7 @@ export function TreatmentDrawer({
                 <button
                   type="button"
                   onClick={onClose}
-                  className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-obsidian/80 backdrop-blur-md text-cream hover:text-gold border border-white/10 transition-colors"
+                  className="absolute top-4 right-4 z-10 p-2.5 rounded-xl bg-obsidian/85 backdrop-blur-md text-cream hover:text-rose border border-rose/20 transition-colors"
                   aria-label="Close details"
                 >
                   <X className="w-5 h-5" />
@@ -105,7 +105,7 @@ export function TreatmentDrawer({
 
                 {/* Category Badge */}
                 <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-obsidian/90 backdrop-blur-md border border-white/10 text-xs uppercase tracking-[0.2em] font-sans font-medium text-gold">
+                  <span className="px-3.5 py-1 rounded-full bg-obsidian/90 backdrop-blur-md border border-rose/30 text-xs uppercase tracking-[0.2em] font-sans font-bold text-rose">
                     {treatment.category}
                   </span>
                 </div>
@@ -116,17 +116,17 @@ export function TreatmentDrawer({
                 <div>
                   <h2
                     id="drawer-title"
-                    className="font-serif text-2xl sm:text-3xl text-cream font-medium tracking-tight mb-2"
+                    className="font-serif text-2xl sm:text-3xl text-white font-medium tracking-tight mb-2"
                   >
                     {treatment.name}
                   </h2>
-                  <p className="text-sm text-gold-light italic font-serif mb-6">
+                  <p className="text-sm text-rose-light italic font-serif mb-6">
                     {treatment.tagline}
                   </p>
 
                   {/* Duration & Price Selector */}
-                  <div className="mb-6 p-4 rounded-xl bg-white/[0.03] border border-white/[0.08]">
-                    <span className="text-[11px] uppercase tracking-[0.16em] text-muted font-sans font-semibold block mb-3">
+                  <div className="mb-6 p-4 rounded-xl bg-surface-dark border border-rose/15">
+                    <span className="text-[11px] uppercase tracking-[0.16em] text-taupe font-sans font-bold block mb-3">
                       Select Session Duration & Pricing:
                     </span>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -137,14 +137,14 @@ export function TreatmentDrawer({
                           onClick={() => setSelectedDuration(d)}
                           className={`flex flex-col items-center justify-center p-3 rounded-xl border transition-all ${
                             selectedDuration?.minutes === d.minutes
-                              ? "bg-gold/15 border-gold text-cream shadow-sm"
-                              : "bg-surface-dark border-white/10 text-taupe hover:border-white/20 hover:text-cream"
+                              ? "bg-rose/20 border-rose text-white shadow-sm"
+                              : "bg-surface-raised border-rose/15 text-taupe hover:border-rose/35 hover:text-white"
                           }`}
                         >
-                          <span className="text-xs font-semibold uppercase tracking-wider font-sans">
+                          <span className="text-xs font-bold uppercase tracking-wider font-sans">
                             {d.minutes} Minutes
                           </span>
-                          <span className="text-sm font-bold text-gold mt-1 font-sans">
+                          <span className="text-sm font-bold text-rose mt-1 font-sans">
                             {formatPrice(d.price)}
                           </span>
                         </button>
@@ -153,12 +153,12 @@ export function TreatmentDrawer({
                   </div>
 
                   {/* Pressure Rating */}
-                  <div className="flex items-center justify-between py-3 border-y border-white/[0.07] mb-6">
+                  <div className="flex items-center justify-between py-3.5 border-y border-white/[0.07] mb-6">
                     <span className="text-xs font-sans font-medium text-taupe">
                       Therapy Pressure Intensity
                     </span>
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-semibold text-cream font-sans">
+                      <span className="text-xs font-bold text-cream font-sans">
                         {treatment.pressureLabel} ({treatment.pressure}/5)
                       </span>
                       <div className="flex items-center gap-1">
@@ -166,7 +166,7 @@ export function TreatmentDrawer({
                           <span
                             key={dot}
                             className={`w-2 h-2 rounded-full ${
-                              dot <= treatment.pressure ? "bg-gold" : "bg-white/15"
+                              dot <= treatment.pressure ? "bg-rose" : "bg-white/15"
                             }`}
                           />
                         ))}
@@ -176,7 +176,7 @@ export function TreatmentDrawer({
 
                   {/* Long Description */}
                   <div className="mb-6">
-                    <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-semibold text-muted mb-2">
+                    <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-bold text-taupe mb-2">
                       About this experience
                     </h3>
                     <p className="text-sm sm:text-base text-taupe leading-relaxed">
@@ -187,16 +187,16 @@ export function TreatmentDrawer({
                   {/* Inclusions */}
                   {treatment.inclusions && (
                     <div className="mb-6">
-                      <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-semibold text-muted mb-3">
+                      <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-bold text-taupe mb-3">
                         Experience Inclusions
                       </h3>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {treatment.inclusions.map((inc, idx) => (
                           <li
                             key={idx}
-                            className="flex items-center gap-2 text-xs sm:text-sm text-cream/90 font-sans"
+                            className="flex items-center gap-2 text-xs sm:text-sm text-cream font-sans"
                           >
-                            <Check className="w-4 h-4 text-gold flex-shrink-0" />
+                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
                             <span>{inc}</span>
                           </li>
                         ))}
@@ -206,14 +206,14 @@ export function TreatmentDrawer({
 
                   {/* Recommended For Tags */}
                   <div className="mb-8">
-                    <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-semibold text-muted mb-3">
+                    <h3 className="text-xs uppercase tracking-[0.18em] font-sans font-bold text-taupe mb-3">
                       Recommended For
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {treatment.recommendedFor.map((item, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 rounded-full text-xs font-sans font-medium bg-white/[0.04] border border-white/10 text-taupe"
+                          className="px-3 py-1 rounded-lg text-xs font-sans font-medium bg-surface-dark border border-rose/15 text-taupe"
                         >
                           {item}
                         </span>
@@ -223,7 +223,7 @@ export function TreatmentDrawer({
                 </div>
 
                 {/* Bottom Action CTAs */}
-                <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <div className="pt-6 border-t border-rose/15 flex flex-col sm:flex-row gap-3">
                   <Button
                     variant="primary"
                     size="lg"
@@ -252,9 +252,9 @@ export function TreatmentDrawer({
                         context: "treatment_drawer",
                       })
                     }
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/15 text-sm font-sans font-medium text-cream hover:text-gold transition-colors flex-shrink-0"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-dark hover:bg-rose/15 border border-rose/25 text-sm font-sans font-semibold text-cream hover:text-rose transition-colors flex-shrink-0"
                   >
-                    <MessageCircle className="w-4 h-4 text-gold" />
+                    <MessageCircle className="w-4 h-4 text-rose" />
                     <span>WhatsApp</span>
                   </a>
                 </div>

@@ -10,24 +10,28 @@
 
   html {
     scroll-behavior: smooth;
-    background-color: #0E0F0D;
-    color: #F4EEE4;
+    background-color: #181416;
+    color: #FAF7F8;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   body {
-    background-color: #0E0F0D;
-    color: #F4EEE4;
+    background-color: #181416;
+    color: #FAF7F8;
     overflow-x: hidden;
-    selection-background-color: #C9A96B;
-    selection-color: #0E0F0D;
+    selection-background-color: #e88cb2;
+    selection-color: #181416;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background-color: #C9A96B;
-    color: #0E0F0D;
+    background-color: #e88cb2;
+    color: #181416;
+  }
+
+  p {
+    line-height: 1.75;
   }
 }
 
@@ -38,17 +42,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0E0F0D;
+  background: #181416;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1C1915;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #2c2427;
+  border: 1px solid rgba(232, 140, 178, 0.15);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C9A96B;
+  background: #e88cb2;
 }
 
 /* Utility to hide scrollbar on horizontal swipe strips */

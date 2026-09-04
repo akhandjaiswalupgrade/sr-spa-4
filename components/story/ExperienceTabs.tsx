@@ -65,15 +65,15 @@ export function ExperienceTabs() {
   return (
     <section
       id="experience-story"
-      className="relative bg-surface-dark py-20 sm:py-28 lg:py-36 border-t border-white/[0.07]"
+      className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-semibold uppercase tracking-[0.22em] text-gold mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Feel The Difference
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-cream font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
             The experience is in the details.
           </h2>
           <p className="text-base sm:text-lg text-taupe leading-relaxed">
@@ -83,7 +83,7 @@ export function ExperienceTabs() {
         </div>
 
         {/* Tab Navigation Buttons */}
-        <div className="flex items-center gap-2 sm:gap-3 overflow-x-auto pb-4 mb-8 sm:mb-12 no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0">
+        <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto pb-4 mb-8 sm:mb-12 no-scrollbar -mx-5 px-5 sm:mx-0 sm:px-0">
           {experienceTabsData.map((tab) => {
             const isSelected = tab.id === activeTab;
             return (
@@ -91,10 +91,10 @@ export function ExperienceTabs() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex-shrink-0 px-5 py-3 rounded-full text-xs font-sans uppercase tracking-[0.16em] transition-all duration-300 font-medium ${
+                className={`relative flex-shrink-0 px-5 sm:px-6 py-3 rounded-xl text-xs font-sans uppercase tracking-[0.16em] transition-all duration-300 font-bold ${
                   isSelected
-                    ? "bg-gold text-obsidian font-semibold shadow-luxury-glow"
-                    : "bg-surface-raised border border-white/10 text-taupe hover:text-cream hover:border-white/20"
+                    ? "bg-rose text-obsidian font-bold shadow-rose-glow border border-rose"
+                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
                 }`}
               >
                 <span>{tab.label}</span>
@@ -104,7 +104,7 @@ export function ExperienceTabs() {
         </div>
 
         {/* Tab Content Display */}
-        <div className="relative rounded-feature bg-surface-raised border border-white/10 overflow-hidden shadow-2xl p-6 sm:p-10 lg:p-12">
+        <div className="relative rounded-2xl bg-surface-raised border border-rose/20 overflow-hidden shadow-2xl p-6 sm:p-10 lg:p-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTab.id}
@@ -116,11 +116,11 @@ export function ExperienceTabs() {
             >
               {/* Left Text */}
               <div className="lg:col-span-6 space-y-6">
-                <span className="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold border border-gold/20 text-xs font-sans uppercase tracking-wider font-semibold">
+                <span className="inline-block px-3.5 py-1.5 rounded-xl bg-rose/15 text-rose border border-rose/30 text-xs font-sans uppercase tracking-wider font-bold">
                   {currentTab.highlight}
                 </span>
 
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-cream font-normal leading-[1.2]">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-[1.2]">
                   {currentTab.headline}
                 </h3>
 
@@ -131,7 +131,7 @@ export function ExperienceTabs() {
 
               {/* Right Image */}
               <div className="lg:col-span-6">
-                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-visual overflow-hidden border border-white/10 shadow-lg">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl overflow-hidden border border-rose/20 shadow-lg">
                   <Image
                     src={currentTab.image}
                     alt={currentTab.headline}
