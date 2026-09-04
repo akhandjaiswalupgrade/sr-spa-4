@@ -27,6 +27,8 @@ export type EventName =
   | "gallery_slide"
   | "review_interaction"
   | "faq_open"
+  | "faq_toggle"
+  | "faq_category_change"
   | "booking_modal_open"
   | "booking_submit"
   | "booking_success";
