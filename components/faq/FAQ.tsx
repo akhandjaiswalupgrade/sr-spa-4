@@ -13,10 +13,9 @@ export function FAQ() {
 
   const categories: { id: FAQCategory; label: string }[] = [
     { id: "ALL", label: "All Questions" },
-    { id: "GENERAL", label: "General & First Visit" },
-    { id: "TREATMENTS", label: "Treatments & Pressure" },
-    { id: "BOOKING", label: "Booking & Policies" },
-    { id: "FACILITIES", label: "Suites & Facilities" },
+    { id: "General", label: "General & First Visit" },
+    { id: "Treatments", label: "Treatments & Pressure" },
+    { id: "Booking & Visit", label: "Booking & Policies" },
   ];
 
   const filteredFaqs =

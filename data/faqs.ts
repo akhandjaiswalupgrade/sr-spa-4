@@ -1,3 +1,5 @@
+export type FAQCategory = "General" | "Treatments" | "Booking & Visit" | "ALL";
+
 export interface FAQItem {
   id: string;
   category: "General" | "Treatments" | "Booking & Visit";
@@ -23,78 +25,78 @@ export const faqsData: FAQItem[] = [
   {
     id: "faq-3",
     category: "Booking & Visit",
-    question: "Do I need an appointment?",
+    question: "Do I need to book in advance?",
     answer:
-      "We strongly recommend reserving in advance to ensure your preferred time slot and private suite are ready for you. However, walk-in guests are welcomed based on therapist and room availability.",
+      "Appointments are strongly recommended, especially for evening slots (after 5 PM) and weekends, to secure your preferred therapist and private suite. However, we welcome same-day enquiries via WhatsApp or phone call.",
   },
   {
     id: "faq-4",
-    category: "Booking & Visit",
-    question: "How early should I arrive?",
+    category: "General",
+    question: "Are treatments done in private rooms?",
     answer:
-      "We suggest arriving 10 to 15 minutes before your scheduled appointment. This allows you to unwind, enjoy a warm herbal refreshment, and discuss your preferences without feeling rushed.",
+      "Yes. Every therapy is carried out in dedicated, acoustically isolated private treatment suites with private changing amenities, ambient lighting, and soothing acoustic design. We also offer dedicated couples suites for simultaneous treatments.",
   },
   {
     id: "faq-5",
     category: "Treatments",
-    question: "Can I choose my preferred pressure?",
+    question: "Can I choose my pressure level?",
     answer:
-      "Yes, absolutely. You can choose Light, Medium, or Firm pressure before your session starts. You are also encouraged to communicate with your therapist at any point during the massage to increase or decrease pressure.",
+      "Absolutely. Before every session begins, your therapist will discuss whether you prefer light, medium, or firm pressure. During the treatment, you are always encouraged to speak up to ask for deeper pressure or lighter touch at any time.",
   },
   {
     id: "faq-6",
-    category: "Treatments",
-    question: "What should I wear?",
+    category: "Booking & Visit",
+    question: "What is your cancellation and rescheduling policy?",
     answer:
-      "Wear whatever you feel most comfortable in. During oil-based massage treatments, you will be provided with disposable spa undergarments and fully draped with clean cream linens, with only the area being treated exposed. For dry Thai-style bodywork, loose and breathable cotton linen attire is provided.",
+      "We understand plans change. We appreciate at least 2 hours' notice if you need to reschedule or cancel your appointment so our therapists can adjust their schedule. Simply message us on WhatsApp or call our desk.",
   },
   {
     id: "faq-7",
     category: "General",
-    question: "Are the treatment rooms private?",
+    question: "How are rooms and linens sanitized?",
     answer:
-      "Yes. Every treatment room at Shirui is an independent, sound-dampened private suite with personal climate control, dimmable ambient lighting, and dedicated changing space to ensure complete personal privacy.",
+      "Hygienic excellence is fundamental to Shirui. All linens, towels, and robes are freshly laundered and single-use for each guest. Treatment beds, face cradles, and suites are thoroughly sanitized between sessions using medical-grade disinfectant protocols.",
   },
   {
     id: "faq-8",
     category: "Treatments",
-    question: "What session durations are available?",
+    question: "What oils and products are used during therapy?",
     answer:
-      "We offer 45-minute (targeted), 60-minute, 90-minute (signature full body), and 120-minute comprehensive immersion sessions depending on the chosen therapy.",
+      "We exclusively use 100% cold-pressed natural plant carrier oils (sweet almond, jojoba, and sesame) infused with therapeutic-grade botanical essential oils (lavender, lemongrass, eucalyptus, and rose). Our oils are skin-friendly, non-staining, and deeply nourishing.",
   },
   {
     id: "faq-9",
     category: "Booking & Visit",
-    question: "Can I book through WhatsApp?",
+    question: "Where is Shirui Spa located and is there parking?",
     answer:
-      "Yes! WhatsApp is one of our fastest booking channels. Simply click any 'WhatsApp' button on this website to send us a pre-filled message with your desired treatment, date, and preferred time.",
+      "We are located on Main Road, Neknampur, Hyderabad (near Alkapur Township). Convenient complimentary dedicated four-wheeler and two-wheeler parking is available directly on premises for spa guests.",
   },
   {
     id: "faq-10",
-    category: "Booking & Visit",
-    question: "Where is Shirui Wellness Spa located?",
+    category: "General",
+    question: "What should I wear to my appointment?",
     answer:
-      "We are located in Neknampur, Hyderabad, in close proximity to Gandipet, Narsingi, and Manikonda, just minutes from the Financial District and Outer Ring Road (ORR).",
+      "Wear whatever you feel comfortable in. In your private suite, you will be provided with fresh disposable undergarments and soft plush robes. Professional draping techniques are strictly adhered to throughout every moment of your therapy.",
   },
   {
     id: "faq-11",
-    category: "Booking & Visit",
-    question: "What are your opening hours?",
+    category: "Treatments",
+    question: "Is massage therapy safe if I have health conditions?",
     answer:
-      "Shirui Wellness Spa is open 7 days a week from 10:00 AM to 9:30 PM. Our last treatment slot commences at 8:30 PM.",
+      "Massage is generally safe and beneficial for most adults. However, if you are pregnant, have acute injuries, recent surgery, cardiovascular conditions, or contagious skin conditions, please inform us in advance so we can guide you toward safe, approved modalities.",
   },
   {
     id: "faq-12",
-    category: "Treatments",
-    question: "Do you offer couple experiences?",
+    category: "Booking & Visit",
+    question: "What payment methods do you accept?",
     answer:
-      "Yes. We have a dedicated VIP Couple's Sanctuary Suite featuring dual massage beds where you and your partner or friend can enjoy customized treatments simultaneously.",
+      "We accept all major UPI apps (Google Pay, PhonePe, Paytm), credit and debit cards, and cash. Transparent pricing is guaranteed with zero hidden fees.",
   },
   {
     id: "faq-13",
-    category: "Booking & Visit",
-    question: "Which payment methods do you accept?",
+    category: "General",
+    question: "Can I purchase gift cards or packages?",
     answer:
-      "We accept all major credit and debit cards (Visa, MasterCard, RuPay), UPI (Google Pay, PhonePe, Paytm), net banking, and cash.",
+      "Yes. We offer beautifully packaged physical gift cards and customized digital gift vouchers for loved ones, as well as privileged multi-session wellness passes with preferred pricing. Enquire via WhatsApp or at our front desk.",
   },
 ];
