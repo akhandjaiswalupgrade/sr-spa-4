@@ -148,7 +148,7 @@ export function Location({ onOpenBooking }: LocationProps) {
           <div className="lg:col-span-6 min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden border border-rose/20 shadow-2xl relative bg-surface-raised">
             <iframe
               title="Shirui Wellness Spa Google Maps Location"
-              src={businessConfig.googleMapsEmbedUrl}
+              src={businessConfig.googleEmbedMapUrl || "https://maps.google.com/?q=Shirui+Wellness+Spa+Neknampur+Hyderabad"}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "100%", filter: "invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)" }}
