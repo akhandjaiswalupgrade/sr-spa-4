@@ -6,7 +6,12 @@ export interface WhatsAppMessageParams {
   pressure?: string;
   date?: string;
   time?: string;
-  guests?: number;
+  guests?: string | number;
+  guestName?: string;
+  phone?: string;
+  preferredDate?: string;
+  preferredTimeSlot?: string;
+  notes?: string;
   customMessage?: string;
   source?: string;
 }
@@ -18,27 +23,38 @@ export function getWhatsAppUrl(params?: WhatsAppMessageParams): string {
 
   if (params?.customMessage) {
     text = params.customMessage;
-  } else if (params?.experience) {
+  } else if (params?.guestName || params?.experience) {
     const lines = [
       "Hi Shirui Wellness Spa, I would like to enquire about a session.",
       "",
-      `• Experience: ${params.experience}`,
     ];
 
+    if (params.guestName) {
+      lines.push(`• Guest Name: ${params.guestName}`);
+    }
+    if (params.phone) {
+      lines.push(`• Contact: ${params.phone}`);
+    }
+    if (params.experience) {
+      lines.push(`• Experience: ${params.experience}`);
+    }
     if (params.duration) {
       lines.push(`• Duration: ${params.duration} Minutes`);
     }
     if (params.pressure) {
       lines.push(`• Preferred Pressure: ${params.pressure}`);
     }
-    if (params.date) {
-      lines.push(`• Preferred Date: ${params.date}`);
+    if (params.preferredDate || params.date) {
+      lines.push(`• Preferred Date: ${params.preferredDate || params.date}`);
     }
-    if (params.time) {
-      lines.push(`• Preferred Time: ${params.time}`);
+    if (params.preferredTimeSlot || params.time) {
+      lines.push(`• Preferred Time Slot: ${params.preferredTimeSlot || params.time}`);
     }
-    if (params.guests && params.guests > 1) {
-      lines.push(`• Number of Guests: ${params.guests}`);
+    if (params.guests) {
+      lines.push(`• Guests: ${params.guests}`);
+    }
+    if (params.notes) {
+      lines.push(`• Special Notes: ${params.notes}`);
     }
 
     lines.push("", "Please share available timings and confirmation details.");
