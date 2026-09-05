@@ -56,10 +56,10 @@ export function Hero({ onOpenBooking }: HeroProps) {
           className="object-cover object-center lg:object-[65%_center]"
         />
 
-        {/* Light, Airy Spa Ambiance Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/60 lg:to-white/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(217,118,154,0.08)_0%,transparent_65%)]" />
+        {/* Light, Airy Spa Ambiance Gradients - Crisp text backdrop on left, clear spa room visual on right */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/75 to-transparent sm:bg-gradient-to-r sm:from-white sm:from-30% sm:via-white/80 sm:via-48% sm:via-white/20 sm:via-60% sm:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent via-15% to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_50%,rgba(200,59,116,0.05)_0%,transparent_60%)]" />
       </motion.div>
 
       {/* Hero Content Container - Ample Breathing Room */}
