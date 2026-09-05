@@ -56,14 +56,14 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
       {/* Phase Status Banner */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-serif text-sm text-rose font-bold">
+          <span className="font-serif text-sm font-bold bg-gradient-to-r from-[#df548f] to-[#c83b74] bg-clip-text text-transparent">
             {currentPhase.phase}
           </span>
-          <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-white">
+          <span className="text-xs uppercase tracking-[0.2em] font-sans font-bold text-slate-900 bg-white px-2.5 py-0.5 rounded-full border border-slate-200 shadow-sm">
             {currentPhase.label}
           </span>
         </div>
-        <span className="text-xs text-taupe font-sans">
+        <span className="text-xs text-slate-600 font-sans font-medium">
           {currentPhase.state} ({value}%)
         </span>
       </div>
@@ -80,14 +80,14 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
         onKeyDown={handleKeyDown}
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
-        className="relative h-12 w-full flex items-center cursor-ew-resize touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-rose rounded-full px-2"
+        className="relative h-14 w-full flex items-center cursor-ew-resize touch-none focus:outline-none focus-visible:ring-2 focus-visible:ring-rose rounded-full px-2"
         style={{ touchAction: "none" }}
       >
-        {/* Track Line Background */}
-        <div className="absolute inset-x-0 h-2.5 bg-white/10 rounded-full overflow-hidden">
-          {/* Active Colored Fill in Soft Pink */}
+        {/* Track Line Background with 3D Inset Groove */}
+        <div className="absolute inset-x-0 h-3 bg-slate-200/90 rounded-full overflow-hidden shadow-inset-groove border border-slate-300/50">
+          {/* Active Colored Fill in Rich Vibrant Rose */}
           <div
-            className="h-full bg-gradient-to-r from-rose/40 via-rose to-rose-light transition-all duration-75"
+            className="h-full bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] transition-all duration-75"
             style={{ width: `${value}%` }}
           />
         </div>
@@ -97,27 +97,27 @@ export function AnatomySlider({ value, onChange }: AnatomySliderProps) {
           {[0, 25, 50, 75, 100].map((step) => (
             <div
               key={step}
-              className={`w-1 h-3 rounded-full transition-colors ${
-                value >= step ? "bg-rose" : "bg-white/20"
+              className={`w-1 h-3.5 rounded-full transition-colors ${
+                value >= step ? "bg-white shadow-sm" : "bg-slate-300"
               }`}
             />
           ))}
         </div>
 
-        {/* 44px Circular Drag Handle */}
+        {/* 44px 3D Tactile Dial Drag Handle */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-rose text-obsidian shadow-rose-glow flex items-center justify-center -ml-5.5 transition-transform active:scale-110 pointer-events-none"
+          className="absolute top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-gradient-to-b from-[#e35691] to-[#af2762] text-white shadow-dial-3d border-2 border-white flex items-center justify-center -ml-5.5 transition-transform active:scale-95 pointer-events-none"
           style={{ left: `${value}%` }}
         >
-          <div className="flex items-center -space-x-1">
-            <ChevronLeft className="w-4 h-4 text-obsidian font-bold" />
-            <ChevronRight className="w-4 h-4 text-obsidian font-bold" />
+          <div className="flex items-center -space-x-1 drop-shadow-sm">
+            <ChevronLeft className="w-4 h-4 text-white stroke-[2.5]" />
+            <ChevronRight className="w-4 h-4 text-white stroke-[2.5]" />
           </div>
         </div>
       </div>
 
       {/* Slider Helper Guidance */}
-      <div className="flex items-center justify-between text-[11px] text-muted font-sans pt-1">
+      <div className="flex items-center justify-between text-[11px] text-slate-600 font-sans font-medium pt-1">
         <span>◀ Skin Surface</span>
         <span>Drag to reveal muscular structure ▶</span>
       </div>

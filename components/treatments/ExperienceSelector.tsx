@@ -43,7 +43,7 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
   return (
     <section
       id="experiences"
-      className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15"
+      className="relative bg-[#f5f0eb] py-24 sm:py-32 lg:py-36 border-t border-slate-200/80"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
@@ -51,10 +51,10 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
           <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
             Choose Your Experience
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
             What does your body need today?
           </h2>
-          <p className="text-base sm:text-lg text-taupe leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
             Different days call for different ways to unwind. Select a category below
             to find your ideal therapy.
           </p>
@@ -71,8 +71,8 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
                 onClick={() => handleCategoryChange(cat.id)}
                 className={`relative flex-shrink-0 px-5 sm:px-6 py-2.5 rounded-xl text-xs font-sans font-bold uppercase tracking-[0.14em] transition-all duration-300 ${
                   isActive
-                    ? "bg-rose text-obsidian font-bold shadow-rose-glow scale-105 border border-rose"
-                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
+                    ? "bg-gradient-to-b from-[#e35691] via-[#c83b74] to-[#af2762] text-white font-bold shadow-button-3d scale-105 border-t border-white/30 border-b border-rose-900/40"
+                    : "bg-white border border-slate-200 text-slate-700 hover:text-slate-900 hover:border-rose-300 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                 }`}
               >
                 <span>{cat.label}</span>

@@ -125,42 +125,42 @@ export function BookingModal({
       ariaLabel="Schedule Your Wellness Experience"
       maxWidth="2xl"
     >
-      <div className="relative p-6 sm:p-8 lg:p-10 bg-surface-raised border border-rose/25 rounded-2xl shadow-2xl">
+      <div className="relative p-6 sm:p-8 lg:p-10 bg-white border border-slate-200/90 rounded-3xl shadow-2xl">
         {/* Modal Close Button */}
         <button
           type="button"
           onClick={handleModalClose}
-          className="absolute top-5 right-5 p-2 rounded-xl text-taupe hover:text-rose hover:bg-surface-dark transition-colors focus:outline-none"
+          className="absolute top-5 right-5 p-2.5 rounded-xl text-slate-600 hover:text-rose bg-white border border-slate-200/90 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5 transition-all focus:outline-none"
           aria-label="Close booking modal"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 stroke-[2.5]" />
         </button>
 
         {isSubmitted && submittedData ? (
           /* Success Screen with Direct WhatsApp Confirmation Handoff */
           <div className="text-center py-6 sm:py-8 space-y-6">
-            <div className="w-16 h-16 rounded-full bg-rose/15 border-2 border-rose flex items-center justify-center mx-auto text-rose shadow-rose-glow">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#df548f] to-[#c83b74] text-white flex items-center justify-center mx-auto shadow-button-3d border-2 border-white">
+              <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium">
+              <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold">
                 Appointment Request Received
               </h3>
-              <p className="text-xs sm:text-sm text-taupe max-w-md mx-auto leading-relaxed">
-                Thank you, <strong className="text-white">{submittedData.fullName}</strong>. We
+              <p className="text-xs sm:text-sm text-slate-700 max-w-md mx-auto leading-relaxed font-medium">
+                Thank you, <strong className="text-slate-900">{submittedData.fullName}</strong>. We
                 have recorded your interest for{" "}
-                <strong className="text-rose">{submittedData.treatment}</strong> ({submittedData.duration}).
+                <strong className="text-[#c83b74]">{submittedData.treatment}</strong> ({submittedData.duration}).
               </p>
             </div>
 
             {/* Direct WhatsApp Handoff CTA */}
-            <div className="p-5 rounded-2xl bg-surface-dark border border-rose/20 max-w-md mx-auto text-left space-y-3">
-              <div className="flex items-center gap-2 text-xs font-bold text-rose uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-rose" />
+            <div className="p-6 rounded-2xl bg-[#f5f0eb] border border-slate-200/90 max-w-md mx-auto text-left space-y-3 shadow-3d">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#c83b74] uppercase tracking-wider">
+                <Sparkles className="w-4 h-4" />
                 <span>Instant Confirmation</span>
               </div>
-              <p className="text-xs text-taupe leading-relaxed">
+              <p className="text-xs text-slate-700 leading-relaxed font-medium">
                 To guarantee your preferred time slot immediately, send your pre-filled
                 appointment request to our desk on WhatsApp:
               </p>
@@ -182,7 +182,7 @@ export function BookingModal({
                 onClick={() =>
                   trackEvent("whatsapp_click", { context: "booking_modal_success" })
                 }
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-rose text-obsidian font-bold text-sm shadow-rose-glow hover:bg-rose-light transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-b from-[#df548f] to-[#c83b74] text-white font-bold text-sm shadow-button-3d border-t border-white/35 border-b border-rose-900/40 hover:-translate-y-0.5 active:translate-y-0.5 transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Confirm on WhatsApp Now</span>
@@ -193,7 +193,7 @@ export function BookingModal({
               <button
                 type="button"
                 onClick={handleModalClose}
-                className="text-xs text-taupe hover:text-white underline font-sans"
+                className="text-xs text-slate-600 hover:text-slate-900 underline font-sans font-semibold"
               >
                 Done / Close Window
               </button>
@@ -203,13 +203,13 @@ export function BookingModal({
           /* Booking Request Form */
           <div>
             <div className="mb-6 pr-8">
-              <span className="text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-[0.22em] text-rose block mb-1">
+              <span className="text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-[0.22em] text-[#c83b74] block mb-1">
                 Personalized Reservation
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl text-white font-medium">
+              <h2 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold">
                 Schedule Your Experience
               </h2>
-              <p className="text-xs sm:text-sm text-taupe mt-1">
+              <p className="text-xs sm:text-sm text-slate-700 mt-1 font-medium">
                 Tell us your preferred date and time. Our team will verify therapist
                 availability and confirm your booking.
               </p>
@@ -219,38 +219,38 @@ export function BookingModal({
               {/* Name & Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Full Name *
                   </label>
                   <input
                     type="text"
                     {...register("fullName")}
                     placeholder="e.g. Aarti Sharma"
-                    className={`w-full px-4 py-2.5 rounded-xl bg-surface-dark border text-sm text-white placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-rose ${
-                      errors.fullName ? "border-rose" : "border-rose/20"
+                    className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all ${
+                      errors.fullName ? "border-rose" : "border-slate-200/90"
                     }`}
                   />
                   {errors.fullName && (
-                    <span className="text-[11px] text-rose mt-1 block">
+                    <span className="text-[11px] text-[#c83b74] mt-1 block font-semibold">
                       {errors.fullName.message}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Phone / WhatsApp *
                   </label>
                   <input
                     type="tel"
                     {...register("phone")}
                     placeholder="e.g. 9876543210"
-                    className={`w-full px-4 py-2.5 rounded-xl bg-surface-dark border text-sm text-white placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-rose ${
-                      errors.phone ? "border-rose" : "border-rose/20"
+                    className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all ${
+                      errors.phone ? "border-rose" : "border-slate-200/90"
                     }`}
                   />
                   {errors.phone && (
-                    <span className="text-[11px] text-rose mt-1 block">
+                    <span className="text-[11px] text-[#c83b74] mt-1 block font-semibold">
                       {errors.phone.message}
                     </span>
                   )}
@@ -260,15 +260,15 @@ export function BookingModal({
               {/* Treatment Selection & Duration */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Select Experience *
                   </label>
                   <select
                     {...register("treatment")}
-                    className="w-full px-4 py-2.5 rounded-xl bg-surface-dark border border-rose/20 text-sm text-white focus:outline-none focus:ring-1 focus:ring-rose"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200/90 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all font-medium"
                   >
                     {treatmentsData.map((t) => (
-                      <option key={t.id} value={t.name} className="bg-surface-dark text-white">
+                      <option key={t.id} value={t.name}>
                         {t.name} ({t.category})
                       </option>
                     ))}
@@ -276,15 +276,15 @@ export function BookingModal({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Session Duration *
                   </label>
                   <select
                     {...register("duration")}
-                    className="w-full px-4 py-2.5 rounded-xl bg-surface-dark border border-rose/20 text-sm text-white focus:outline-none focus:ring-1 focus:ring-rose"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200/90 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all font-medium"
                   >
                     {durationsList.map((d) => (
-                      <option key={d} value={d} className="bg-surface-dark text-white">
+                      <option key={d} value={d}>
                         {d}
                       </option>
                     ))}
@@ -295,43 +295,43 @@ export function BookingModal({
               {/* Date & Time Slot */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Preferred Date *
                   </label>
                   <input
                     type="date"
                     {...register("preferredDate")}
                     min={new Date().toISOString().split("T")[0]}
-                    className={`w-full px-4 py-2.5 rounded-xl bg-surface-dark border text-sm text-white focus:outline-none focus:ring-1 focus:ring-rose ${
-                      errors.preferredDate ? "border-rose" : "border-rose/20"
+                    className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all font-medium ${
+                      errors.preferredDate ? "border-rose" : "border-slate-200/90"
                     }`}
                   />
                   {errors.preferredDate && (
-                    <span className="text-[11px] text-rose mt-1 block">
+                    <span className="text-[11px] text-[#c83b74] mt-1 block font-semibold">
                       {errors.preferredDate.message}
                     </span>
                   )}
                 </div>
 
                 <div>
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Preferred Time Slot *
                   </label>
                   <select
                     {...register("preferredTimeSlot")}
-                    className={`w-full px-4 py-2.5 rounded-xl bg-surface-dark border text-sm text-white focus:outline-none focus:ring-1 focus:ring-rose ${
-                      errors.preferredTimeSlot ? "border-rose" : "border-rose/20"
+                    className={`w-full px-4 py-3 rounded-xl bg-white border text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all font-medium ${
+                      errors.preferredTimeSlot ? "border-rose" : "border-slate-200/90"
                     }`}
                   >
                     <option value="">Select a slot</option>
                     {timeSlots.map((slot) => (
-                      <option key={slot} value={slot} className="bg-surface-dark text-white">
+                      <option key={slot} value={slot}>
                         {slot}
                       </option>
                     ))}
                   </select>
                   {errors.preferredTimeSlot && (
-                    <span className="text-[11px] text-rose mt-1 block">
+                    <span className="text-[11px] text-[#c83b74] mt-1 block font-semibold">
                       {errors.preferredTimeSlot.message}
                     </span>
                   )}
@@ -341,12 +341,12 @@ export function BookingModal({
               {/* Number of Guests & Custom Notes */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="sm:col-span-1">
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Guests
                   </label>
                   <select
                     {...register("guests")}
-                    className="w-full px-4 py-2.5 rounded-xl bg-surface-dark border border-rose/20 text-sm text-white focus:outline-none focus:ring-1 focus:ring-rose"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200/90 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all font-medium"
                   >
                     <option value="1 Guest">1 Guest (Single Suite)</option>
                     <option value="2 Guests">2 Guests (Couples Suite)</option>
@@ -354,14 +354,14 @@ export function BookingModal({
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-sans uppercase tracking-wider text-taupe mb-1.5 font-semibold">
+                  <label className="block text-xs font-sans uppercase tracking-wider text-slate-800 mb-1.5 font-bold">
                     Focus Areas / Special Notes (Optional)
                   </label>
                   <input
                     type="text"
                     {...register("notes")}
                     placeholder="e.g. Focus on neck tension, prefer medium pressure"
-                    className="w-full px-4 py-2.5 rounded-xl bg-surface-dark border border-rose/20 text-sm text-white placeholder:text-muted/60 focus:outline-none focus:ring-1 focus:ring-rose"
+                    className="w-full px-4 py-3 rounded-xl bg-white border border-slate-200/90 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose/40 shadow-sm transition-all"
                   />
                 </div>
               </div>
@@ -372,15 +372,15 @@ export function BookingModal({
                   <input
                     type="checkbox"
                     {...register("consent")}
-                    className="mt-0.5 rounded border-rose/40 text-rose focus:ring-rose"
+                    className="mt-0.5 rounded border-slate-300 text-rose focus:ring-rose"
                   />
-                  <span className="text-[11px] text-taupe leading-relaxed">
+                  <span className="text-[11px] text-slate-700 leading-relaxed font-medium">
                     I agree to be contacted via WhatsApp or Phone to confirm my
                     appointment schedule and therapist availability.
                   </span>
                 </label>
                 {errors.consent && (
-                  <span className="text-[11px] text-rose mt-1 block">
+                  <span className="text-[11px] text-[#c83b74] mt-1 block font-semibold">
                     {errors.consent.message}
                   </span>
                 )}
@@ -394,7 +394,6 @@ export function BookingModal({
                   size="lg"
                   fullWidth
                   disabled={isSubmitting}
-                  className="shadow-rose-glow"
                 >
                   {isSubmitting ? "Sending Request..." : "Request Appointment"}
                 </Button>
@@ -402,9 +401,9 @@ export function BookingModal({
                 <a
                   href={getCallUrl()}
                   onClick={() => trackEvent("call_click", { context: "booking_modal" })}
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-dark hover:bg-rose/15 border border-rose/25 text-xs uppercase tracking-wider font-bold text-cream hover:text-rose transition-colors flex-shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-rose-50/60 border border-slate-200/90 text-xs uppercase tracking-wider font-bold text-slate-800 hover:text-rose transition-all flex-shrink-0 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                 >
-                  <Phone className="w-4 h-4 text-rose" />
+                  <Phone className="w-4 h-4 text-[#c83b74]" />
                   <span>Call Spa Direct</span>
                 </a>
               </div>

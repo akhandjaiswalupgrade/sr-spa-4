@@ -25,28 +25,30 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
   const treatmentName = "Signature Shirui 90-Minute Immersion";
 
   return (
-    <section className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15 overflow-hidden">
+    <section className="relative bg-[#f5f0eb] py-24 sm:py-32 lg:py-36 border-t border-slate-200/80 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="rounded-2xl bg-surface-raised border border-rose/20 overflow-hidden shadow-2xl p-6 sm:p-10 lg:p-14 relative">
+        <div className="rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-3d p-6 sm:p-10 lg:p-14 relative">
           {/* Background Ambient Glow in Soft Rose */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-rose/10 blur-[110px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-rose-100/30 blur-[110px] rounded-full pointer-events-none" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center relative z-10">
             {/* Left Content */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose/15 border border-rose/30 text-rose">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f5f0eb] border border-slate-200/90 text-[#c83b74] shadow-sm">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em]">
                   Flagship Experience
                 </span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.15]">
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.15]">
                 90 minutes of doing <br />
-                <span className="italic text-rose-light">absolutely nothing.</span>
+                <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
+                  absolutely nothing.
+                </span>
               </h2>
 
-              <p className="text-base sm:text-lg text-taupe leading-relaxed text-pretty">
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed text-pretty font-medium">
                 A longer, unhurried session designed specifically for guests who want
                 ample time to settle deeply into the experience, release persistent
                 physical tension, and fully disconnect from their day.
@@ -54,16 +56,16 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
 
               {/* Inclusions Grid */}
               <div className="pt-2">
-                <span className="text-xs uppercase tracking-[0.18em] font-sans font-bold text-taupe block mb-3">
+                <span className="text-xs uppercase tracking-[0.18em] font-sans font-bold text-slate-600 block mb-3">
                   What’s Included in the 90-Minute Session:
                 </span>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {inclusions.map((item, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2 text-xs sm:text-sm text-cream font-sans"
+                      className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-sans font-medium"
                     >
-                      <Check className="w-4 h-4 text-rose flex-shrink-0" />
+                      <Check className="w-4 h-4 text-[#c83b74] flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -97,9 +99,9 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
                       treatmentName,
                     })
                   }
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-dark hover:bg-rose/15 border border-rose/25 text-sm font-sans font-semibold text-cream hover:text-rose transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-rose-50/60 border border-slate-200/90 text-sm font-sans font-bold text-slate-800 hover:text-rose transition-all shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                 >
-                  <MessageCircle className="w-4 h-4 text-rose" />
+                  <MessageCircle className="w-4 h-4 text-[#c83b74]" />
                   <span>Enquire via WhatsApp</span>
                 </a>
               </div>
@@ -107,7 +109,7 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
 
             {/* Right Visual */}
             <div className="lg:col-span-6">
-              <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11] w-full rounded-2xl overflow-hidden border border-rose/20 shadow-2xl group">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] lg:aspect-[16/11] w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-3d group">
                 <Image
                   src="/images/shirui-signature-treatment.jpg"
                   alt="Flagship 90-minute signature massage at Shirui Wellness Spa Hyderabad"
@@ -115,7 +117,7 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-luxury"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
               </div>
             </div>
           </div>

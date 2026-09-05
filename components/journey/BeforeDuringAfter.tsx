@@ -49,17 +49,21 @@ const stages: JourneyStage[] = [
 
 export function BeforeDuringAfter() {
   return (
-    <section className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15">
+    <section className="relative bg-[#f5f0eb] py-24 sm:py-32 lg:py-36 border-t border-slate-200/80">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#c83b74] bg-white px-3.5 py-1 rounded-full border border-slate-200 shadow-sm mb-4">
             Guest Etiquette & Flow
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
-            Know what to expect.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
+            Know what to{" "}
+            <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
+              expect
+            </span>
+            .
           </h2>
-          <p className="text-base sm:text-lg text-taupe leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
             Whether it is your first time visiting Shirui or your regular weekly
             ritual, here is how we ensure seamless comfort from start to finish.
           </p>
@@ -76,19 +80,19 @@ export function BeforeDuringAfter() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-2xl bg-surface-raised border border-rose/15 hover:border-rose/40 transition-all flex flex-col justify-between shadow-sm"
+                className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-3d hover:shadow-3d-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-11 h-11 rounded-xl bg-rose/15 border border-rose/25 flex items-center justify-center text-rose">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-xl bg-[#f5f0eb] border border-slate-200/90 shadow-button-secondary-3d flex items-center justify-center text-[#c83b74]">
+                      <Icon className="w-5 h-5 stroke-[2]" />
                     </div>
-                    <span className="font-serif text-2xl font-bold text-muted/60">
+                    <span className="font-serif text-2xl font-bold bg-gradient-to-b from-slate-400 to-slate-300 bg-clip-text text-transparent">
                       {stage.step}
                     </span>
                   </div>
 
-                  <h3 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-rose mb-5">
+                  <h3 className="font-sans text-xs uppercase tracking-[0.2em] font-bold text-[#c83b74] mb-5">
                     {stage.title}
                   </h3>
 
@@ -96,9 +100,9 @@ export function BeforeDuringAfter() {
                     {stage.guidelines.map((item, gIdx) => (
                       <li
                         key={gIdx}
-                        className="text-xs sm:text-sm text-taupe flex items-start gap-2.5 leading-relaxed"
+                        className="text-xs sm:text-sm text-slate-700 flex items-start gap-2.5 leading-relaxed font-medium"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-rose flex-shrink-0 mt-2" />
+                        <span className="w-2 h-2 rounded-full bg-gradient-to-b from-[#df548f] to-[#c83b74] shadow-sm flex-shrink-0 mt-1.5" />
                         <span>{item}</span>
                       </li>
                     ))}

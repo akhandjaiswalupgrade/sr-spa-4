@@ -22,7 +22,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0E0F0D",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -150,7 +150,7 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable} dark`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
         {/* Structured Data: Local Business */}
         <script
@@ -181,7 +181,7 @@ export default function RootLayout({
           </Script>
         )}
       </head>
-      <body className="font-sans bg-obsidian text-cream antialiased min-h-screen flex flex-col">
+      <body className="font-sans bg-white text-slate-700 antialiased min-h-screen flex flex-col">
         {/* Optional GTM noscript fallback */}
         {gtmId && (
           <noscript>

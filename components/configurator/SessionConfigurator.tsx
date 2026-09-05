@@ -100,34 +100,38 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
   return (
     <section
       id="build-session"
-      className="relative bg-obsidian py-24 sm:py-32 lg:py-36 border-t border-rose/15"
+      className="relative bg-white py-24 sm:py-32 lg:py-36 border-t border-gray-100"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#c83b74] bg-rose-50/80 px-3.5 py-1 rounded-full border border-rose-200 shadow-sm mb-4">
             Interactive Journey
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
-            Create your ideal session.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
+            Create your{" "}
+            <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
+              ideal session
+            </span>
+            .
           </h2>
-          <p className="text-base sm:text-lg text-taupe leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
             Tell us what kind of experience you need today, and we’ll match you with
             the right treatment, duration, and pressure.
           </p>
         </div>
 
         {/* Wizard Container */}
-        <div className="max-w-3xl mx-auto rounded-2xl bg-surface-raised border border-rose/20 p-6 sm:p-10 lg:p-12 shadow-2xl">
+        <div className="max-w-3xl mx-auto rounded-3xl bg-[#f5f0eb] border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-3d">
           {/* Progress Bar & Steps Indicator */}
-          <div className="flex items-center justify-between mb-8 pb-6 border-b border-rose/15">
-            <div className="flex items-center gap-2.5">
-              <span className="w-8 h-8 rounded-full bg-rose text-obsidian flex items-center justify-center font-sans font-bold text-xs shadow-sm">
+          <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-200/90">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-8 rounded-full bg-gradient-to-b from-[#df548f] to-[#c83b74] text-white flex items-center justify-center font-sans font-bold text-xs shadow-button-3d border-t border-white/30">
                 {step}
               </span>
-              <span className="text-xs font-sans uppercase tracking-widest text-taupe font-semibold">
+              <span className="text-xs font-sans uppercase tracking-widest text-slate-600 font-semibold">
                 Step {step} of 4:{" "}
-                <strong className="text-white">
+                <strong className="text-slate-900 font-bold">
                   {step === 1 && "Your Goal"}
                   {step === 2 && "Duration"}
                   {step === 3 && "Pressure"}
@@ -140,7 +144,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
               <button
                 type="button"
                 onClick={handleReset}
-                className="text-xs font-sans text-taupe hover:text-rose flex items-center gap-1.5 transition-colors"
+                className="text-xs font-sans font-semibold text-slate-600 hover:text-rose flex items-center gap-1.5 transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Start Over</span>
@@ -160,7 +164,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
+                <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold mb-4">
                   What are you looking for?
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -171,21 +175,23 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={goal.id}
                         type="button"
                         onClick={() => setSelectedGoal(goal)}
-                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-2xl text-left transition-all duration-200 ${
                           isSelected
-                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
-                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
+                            ? "bg-white border-2 border-[#c83b74] shadow-3d scale-[1.02]"
+                            : "bg-white border border-slate-200/90 hover:border-rose/40 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="font-serif text-lg text-white font-medium">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="font-serif text-lg text-slate-900 font-bold">
                             {goal.title}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#df548f] to-[#c83b74] text-white flex items-center justify-center shadow-sm flex-shrink-0">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            </span>
                           )}
                         </div>
-                        <span className="text-xs text-taupe block leading-relaxed">
+                        <span className="text-xs text-slate-600 block leading-relaxed font-medium">
                           {goal.subtitle}
                         </span>
                       </button>
@@ -205,7 +211,7 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
+                <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold mb-4">
                   How much time do you want?
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
@@ -216,21 +222,23 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={dur.minutes}
                         type="button"
                         onClick={() => setSelectedDuration(dur)}
-                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-2xl text-left transition-all duration-200 ${
                           isSelected
-                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
-                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
+                            ? "bg-white border-2 border-[#c83b74] shadow-3d scale-[1.02]"
+                            : "bg-white border border-slate-200/90 hover:border-rose/40 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="font-serif text-xl text-white font-medium">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="font-serif text-xl text-slate-900 font-bold">
                             {dur.label}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#df548f] to-[#c83b74] text-white flex items-center justify-center shadow-sm flex-shrink-0">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            </span>
                           )}
                         </div>
-                        <span className="text-xs text-taupe block leading-relaxed">
+                        <span className="text-xs text-slate-600 block leading-relaxed font-medium">
                           {dur.desc}
                         </span>
                       </button>
@@ -250,10 +258,10 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.3 }}
                 className="space-y-4"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-2">
+                <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold mb-2">
                   What is your preferred pressure?
                 </h3>
-                <p className="text-xs sm:text-sm text-taupe mb-4">
+                <p className="text-xs sm:text-sm text-slate-600 mb-4 font-medium">
                   You can always adjust pressure dynamically at any moment during your therapy.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
@@ -264,21 +272,23 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                         key={press.id}
                         type="button"
                         onClick={() => setSelectedPressure(press)}
-                        className={`p-4 sm:p-5 rounded-xl text-left border transition-all ${
+                        className={`p-4 sm:p-5 rounded-2xl text-left transition-all duration-200 ${
                           isSelected
-                            ? "bg-rose/15 border-rose shadow-rose-subtle scale-[1.02]"
-                            : "bg-surface-dark border-rose/15 hover:border-rose/30"
+                            ? "bg-white border-2 border-[#c83b74] shadow-3d scale-[1.02]"
+                            : "bg-white border border-slate-200/90 hover:border-rose/40 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                         }`}
                       >
                         <div className="flex items-center justify-between mb-1.5">
-                          <span className="font-serif text-xl text-white font-medium">
+                          <span className="font-serif text-xl text-slate-900 font-bold">
                             {press.label}
                           </span>
                           {isSelected && (
-                            <Check className="w-4 h-4 text-rose flex-shrink-0" />
+                            <span className="w-6 h-6 rounded-full bg-gradient-to-r from-[#df548f] to-[#c83b74] text-white flex items-center justify-center shadow-sm flex-shrink-0">
+                              <Check className="w-3.5 h-3.5 stroke-[3]" />
+                            </span>
                           )}
                         </div>
-                        <span className="text-xs text-taupe block leading-relaxed">
+                        <span className="text-xs text-slate-600 block leading-relaxed font-medium">
                           {press.desc}
                         </span>
                       </button>
@@ -298,42 +308,42 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                 transition={{ duration: 0.4 }}
                 className="space-y-6"
               >
-                <div className="p-6 rounded-2xl bg-surface-dark border border-rose/35 shadow-luxury relative overflow-hidden">
-                  <div className="absolute top-0 right-0 px-3.5 py-1 bg-rose text-obsidian text-[10px] font-sans uppercase font-bold tracking-wider rounded-bl-xl">
+                <div className="p-6 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-3d relative overflow-hidden">
+                  <div className="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-r from-[#df548f] to-[#c83b74] text-white text-[10px] font-sans uppercase font-bold tracking-wider rounded-bl-xl shadow-sm">
                     Tailored Match
                   </div>
 
-                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-rose font-bold block mb-2">
+                  <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-[#c83b74] font-bold block mb-2">
                     Your Shirui Experience
                   </span>
 
-                  <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium mb-4">
+                  <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-bold mb-4">
                     {selectedGoal.treatment}
                   </h3>
 
                   {/* Config Summary Pills */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-rose/15 text-xs">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 pt-4 border-t border-slate-200/80 text-xs">
                     <div>
-                      <span className="text-muted block uppercase tracking-wider text-[10px]">
+                      <span className="text-slate-500 block uppercase tracking-wider text-[10px] font-bold font-sans">
                         Duration
                       </span>
-                      <span className="font-semibold text-white font-sans">
+                      <span className="font-bold text-slate-900 font-sans text-sm">
                         {selectedDuration.label}
                       </span>
                     </div>
                     <div>
-                      <span className="text-muted block uppercase tracking-wider text-[10px]">
+                      <span className="text-slate-500 block uppercase tracking-wider text-[10px] font-bold font-sans">
                         Pressure
                       </span>
-                      <span className="font-semibold text-white font-sans">
+                      <span className="font-bold text-slate-900 font-sans text-sm">
                         {selectedPressure.label} Pressure
                       </span>
                     </div>
                     <div>
-                      <span className="text-muted block uppercase tracking-wider text-[10px]">
+                      <span className="text-slate-500 block uppercase tracking-wider text-[10px] font-bold font-sans">
                         Approx. Price
                       </span>
-                      <span className="font-bold text-rose font-sans text-sm">
+                      <span className="font-bold text-[#c83b74] font-sans text-base">
                         {formatPrice(estimatedPrice)}
                       </span>
                     </div>
@@ -372,9 +382,9 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                           treatment: selectedGoal.treatment,
                         })
                       }
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-surface-raised hover:bg-rose/15 border border-rose/25 text-sm font-sans font-semibold text-cream hover:text-rose transition-colors flex-shrink-0"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-rose-50/60 border border-slate-200/90 text-sm font-sans font-bold text-slate-800 hover:text-rose transition-all flex-shrink-0 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                     >
-                      <MessageCircle className="w-4 h-4 text-rose" />
+                      <MessageCircle className="w-4 h-4 text-[#c83b74]" />
                       <span>WhatsApp Selection</span>
                     </a>
                   </div>
@@ -385,9 +395,9 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
 
           {/* Navigation Controls (Steps 1 to 3) */}
           {step < 4 && (
-            <div className="flex items-center justify-between pt-8 border-t border-rose/15 mt-8">
+            <div className="flex items-center justify-between pt-8 border-t border-slate-200/90 mt-8">
               {step > 1 ? (
-                <Button variant="ghost" size="md" onClick={handlePrev} className="text-taupe hover:text-white">
+                <Button variant="ghost" size="md" onClick={handlePrev} className="text-slate-700 hover:text-slate-900 font-bold">
                   ← Back
                 </Button>
               ) : (

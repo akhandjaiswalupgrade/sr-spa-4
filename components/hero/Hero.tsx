@@ -37,7 +37,7 @@ export function Hero({ onOpenBooking }: HeroProps) {
   };
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-obsidian pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24">
+    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-white pt-32 sm:pt-36 lg:pt-40 pb-20 sm:pb-24">
       {/* Background Image with Subtle Parallax */}
       <motion.div
         className="absolute inset-0 z-0 scale-105"
@@ -56,11 +56,10 @@ export function Hero({ onOpenBooking }: HeroProps) {
           className="object-cover object-center lg:object-[65%_center]"
         />
 
-        {/* Sophisticated Multi-Layer Warm Plum Vignette and Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian/95 via-obsidian/80 to-obsidian/45 lg:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/50" />
-        <div className="absolute inset-0 bg-obsidian/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(232,140,178,0.12)_0%,transparent_65%)]" />
+        {/* Light, Airy Spa Ambiance Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/60 lg:to-white/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(217,118,154,0.08)_0%,transparent_65%)]" />
       </motion.div>
 
       {/* Hero Content Container - Ample Breathing Room */}
@@ -71,23 +70,23 @@ export function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-raised/90 border border-rose/25 backdrop-blur-md mb-6 sm:mb-7 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 border border-slate-200 backdrop-blur-md mb-6 sm:mb-7 shadow-sm"
           >
             <span className="w-2 h-2 rounded-full bg-rose animate-pulse" />
-            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] font-sans font-bold text-cream">
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] font-sans font-bold text-slate-800">
               Premium Wellness · Neknampur, Hyderabad
             </span>
           </motion.div>
 
-          {/* Main Headline - Stark White + Soft Pink Italic */}
+          {/* Main Headline - Near-Black + Vibrant Rose Gradient Italic */}
           <motion.h1
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] text-white font-normal leading-[1.1] tracking-[-0.01em] mb-6 sm:mb-8"
+            className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] text-slate-900 font-normal leading-[1.1] tracking-[-0.01em] mb-6 sm:mb-8"
           >
             Leave the noise behind. <br />
-            <span className="italic font-normal text-rose-light drop-shadow-sm">
+            <span className="italic font-normal bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
               Feel yourself again.
             </span>
           </motion.h1>
@@ -97,7 +96,7 @@ export function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-taupe font-sans font-normal leading-relaxed max-w-[620px] mb-8 sm:mb-12 text-pretty"
+            className="text-base sm:text-lg md:text-xl text-slate-700 font-sans font-normal leading-relaxed max-w-[620px] mb-8 sm:mb-12 text-pretty"
           >
             Thoughtfully designed massage and wellness experiences for the moments
             when your body asks you to slow down.
@@ -117,7 +116,6 @@ export function Hero({ onOpenBooking }: HeroProps) {
                 trackEvent("book_click", { context: "hero_primary" });
                 onOpenBooking();
               }}
-              className="shadow-rose-glow"
             >
               Book Your Session
             </Button>
@@ -136,17 +134,17 @@ export function Hero({ onOpenBooking }: HeroProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-6 pt-7 border-t border-rose/15 max-w-[660px]"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 pt-7 border-t border-slate-200/80 max-w-[680px]"
           >
-            <div className="flex items-center gap-2.5 text-xs text-cream">
+            <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/90 border border-slate-200/80 shadow-sm text-xs text-slate-800">
               <DoorClosed className="w-4 h-4 text-rose flex-shrink-0" />
               <span className="font-sans font-semibold">Private Treatment Suites</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-cream">
+            <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/90 border border-slate-200/80 shadow-sm text-xs text-slate-800">
               <ShieldCheck className="w-4 h-4 text-rose flex-shrink-0" />
               <span className="font-sans font-semibold">Professional Therapists</span>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-cream">
+            <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/90 border border-slate-200/80 shadow-sm text-xs text-slate-800">
               <Clock className="w-4 h-4 text-rose flex-shrink-0" />
               <span className="font-sans font-semibold">Open 7 Days (10am–9:30pm)</span>
             </div>
@@ -161,16 +159,16 @@ export function Hero({ onOpenBooking }: HeroProps) {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-muted hover:text-rose transition-colors group cursor-pointer focus:outline-none"
+        className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 text-slate-500 hover:text-rose transition-colors group cursor-pointer focus:outline-none"
         aria-label="Scroll down to discover experiences"
       >
-        <span className="text-[10px] tracking-[0.24em] uppercase font-sans font-bold text-taupe group-hover:text-rose transition-colors">
+        <span className="text-[10px] tracking-[0.24em] uppercase font-sans font-bold text-slate-500 group-hover:text-rose transition-colors">
           Scroll to Experience
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-5 h-8 rounded-full border border-rose/30 flex items-start justify-center p-1 group-hover:border-rose/60 transition-colors"
+          className="w-5 h-8 rounded-full border border-rose/40 flex items-start justify-center p-1 group-hover:border-rose transition-colors"
         >
           <div className="w-1.5 h-2 bg-rose rounded-full" />
         </motion.div>

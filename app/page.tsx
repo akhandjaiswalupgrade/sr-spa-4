@@ -39,7 +39,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="relative bg-obsidian text-cream flex flex-col min-h-screen">
+    <main className="relative bg-white text-slate-700 flex flex-col min-h-screen">
       {/* 1. Fixed Navigation Header */}
       <Navbar onOpenBooking={handleOpenBooking} />
 

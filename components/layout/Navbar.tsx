@@ -57,8 +57,8 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? "bg-obsidian/92 backdrop-blur-xl border-b border-rose/15 shadow-xl py-2.5 sm:py-3.5"
-            : "bg-gradient-to-b from-obsidian/90 via-obsidian/40 to-transparent py-4 sm:py-6"
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-sm py-2.5 sm:py-3.5"
+            : "bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5 sm:py-5"
         }`}
       >
         <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
@@ -79,13 +79,13 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                 width={190}
                 height={68}
                 priority
-                className="h-11 sm:h-14 w-auto object-contain filter drop-shadow-md"
+                className="h-11 sm:h-14 w-auto object-contain"
               />
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-[13px] uppercase tracking-[0.14em] font-sans font-semibold text-taupe">
+          <nav className="hidden lg:flex items-center gap-7 text-[13px] uppercase tracking-[0.14em] font-sans font-bold text-slate-800">
             {siteConfig.navLinks.map((link) => (
               <a
                 key={link.name}
@@ -94,7 +94,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   e.preventDefault();
                   handleNavClick(link.href);
                 }}
-                className="hover:text-cream transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-rose hover:after:w-full after:transition-all after:duration-300"
+                className="hover:text-rose transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-rose hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
               </a>
@@ -111,7 +111,6 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   trackEvent("book_click", { context: "navbar" });
                   onOpenBooking();
                 }}
-                className="shadow-rose-glow"
               >
                 Book Experience
               </Button>
@@ -121,14 +120,14 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2.5 rounded-xl text-cream hover:text-rose hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-1 focus:ring-rose"
+              className="lg:hidden p-2.5 rounded-xl text-slate-800 hover:text-rose bg-white border border-slate-200/90 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5 transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-rose"
               aria-label={mobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 stroke-[2.5]" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-6 h-6 stroke-[2.5]" />
               )}
             </button>
           </div>
@@ -143,10 +142,10 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-50 bg-obsidian/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-50 bg-white/98 backdrop-blur-2xl flex flex-col justify-between p-6 sm:p-10 lg:hidden overflow-y-auto"
           >
             {/* Mobile Menu Header */}
-            <div className="flex items-center justify-between pb-5 border-b border-rose/15">
+            <div className="flex items-center justify-between pb-5 border-b border-gray-100">
               <Image
                 src="/srlogo.png"
                 alt="Shirui Wellness Spa"
@@ -159,7 +158,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2.5 rounded-xl text-taupe hover:text-cream hover:bg-white/5 transition-colors focus:outline-none"
+                className="p-2.5 rounded-xl text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors focus:outline-none"
                 aria-label="Close menu"
               >
                 <X className="w-6 h-6" />
@@ -179,7 +178,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="font-serif text-2xl sm:text-3xl text-cream/90 hover:text-rose transition-colors flex items-center justify-between py-1"
+                  className="font-serif text-2xl sm:text-3xl text-slate-800 hover:text-rose transition-colors flex items-center justify-between py-1"
                 >
                   <span>{link.name}</span>
                   <ArrowRight className="w-4 h-4 text-rose opacity-70" />
@@ -188,7 +187,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
             </nav>
 
             {/* Mobile Menu Footer Actions */}
-            <div className="flex flex-col gap-3 pt-6 border-t border-rose/15">
+            <div className="flex flex-col gap-3 pt-6 border-t border-gray-100">
               <Button
                 variant="primary"
                 fullWidth
@@ -208,7 +207,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackEvent("whatsapp_click", { context: "mobile_menu" })}
-                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-raised border border-rose/25 text-xs tracking-wider uppercase font-semibold text-cream hover:bg-rose/15 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-slate-50 border border-gray-200 text-xs tracking-wider uppercase font-semibold text-slate-700 hover:bg-rose-50 hover:text-rose transition-colors"
                 >
                   <MessageCircle className="w-4 h-4 text-rose" />
                   WhatsApp
@@ -217,7 +216,7 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
                 <a
                   href={getCallUrl()}
                   onClick={() => trackEvent("call_click", { context: "mobile_menu" })}
-                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-raised border border-rose/25 text-xs tracking-wider uppercase font-semibold text-cream hover:bg-rose/15 transition-colors"
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-slate-50 border border-gray-200 text-xs tracking-wider uppercase font-semibold text-slate-700 hover:bg-rose-50 hover:text-rose transition-colors"
                 >
                   <Phone className="w-4 h-4 text-rose" />
                   Call Spa

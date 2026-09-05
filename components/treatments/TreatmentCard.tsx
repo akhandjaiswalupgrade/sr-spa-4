@@ -25,8 +25,10 @@ export function TreatmentCard({
         {[1, 2, 3, 4, 5].map((dot) => (
           <span
             key={dot}
-            className={`w-1.5 h-1.5 rounded-full transition-colors ${
-              dot <= level ? "bg-rose" : "bg-white/15"
+            className={`w-2 h-2 rounded-full transition-all ${
+              dot <= level
+                ? "bg-gradient-to-b from-[#e04f8b] to-[#b82963] shadow-sm ring-1 ring-white"
+                : "bg-slate-200 ring-1 ring-slate-100"
             }`}
           />
         ))}
@@ -41,10 +43,10 @@ export function TreatmentCard({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col bg-surface-raised rounded-2xl border border-rose/15 hover:border-rose/40 transition-all duration-350 hover:-translate-y-1 hover:shadow-rose-glow/20 overflow-hidden"
+      className="group relative flex flex-col bg-white rounded-2xl border border-slate-200/90 hover:border-rose/40 transition-all duration-350 hover:-translate-y-2 shadow-3d hover:shadow-3d-hover overflow-hidden"
     >
       {/* Card Image Container */}
-      <div className="relative h-[260px] sm:h-[290px] lg:h-[310px] w-full overflow-hidden bg-surface-dark">
+      <div className="relative h-[260px] sm:h-[290px] lg:h-[310px] w-full overflow-hidden bg-slate-100">
         <Image
           src={treatment.image}
           alt={treatment.name}
@@ -53,17 +55,17 @@ export function TreatmentCard({
           className="object-cover object-center group-hover:scale-[1.035] transition-transform duration-500 ease-luxury"
         />
 
-        {/* Ambient Gradient on Image */}
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-raised via-transparent to-black/30" />
+        {/* Ambient Scrim on Image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
         {/* Top Badges */}
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-          <span className="px-3 py-1 rounded-full bg-obsidian/90 backdrop-blur-md border border-rose/25 text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-cream shadow-sm">
+          <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-slate-200/90 text-[10px] uppercase tracking-[0.2em] font-sans font-bold text-slate-800 shadow-sm">
             {treatment.category}
           </span>
 
           {treatment.featured && (
-            <span className="px-2.5 py-1 rounded-full bg-rose text-obsidian text-[10px] uppercase tracking-wider font-bold flex items-center gap-1 shadow-sm">
+            <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#df548f] to-[#b82963] text-white text-[10px] uppercase tracking-wider font-bold flex items-center gap-1 shadow-button-3d border-t border-white/30">
               <Sparkles className="w-3 h-3" />
               Signature
             </span>
@@ -72,19 +74,19 @@ export function TreatmentCard({
 
         {/* Bottom Image Overlay: Starting Price & Pressure */}
         <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
-          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-rose/20 shadow-sm">
-            <span className="text-[10px] text-muted uppercase tracking-wider block font-sans">
+          <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-200/90 shadow-md">
+            <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-sans font-medium">
               From
             </span>
-            <span className="text-sm font-bold text-white font-sans">
+            <span className="text-sm font-extrabold text-slate-900 font-sans">
               {formatPrice(treatment.priceFrom)}
             </span>
           </div>
 
           {/* Pressure indicator */}
-          <div className="bg-obsidian/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-rose/20 shadow-sm flex flex-col items-end">
-            <span className="text-[10px] text-taupe uppercase tracking-wider mb-1 font-sans">
-              Pressure: <strong className="text-cream">{treatment.pressureLabel}</strong>
+          <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-200/90 shadow-md flex flex-col items-end">
+            <span className="text-[10px] text-slate-600 uppercase tracking-wider mb-1 font-sans font-medium">
+              Pressure: <strong className="text-slate-900 font-bold">{treatment.pressureLabel}</strong>
             </span>
             {renderPressureDots(treatment.pressure)}
           </div>
@@ -94,11 +96,11 @@ export function TreatmentCard({
       {/* Card Content */}
       <div className="flex flex-col flex-1 p-5 sm:p-6 justify-between">
         <div>
-          <h3 className="font-serif text-xl sm:text-2xl text-white font-medium tracking-tight mb-2 group-hover:text-rose transition-colors duration-200">
+          <h3 className="font-serif text-xl sm:text-2xl text-slate-900 font-medium tracking-tight mb-2 group-hover:text-rose transition-colors duration-200">
             {treatment.name}
           </h3>
 
-          <p className="text-xs sm:text-sm text-taupe leading-relaxed mb-4 line-clamp-2">
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4 line-clamp-2">
             {treatment.shortDescription}
           </p>
 
@@ -109,7 +111,7 @@ export function TreatmentCard({
               {treatment.durations.map((d) => (
                 <span
                   key={d.minutes}
-                  className="px-2.5 py-0.5 rounded-lg text-[11px] font-sans font-medium bg-surface-dark border border-rose/15 text-taupe"
+                  className="px-2.5 py-0.5 rounded-lg text-[11px] font-sans font-semibold bg-white border border-slate-200/90 text-slate-700 shadow-sm"
                 >
                   {d.minutes} min
                 </span>
@@ -119,7 +121,7 @@ export function TreatmentCard({
         </div>
 
         {/* Action Link & Book */}
-        <div className="flex items-center justify-between pt-4 border-t border-white/[0.07] gap-3">
+        <div className="flex items-center justify-between pt-4 border-t border-slate-100 gap-3">
           <button
             type="button"
             onClick={() => {
@@ -130,7 +132,7 @@ export function TreatmentCard({
               });
               onSelect(treatment);
             }}
-            className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.16em] font-bold text-rose hover:text-rose-light transition-colors group/btn py-1"
+            className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.16em] font-bold text-rose hover:text-rose-dark transition-colors group/btn py-1"
           >
             <span>Explore Details</span>
             <ArrowRight className="w-3.5 h-3.5 text-rose group-hover/btn:translate-x-1 transition-transform" />
@@ -145,7 +147,7 @@ export function TreatmentCard({
               });
               onQuickBook(treatment.name);
             }}
-            className="px-4 py-1.5 rounded-xl text-xs font-sans font-bold bg-rose/15 hover:bg-rose hover:text-obsidian border border-rose/35 hover:border-rose text-rose transition-all duration-200 shadow-sm"
+            className="px-5 py-2 rounded-xl text-xs font-sans font-bold bg-gradient-to-b from-[#e35691] via-[#c83b74] to-[#af2762] text-white shadow-button-3d hover:from-[#eb68a0] hover:to-[#bc2e6a] hover:-translate-y-0.5 active:translate-y-0.5 active:shadow-inner border-t border-white/30 border-b border-rose-900/40 transition-all"
           >
             Book
           </button>

@@ -19,36 +19,36 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
   if (!activeOffer) return null;
 
   return (
-    <section className="relative bg-obsidian py-24 sm:py-32 border-t border-rose/15">
+    <section className="relative bg-white py-24 sm:py-32 border-t border-slate-200/80">
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
-        <div className="rounded-2xl bg-surface-raised border border-rose/30 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-[#f5f0eb] border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-3d relative overflow-hidden">
           {/* Subtle Top Rose Highlight */}
-          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-rose to-transparent" />
+          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#c83b74] to-transparent" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-5 text-left">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose/15 text-rose text-[10px] sm:text-xs font-sans font-bold uppercase tracking-widest border border-rose/25">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-[#c83b74] text-[10px] sm:text-xs font-sans font-bold uppercase tracking-widest border border-slate-200/90 shadow-sm">
                 <Sparkles className="w-3.5 h-3.5" />
                 {activeOffer.tag}
               </span>
 
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal">
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-bold">
                 {activeOffer.title}
               </h2>
 
-              <p className="text-sm sm:text-base text-taupe leading-relaxed text-pretty">
+              <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-pretty font-medium">
                 {activeOffer.description}
               </p>
 
               {/* Timing & Validity Tags */}
-              <div className="flex flex-wrap items-center gap-3 text-xs text-cream font-sans">
-                <div className="flex items-center gap-1.5 bg-surface-dark px-3.5 py-2 rounded-xl border border-rose/15">
-                  <Calendar className="w-3.5 h-3.5 text-rose" />
+              <div className="flex flex-wrap items-center gap-3 text-xs text-slate-800 font-sans font-semibold">
+                <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-xl border border-slate-200/90 shadow-sm">
+                  <Calendar className="w-3.5 h-3.5 text-[#c83b74]" />
                   <span>{activeOffer.validity}</span>
                 </div>
-                <div className="flex items-center gap-1.5 bg-surface-dark px-3.5 py-2 rounded-xl border border-rose/15">
-                  <Clock className="w-3.5 h-3.5 text-rose" />
+                <div className="flex items-center gap-1.5 bg-white px-4 py-2 rounded-xl border border-slate-200/90 shadow-sm">
+                  <Clock className="w-3.5 h-3.5 text-[#c83b74]" />
                   <span>{activeOffer.timing}</span>
                 </div>
               </div>
@@ -59,9 +59,9 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
                   {activeOffer.inclusions.map((inc, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2 text-xs sm:text-sm text-cream font-sans"
+                      className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-sans font-medium"
                     >
-                      <Check className="w-3.5 h-3.5 text-rose flex-shrink-0" />
+                      <Check className="w-3.5 h-3.5 text-[#c83b74] flex-shrink-0" />
                       <span>{inc}</span>
                     </li>
                   ))}
@@ -71,10 +71,10 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
               {/* Pricing & CTA */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <div className="flex items-baseline gap-2.5">
-                  <span className="text-2xl sm:text-3xl font-serif font-bold text-rose">
+                  <span className="text-2xl sm:text-3xl font-serif font-bold text-[#c83b74]">
                     {formatPrice(activeOffer.offerPrice)}
                   </span>
-                  <span className="text-sm text-muted line-through">
+                  <span className="text-sm text-slate-500 line-through font-medium">
                     {formatPrice(activeOffer.originalPrice)}
                   </span>
                 </div>
@@ -91,14 +91,14 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
                 </Button>
               </div>
 
-              <span className="block text-[11px] text-muted italic font-sans pt-1">
+              <span className="block text-[11px] text-slate-600 italic font-sans pt-1">
                 {activeOffer.terms}
               </span>
             </div>
 
             {/* Right Visual */}
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden border border-rose/20 shadow-lg">
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-3d">
                 <Image
                   src={activeOffer.image}
                   alt={activeOffer.title}
@@ -106,7 +106,7 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent" />
               </div>
             </div>
           </div>

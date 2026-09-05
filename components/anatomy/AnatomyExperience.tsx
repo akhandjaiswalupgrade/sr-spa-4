@@ -59,7 +59,7 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
   return (
     <section
       id="inside-massage"
-      className="relative bg-obsidian py-24 sm:py-32 lg:py-36 border-t border-rose/15 overflow-hidden"
+      className="relative bg-white py-24 sm:py-32 lg:py-36 border-t border-gray-100 overflow-hidden"
     >
       {/* Subtle Background Glow in Soft Rose */}
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-rose/5 blur-[130px] rounded-full pointer-events-none" />
@@ -67,14 +67,18 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
+          <span className="inline-flex items-center gap-2 text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#c83b74] bg-rose-50/80 px-3.5 py-1 rounded-full border border-rose-200 shadow-sm mb-4">
             <Activity className="w-3.5 h-3.5" />
             Inside The Massage
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
-            See what happens beneath the surface.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
+            See what happens{" "}
+            <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
+              beneath the surface
+            </span>
+            .
           </h2>
-          <p className="text-base sm:text-lg text-taupe leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
             Explore common muscle areas people often ask therapists to focus on
             during a session, and visualize how therapeutic bodywork encourages ease.
           </p>
@@ -83,10 +87,10 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
         {/* 2-Column Responsive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Interactive Slider & Phase Information */}
-          <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
+          <div className="lg:col-span-5 space-y-6 order-2 lg:order-1">
             {/* Live Phase Text Box */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-surface-raised border border-rose/20 relative overflow-hidden shadow-md">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-rose" />
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#f5f0eb] border border-slate-200/90 relative overflow-hidden shadow-3d">
+              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#df548f] to-[#c83b74]" />
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activePhaseCopy.label}
@@ -95,13 +99,13 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-rose block mb-1.5">
+                  <span className="text-[11px] font-sans font-bold uppercase tracking-[0.2em] text-[#c83b74] block mb-1.5">
                     Phase {activePhaseCopy.phase} · {activePhaseCopy.label}
                   </span>
-                  <h3 className="font-serif text-2xl text-white font-medium mb-2.5">
+                  <h3 className="font-serif text-2xl text-slate-900 font-bold mb-2.5">
                     {activePhaseCopy.headline}
                   </h3>
-                  <p className="text-xs sm:text-sm text-taupe leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                     {activePhaseCopy.body}
                   </p>
                 </motion.div>
@@ -109,7 +113,7 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
             </div>
 
             {/* Interactive Anatomical Slider */}
-            <div className="p-5 rounded-2xl bg-surface-dark border border-rose/15 shadow-sm">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#f5f0eb] border border-slate-200/90 shadow-3d">
               <AnatomySlider value={sliderValue} onChange={setSliderValue} />
             </div>
 
@@ -121,10 +125,10 @@ export function AnatomyExperience({ onOpenBooking }: AnatomyExperienceProps) {
             />
 
             {/* Medical Wellness Disclaimer */}
-            <div className="flex items-start gap-2.5 p-3.5 rounded-xl bg-surface-raised/60 border border-rose/15 text-[11px] text-taupe/90 leading-normal">
-              <ShieldAlert className="w-4 h-4 text-rose flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-2.5 p-4 rounded-xl bg-white border border-slate-200/90 text-[11px] text-slate-700 leading-normal shadow-sm">
+              <ShieldAlert className="w-4 h-4 text-[#c83b74] flex-shrink-0 mt-0.5" />
               <span>
-                <strong className="text-cream">Educational wellness visualization only.</strong> Massage may
+                <strong className="text-slate-900">Educational wellness visualization only.</strong> Massage may
                 help with temporary muscle tension, stiffness and relaxation. It
                 is not a substitute for medical diagnosis or clinical treatment.
               </span>

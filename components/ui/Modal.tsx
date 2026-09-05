@@ -67,7 +67,7 @@ export function Modal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm"
             aria-hidden="true"
           />
 
@@ -81,7 +81,7 @@ export function Modal({
             aria-modal="true"
             aria-label={ariaLabel || title || "Dialog window"}
             className={cn(
-              "relative w-full bg-surface-raised border border-rose/25 rounded-2xl shadow-2xl p-6 sm:p-8 z-10 my-auto text-cream max-h-[90vh] overflow-y-auto",
+              "relative w-full bg-white border border-gray-100 rounded-2xl shadow-xl p-6 sm:p-8 z-10 my-auto text-slate-700 max-h-[90vh] overflow-y-auto",
               maxWidthClasses[maxWidth],
               className
             )}
@@ -91,12 +91,12 @@ export function Modal({
               <div className="flex items-start justify-between mb-5 gap-4">
                 <div>
                   {title && (
-                    <h3 className="font-serif text-2xl sm:text-3xl text-white font-medium tracking-tight">
+                    <h3 className="font-serif text-2xl sm:text-3xl text-slate-900 font-medium tracking-tight">
                       {title}
                     </h3>
                   )}
                   {subtitle && (
-                    <p className="text-sm text-taupe mt-1 leading-relaxed">
+                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                       {subtitle}
                     </p>
                   )}
@@ -106,7 +106,7 @@ export function Modal({
                   <button
                     type="button"
                     onClick={onClose}
-                    className="p-2 rounded-xl text-taupe hover:text-rose hover:bg-surface-dark transition-colors focus:outline-none focus:ring-1 focus:ring-rose"
+                    className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors focus:outline-none focus:ring-1 focus:ring-rose"
                     aria-label="Close modal"
                   >
                     <X className="w-5 h-5" />

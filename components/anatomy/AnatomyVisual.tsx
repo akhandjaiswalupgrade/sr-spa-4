@@ -15,7 +15,7 @@ export function AnatomyVisual({ sliderValue, activeRegion }: AnatomyVisualProps)
   const muscleOpacity = sliderValue / 100;
 
   return (
-    <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] min-h-[380px] sm:min-h-[500px] lg:min-h-[580px] rounded-2xl overflow-hidden bg-surface-dark border border-rose/20 shadow-2xl">
+    <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] min-h-[380px] sm:min-h-[500px] lg:min-h-[580px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/90 shadow-3d">
       {/* Base Layer: Natural Spa Client & Therapist */}
       <div className="absolute inset-0">
         <Image
@@ -42,9 +42,8 @@ export function AnatomyVisual({ sliderValue, activeRegion }: AnatomyVisualProps)
         />
       </div>
 
-      {/* Atmospheric Ambient Overlays in Warm Plum */}
-      <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-black/20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-obsidian/40 via-transparent to-obsidian/40 pointer-events-none" />
+      {/* Atmospheric Ambient Scrim */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
 
       {/* Warm Relaxation Glow in Soft Rose (Phase 3 & 4: 50% - 100%) */}
       {sliderValue >= 50 && (
@@ -52,7 +51,7 @@ export function AnatomyVisual({ sliderValue, activeRegion }: AnatomyVisualProps)
           initial={{ opacity: 0 }}
           animate={{ opacity: (sliderValue - 50) / 50 }}
           transition={{ duration: 0.5 }}
-          className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_65%,rgba(232,140,178,0.22)_0%,transparent_60%)] pointer-events-none"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_65%,rgba(200,59,116,0.22)_0%,transparent_60%)] pointer-events-none"
         />
       )}
 
@@ -67,20 +66,20 @@ export function AnatomyVisual({ sliderValue, activeRegion }: AnatomyVisualProps)
         >
           {/* Pulsing Target Rings */}
           <div className="relative flex items-center justify-center">
-            <span className="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-rose opacity-75" />
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-rose border-2 border-obsidian shadow-rose-glow" />
+            <span className="animate-ping absolute inline-flex h-10 w-10 rounded-full bg-[#df548f] opacity-75" />
+            <span className="relative inline-flex rounded-full h-4.5 w-4.5 bg-gradient-to-r from-[#df548f] to-[#c83b74] border-2 border-white shadow-md" />
 
             {/* Muscle Callout Badge */}
             <motion.div
               initial={{ opacity: 0, y: 8, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               key={activeRegion.id}
-              className="absolute left-6 bottom-4 whitespace-nowrap bg-surface-raised/95 backdrop-blur-md border border-rose/40 rounded-xl px-3.5 py-1.5 shadow-2xl"
+              className="absolute left-6 bottom-4 whitespace-nowrap bg-white/95 backdrop-blur-md border border-rose-200 rounded-xl px-4 py-2 shadow-3d"
             >
-              <span className="text-[10px] uppercase tracking-wider text-rose font-sans font-bold block">
+              <span className="text-[10px] uppercase tracking-wider text-[#c83b74] font-sans font-bold block">
                 Target Zone
               </span>
-              <span className="text-xs font-serif text-white font-medium">
+              <span className="text-xs font-serif text-slate-900 font-bold">
                 {activeRegion.name}
               </span>
             </motion.div>
@@ -89,9 +88,9 @@ export function AnatomyVisual({ sliderValue, activeRegion }: AnatomyVisualProps)
       )}
 
       {/* Watermark/Status Indicator */}
-      <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-obsidian/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-rose/20 shadow-sm">
-        <span className="w-2 h-2 rounded-full bg-rose animate-pulse" />
-        <span className="text-[10px] font-sans uppercase tracking-widest text-cream font-bold">
+      <div className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-white/95 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200/90 text-slate-900 shadow-3d">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#c83b74] animate-pulse" />
+        <span className="text-[10px] font-sans uppercase tracking-widest text-slate-900 font-bold">
           Interactive Anatomy Simulation
         </span>
       </div>

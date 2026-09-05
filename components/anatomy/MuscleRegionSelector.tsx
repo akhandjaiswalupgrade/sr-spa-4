@@ -120,7 +120,7 @@ export function MuscleRegionSelector({
     <div className="space-y-4">
       {/* Zone Button Pills */}
       <div>
-        <span className="text-[11px] uppercase tracking-[0.16em] font-sans font-bold text-taupe block mb-2.5">
+        <span className="text-[11px] uppercase tracking-[0.16em] font-sans font-bold text-slate-800 block mb-2.5">
           Select Muscle Region to Explore:
         </span>
         <div className="flex flex-wrap gap-2">
@@ -134,10 +134,10 @@ export function MuscleRegionSelector({
                   trackEvent("muscle_region_select", { muscleRegion: region.name });
                   onSelectRegion(region);
                 }}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-sans font-semibold transition-all ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-sans font-bold transition-all duration-200 ${
                   isSelected
-                    ? "bg-rose text-obsidian font-bold shadow-rose-subtle scale-105 border border-rose"
-                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
+                    ? "bg-gradient-to-b from-[#df548f] to-[#c83b74] text-white shadow-button-3d border-t border-white/35 border-b border-rose-900/40 scale-[1.03]"
+                    : "bg-white border border-slate-200/90 text-slate-700 hover:text-slate-900 hover:border-rose/40 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                 }`}
               >
                 {region.name}
@@ -148,23 +148,23 @@ export function MuscleRegionSelector({
       </div>
 
       {/* Selected Region Detailed Card */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-surface-raised border border-rose/20 shadow-md">
+      <div className="p-4 sm:p-5 rounded-2xl bg-[#f5f0eb] border border-slate-200/90 shadow-3d">
         <div className="flex items-center justify-between gap-2 mb-1.5">
-          <h4 className="font-serif text-lg sm:text-xl text-white font-medium">
+          <h4 className="font-serif text-lg sm:text-xl text-slate-900 font-bold">
             {activeRegion.name}
           </h4>
-          <span className="text-[11px] font-sans text-rose font-bold bg-rose/15 px-2.5 py-0.5 rounded-lg border border-rose/25">
+          <span className="text-[11px] font-sans text-[#c83b74] font-bold bg-white px-3 py-1 rounded-lg border border-slate-200/90 shadow-sm">
             {activeRegion.muscleName}
           </span>
         </div>
 
-        <p className="text-xs sm:text-sm text-taupe leading-relaxed mb-4">
+        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-4">
           {activeRegion.description}
         </p>
 
         {/* Recommended Therapies */}
-        <div className="pt-3 border-t border-white/[0.07]">
-          <span className="text-[10px] uppercase tracking-[0.16em] font-sans font-bold text-taupe block mb-2">
+        <div className="pt-3 border-t border-slate-200/90">
+          <span className="text-[10px] uppercase tracking-[0.16em] font-sans font-bold text-slate-600 block mb-2">
             Recommended Experiences:
           </span>
           <div className="flex flex-wrap gap-2">
@@ -173,10 +173,10 @@ export function MuscleRegionSelector({
                 key={idx}
                 type="button"
                 onClick={() => onSelectTreatmentName(t.name)}
-                className="inline-flex items-center gap-1.5 text-xs font-sans font-bold text-rose hover:text-rose-light bg-surface-dark hover:bg-rose/15 px-3 py-1 rounded-xl border border-rose/25 transition-colors"
+                className="inline-flex items-center gap-1.5 text-xs font-sans font-bold text-[#c83b74] bg-white hover:bg-rose-50/60 px-3.5 py-1.5 rounded-xl border border-slate-200/90 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5 transition-all"
               >
                 <span>{t.name}</span>
-                <ArrowRight className="w-3 h-3" />
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             ))}
           </div>

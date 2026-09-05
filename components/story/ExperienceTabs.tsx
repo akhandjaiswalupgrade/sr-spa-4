@@ -65,18 +65,22 @@ export function ExperienceTabs() {
   return (
     <section
       id="experience-story"
-      className="relative bg-surface-dark py-24 sm:py-32 lg:py-36 border-t border-rose/15"
+      className="relative bg-[#f5f0eb] py-24 sm:py-32 lg:py-36 border-t border-slate-200/80"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section Header */}
         <div className="max-w-2xl text-left mb-12 sm:mb-16">
-          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-rose mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-sans font-bold uppercase tracking-[0.22em] text-[#c83b74] bg-white px-3.5 py-1 rounded-full border border-slate-200 shadow-sm mb-4">
             Feel The Difference
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-white font-normal leading-[1.18] tracking-tight mb-4">
-            The experience is in the details.
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
+            The experience is in{" "}
+            <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
+              the details
+            </span>
+            .
           </h2>
-          <p className="text-base sm:text-lg text-taupe leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
             From the warmth of our lighting to the unhurried tea ritual afterward,
             discover the thoughtful nuances that make Shirui special.
           </p>
@@ -91,10 +95,10 @@ export function ExperienceTabs() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex-shrink-0 px-5 sm:px-6 py-3 rounded-xl text-xs font-sans uppercase tracking-[0.16em] transition-all duration-300 font-bold ${
+                className={`relative flex-shrink-0 px-5 sm:px-6 py-3 rounded-xl text-xs font-sans uppercase tracking-[0.16em] transition-all duration-200 font-bold ${
                   isSelected
-                    ? "bg-rose text-obsidian font-bold shadow-rose-glow border border-rose"
-                    : "bg-surface-raised border border-rose/20 text-taupe hover:text-white hover:border-rose/40"
+                    ? "bg-gradient-to-b from-[#df548f] to-[#c83b74] text-white font-bold shadow-button-3d border-t border-white/35 border-b border-rose-900/40 scale-[1.02]"
+                    : "bg-white border border-slate-200/90 text-slate-700 hover:text-slate-900 hover:border-rose/40 shadow-button-secondary-3d hover:-translate-y-0.5 active:translate-y-0.5"
                 }`}
               >
                 <span>{tab.label}</span>
@@ -104,7 +108,7 @@ export function ExperienceTabs() {
         </div>
 
         {/* Tab Content Display */}
-        <div className="relative rounded-2xl bg-surface-raised border border-rose/20 overflow-hidden shadow-2xl p-6 sm:p-10 lg:p-12">
+        <div className="relative rounded-2xl bg-white border border-slate-200/90 overflow-hidden shadow-3d p-6 sm:p-10 lg:p-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentTab.id}
@@ -116,22 +120,22 @@ export function ExperienceTabs() {
             >
               {/* Left Text */}
               <div className="lg:col-span-6 space-y-6">
-                <span className="inline-block px-3.5 py-1.5 rounded-xl bg-rose/15 text-rose border border-rose/30 text-xs font-sans uppercase tracking-wider font-bold">
+                <span className="inline-block px-4 py-1.5 rounded-xl bg-[#f5f0eb] text-[#c83b74] border border-slate-200/90 text-xs font-sans uppercase tracking-wider font-bold shadow-sm">
                   {currentTab.highlight}
                 </span>
 
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-[1.2]">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-slate-900 font-bold leading-[1.2]">
                   {currentTab.headline}
                 </h3>
 
-                <p className="text-sm sm:text-base text-taupe leading-relaxed text-pretty">
+                <p className="text-sm sm:text-base text-slate-700 leading-relaxed text-pretty">
                   {currentTab.body}
                 </p>
               </div>
 
               {/* Right Image */}
               <div className="lg:col-span-6">
-                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-xl overflow-hidden border border-rose/20 shadow-lg">
+                <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-3d">
                   <Image
                     src={currentTab.image}
                     alt={currentTab.headline}
@@ -139,7 +143,7 @@ export function ExperienceTabs() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
                 </div>
               </div>
             </motion.div>
