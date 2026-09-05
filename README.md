@@ -1,31 +1,36 @@
-# Shirui Wellness Spa — Version 3 (sr-spa-ver-3)
+# Shirui Wellness Spa — Version 4 (`sr-spa-4`)
 
-A complete, production-ready, ultra-premium single-page website for **Shirui Wellness Spa** located in Neknampur, Hyderabad.
+A production-ready, ultra-premium single-page website for **Shirui Wellness Spa** located in Neknampur, Hyderabad. Designed with an airy, calming **Light Theme** aesthetic featuring tactile **3D elevation** and **high color contrast**.
 
-## Features
-- **Design System**: Obsidian palette (`#0E0F0D`), champagne gold accents (`#C9A96B`), warm limestone textures, and dual typography (`Cormorant Garamond` serif & `Inter` sans-serif).
-- **Interactive Anatomy Simulation**: 4-phase reveal slider (Tension → Treatment → Release → Relaxed) with pinpoint muscle zone targets (Neck/Shoulders, Upper Back, Mid Back, Lower Back, Legs, Feet) and educational disclaimer.
-- **4-Step Session Configurator**: Interactive custom session builder with automated WhatsApp deep-link generation.
-- **Treatment Discovery & Drawer**: Category filters (Relax, Restore, Release, Rejuvenate, Recover, Couples), pressure ratings (1-5 dots), and slide-out details drawer.
-- **Draggable Spa Gallery & Fullscreen Lightbox**: Horizontal swipe gallery with touch and keyboard navigation.
-- **Guest Testimonials & Reviews**: Verified review carousel and Google rating badge (4.9 ★).
-- **Location, Map & Opening Hours**: Neknampur location guide, timings, dark-styled Google Maps embed, and direct Call/WhatsApp/Direction shortcuts.
-- **Mobile Persistent Conversion Bar**: Bottom navigation for instant Call, WhatsApp, and Direction actions on mobile devices.
-- **Appointment Request Modal**: Validated with React Hook Form and Zod with instant WhatsApp handoff.
-- **SEO & Schema Markup**: Integrated `LocalBusiness` / `DaySpa` and `FAQPage` JSON-LD structured data.
+## Key Features in Version 4
+- **Light Theme Design System**: Alternating pure white (`#ffffff`) and warm alabaster stone (`#f5f0eb`), vibrant rose gradients (`#df548f` → `#c83b74` → `#a81d52`), deep near-black headings (`#0a0f1d`), and crisp slate body typography (`#1e293b`).
+- **Tactile 3D Depth System**: Multi-layered ambient occlusion shadows (`shadow-3d`, `shadow-3d-hover`), beveled buttons with top reflection highlights (`border-t border-white/35`) and click depression (`active:translate-y-0.5`).
+- **Interactive Anatomy Experience**: 4-phase muscle reveal slider with grooved track (`shadow-inset-groove`), 3D tactile dial handle (`shadow-dial-3d`), interactive pinpoint muscle zones, and educational disclaimer.
+- **Session Configurator**: 4-step interactive session builder with custom duration, pressure, and automated WhatsApp request generation.
+- **Treatment Discovery & Drawer**: Category tabs with tactile 3D pills, 3D bead pressure rating indicators (1-5 dots), and slide-out details drawer.
+- **Regenerated Logo**: Crisp Slate-900 typography, soft rose lotus mark, and organic Shirui Lily flower optimized for light backgrounds.
+- **Draggable Spa Gallery & Fullscreen Lightbox**: Horizontal swipe strip with tactile 3D scroll buttons and keyboard navigation.
+- **Guest Testimonials & Reviews**: Verified review carousel and 4.9★ Google rating card.
+- **Location, Map & Scheduling**: Neknampur location guide, hours, and light-themed Google Maps embed.
+- **Appointment Request Modal**: Validated with React Hook Form and Zod with instant WhatsApp confirmation handoff.
+- **Mobile Persistent Conversion Bar**: Floating conversion dock for instant Call, WhatsApp, and Direction actions.
 
-## Getting Started
+## Deploying to Vercel
 
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
+1. Log into your [Vercel Dashboard](https://vercel.com).
+2. Click **"Add New..."** → **"Project"**.
+3. Import the repository: **`akhandjaiswalupgrade/sr-spa-4`**.
+4. Framework Preset will automatically detect **Next.js**.
+5. Click **"Deploy"**. No extra environment variables or configuration needed!
+
+## Running Locally
 
 ### Installation
 ```bash
 npm install
 ```
 
-### Running Locally
+### Development Server
 ```bash
 npm run dev
 ```
