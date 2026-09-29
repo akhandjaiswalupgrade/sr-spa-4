@@ -45,7 +45,7 @@ export const reviewsData: Review[] = [
     treatmentTaken: "Couples Sanctuary Experience",
     highlight: "Remarkably private, respectful, and serene.",
     comment:
-      "Booked the couples suite for our anniversary. The synchronized therapy was flawless, and the staff maintained utter professionalism throughout. The subtle natural stone and walnut aesthetics gave it a 5-star boutique resort feel right in Neknampur.",
+      "Booked the couples suite for our anniversary. The synchronized therapy was flawless, and the staff maintained utter professionalism throughout. The subtle natural stone and walnut aesthetics gave it a 5-star boutique resort feel right in Gachibowli.",
   },
   {
     id: "rev-4",

@@ -34,13 +34,13 @@ export function Location({ onOpenBooking }: LocationProps) {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-slate-900 font-normal leading-[1.18] tracking-tight mb-4">
             A quiet sanctuary in{" "}
             <span className="italic font-serif bg-gradient-to-r from-[#df548f] via-[#c83b74] to-[#a81d52] bg-clip-text text-transparent">
-              Neknampur
+              Gachibowli
             </span>
             .
           </h2>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
-            Conveniently accessible for residents of Neknampur, Manikonda,
-            Narsingi, Puppalguda, and the wider Financial District.
+            Conveniently accessible for residents of Gachibowli, Financial District,
+            Hitec City, Kondapur, Manikonda, and nearby neighborhoods.
           </p>
         </div>
 
@@ -81,10 +81,10 @@ export function Location({ onOpenBooking }: LocationProps) {
                       Hours & Scheduling
                     </h3>
                     <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                      <strong className="text-slate-900">Monday to Sunday:</strong> 10:00 AM – 9:30 PM
+                      <strong className="text-slate-900">Open Daily (All 7 Days):</strong> 10:00 AM – 9:00 PM
                       <br />
                       <span className="text-xs text-slate-600 font-semibold">
-                        Last appointment accepted at 8:30 PM
+                        No Off Days · Last appointment accepted at 8:00 PM
                       </span>
                     </p>
                   </div>
@@ -152,7 +152,7 @@ export function Location({ onOpenBooking }: LocationProps) {
           <div className="lg:col-span-6 min-h-[380px] sm:min-h-[460px] rounded-2xl overflow-hidden border border-slate-200/90 shadow-3d relative bg-white">
             <iframe
               title="Shirui Wellness Spa Google Maps Location"
-              src={businessConfig.googleEmbedMapUrl || "https://maps.google.com/?q=Shirui+Wellness+Spa+Neknampur+Hyderabad"}
+              src={businessConfig.googleEmbedMapUrl || "https://maps.google.com/?q=KK+Pride+Gachibowli+Hyderabad"}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "100%" }}

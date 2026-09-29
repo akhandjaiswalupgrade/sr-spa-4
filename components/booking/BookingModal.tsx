@@ -53,10 +53,11 @@ const timeSlots = [
   "10:00 AM – 12:00 PM (Morning Calm)",
   "12:00 PM – 03:00 PM (Afternoon Respite)",
   "03:00 PM – 06:00 PM (Evening Wind-Down)",
-  "06:00 PM – 08:30 PM (Night Restorative)",
+  "06:00 PM – 09:00 PM (Night Restorative)",
 ];
 
 const durationsList = [
+  "30 Minutes",
   "45 Minutes",
   "60 Minutes",
   "90 Minutes",

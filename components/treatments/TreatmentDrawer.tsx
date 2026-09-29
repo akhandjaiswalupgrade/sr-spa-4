@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Clock, Check, MessageCircle, Sparkles, Shield, ChevronRight } from "lucide-react";
 import { Treatment, TreatmentDurationOption } from "@/data/treatments";
 import { Button } from "@/components/ui/Button";
-import { formatPrice } from "@/lib/utils";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { trackEvent } from "@/lib/analytics";
 
@@ -124,10 +123,10 @@ export function TreatmentDrawer({
                     {treatment.tagline}
                   </p>
 
-                  {/* Duration & Price Selector */}
+                  {/* Duration Selector */}
                   <div className="mb-6 p-4 rounded-2xl bg-[#f5f0eb] border border-slate-200/90 shadow-inner">
                     <span className="text-[11px] uppercase tracking-[0.16em] text-slate-800 font-sans font-bold block mb-3">
-                      Select Session Duration & Pricing:
+                      Select Session Duration:
                     </span>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                       {treatment.durations.map((d) => (
@@ -144,8 +143,8 @@ export function TreatmentDrawer({
                           <span className={`text-xs font-bold uppercase tracking-wider font-sans ${selectedDuration?.minutes === d.minutes ? "text-white" : "text-slate-700"}`}>
                             {d.minutes} Minutes
                           </span>
-                          <span className={`text-sm font-bold mt-1 font-sans ${selectedDuration?.minutes === d.minutes ? "text-rose-100" : "text-[#c83b74]"}`}>
-                            {formatPrice(d.price)}
+                          <span className={`text-[11px] font-medium mt-0.5 font-sans ${selectedDuration?.minutes === d.minutes ? "text-rose-100" : "text-slate-500"}`}>
+                            Full Session
                           </span>
                         </button>
                       ))}
@@ -235,7 +234,7 @@ export function TreatmentDrawer({
                       onClose();
                     }}
                   >
-                    Request Appointment ({selectedDuration ? formatPrice(selectedDuration.price) : ""})
+                    Request Appointment ({selectedDuration ? `${selectedDuration.minutes} Min` : ""})
                   </Button>
 
                   <a

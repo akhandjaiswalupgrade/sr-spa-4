@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Clock, ArrowRight, Sparkles } from "lucide-react";
 import { Treatment } from "@/data/treatments";
-import { formatPrice } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 
 interface TreatmentCardProps {
@@ -72,14 +71,14 @@ export function TreatmentCard({
           )}
         </div>
 
-        {/* Bottom Image Overlay: Starting Price & Pressure */}
+        {/* Bottom Image Overlay: Duration & Pressure */}
         <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between pointer-events-none">
           <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-200/90 shadow-md">
             <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-sans font-medium">
-              From
+              Duration
             </span>
-            <span className="text-sm font-extrabold text-slate-900 font-sans">
-              {formatPrice(treatment.priceFrom)}
+            <span className="text-xs sm:text-sm font-extrabold text-slate-900 font-sans">
+              {treatment.durations.map((d) => `${d.minutes}m`).join(" · ")}
             </span>
           </div>
 

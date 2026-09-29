@@ -82,7 +82,7 @@ export function SignatureExperience({ onOpenBooking }: SignatureExperienceProps)
                     onOpenBooking(treatmentName, 90);
                   }}
                 >
-                  Reserve Signature Session (₹4,299)
+                  Reserve Signature Session (90 Mins)
                 </Button>
 
                 <a

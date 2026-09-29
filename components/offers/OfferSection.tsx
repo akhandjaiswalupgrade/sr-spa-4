@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { Sparkles, Calendar, Clock, Check } from "lucide-react";
 import { offersData } from "@/data/offers";
 import { Button } from "@/components/ui/Button";
-import { formatPrice } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 
 interface OfferSectionProps {
@@ -68,14 +67,12 @@ export function OfferSection({ onOpenBooking }: OfferSectionProps) {
                 </ul>
               </div>
 
-              {/* Pricing & CTA */}
+              {/* Privilege Badge & CTA */}
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                <div className="flex items-baseline gap-2.5">
-                  <span className="text-2xl sm:text-3xl font-serif font-bold text-[#c83b74]">
-                    {formatPrice(activeOffer.offerPrice)}
-                  </span>
-                  <span className="text-sm text-slate-500 line-through font-medium">
-                    {formatPrice(activeOffer.originalPrice)}
+                <div className="inline-flex items-center gap-2 bg-rose-50/80 px-3.5 py-2 rounded-xl border border-rose-200/80 shadow-sm">
+                  <Sparkles className="w-4 h-4 text-[#c83b74]" />
+                  <span className="text-xs sm:text-sm font-bold text-[#c83b74] font-sans">
+                    Complimentary Botanical Upgrade
                   </span>
                 </div>
 

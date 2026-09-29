@@ -38,7 +38,7 @@ export function AboutShirui({ onOpenBooking }: AboutShiruiProps) {
             <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] max-h-[640px] w-full rounded-2xl overflow-hidden border border-slate-200/90 shadow-3d hover:shadow-3d-hover transition-all duration-500 group">
               <Image
                 src="/images/shirui-about-experience.jpg"
-                alt="A tranquil moment transitioning into Shirui Wellness Spa sanctuary in Neknampur"
+                alt="A tranquil moment transitioning into Shirui Wellness Spa sanctuary in Gachibowli"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-luxury"

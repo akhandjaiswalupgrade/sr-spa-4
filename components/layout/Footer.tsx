@@ -54,7 +54,7 @@ export function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-slate-700 leading-relaxed max-w-sm pt-2 font-medium">
-              A quieter way to experience wellness in Neknampur, Hyderabad. Designed
+              A quieter way to experience wellness in Gachibowli, Hyderabad. Designed
               for individuals seeking restorative time for themselves.
             </p>
 
@@ -136,11 +136,11 @@ export function Footer() {
             <div className="space-y-3 text-xs sm:text-sm font-sans">
               <div>
                 <span className="text-slate-900 font-bold block">All 7 Days</span>
-                <span className="text-slate-700 font-medium">10:00 AM – 9:30 PM</span>
+                <span className="text-slate-700 font-medium">10:00 AM – 9:00 PM</span>
               </div>
               <div>
                 <span className="text-slate-500 block text-[11px] uppercase tracking-wider font-bold">Last Entry</span>
-                <span className="text-slate-700 font-medium">8:30 PM</span>
+                <span className="text-slate-700 font-medium">8:00 PM</span>
               </div>
             </div>
           </div>

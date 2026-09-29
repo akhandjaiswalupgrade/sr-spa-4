@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
-import { formatPrice } from "@/lib/utils";
 import { trackEvent } from "@/lib/analytics";
 
 interface SessionConfiguratorProps {
@@ -25,44 +24,39 @@ const goals = [
     id: "relax",
     title: "Gentle Relaxation",
     subtitle: "Calm your mind & soothe daily stress",
-    treatment: "Swedish Relaxation Massage",
-    basePrice: 2499,
+    treatment: "Swedish Massage",
   },
   {
     id: "release",
     title: "Release Deep Tension",
     subtitle: "Focus on stubborn muscle knots & desk fatigue",
-    treatment: "Deep Tissue Muscle Therapy",
-    basePrice: 2799,
+    treatment: "Deep Tissue Massage",
   },
   {
     id: "recover",
     title: "Post-Activity Recovery",
     subtitle: "Assisted mobility & tension relief for tight limbs",
-    treatment: "Thai Assisted Mobility Bodywork",
-    basePrice: 2899,
+    treatment: "Thai Massage",
   },
   {
     id: "rejuvenate",
     title: "Full-Body Immersion",
     subtitle: "Flagship luxury ritual with warm compresses",
-    treatment: "Signature Shirui 90-Minute Immersion",
-    basePrice: 4299,
+    treatment: "Shirui Signature Massage",
   },
   {
     id: "couples",
     title: "Couples Sanctuary",
     subtitle: "Synchronized dual therapy in private suite",
-    treatment: "Couples Private Sanctuary Experience",
-    basePrice: 5199,
+    treatment: "Couples Massage",
   },
 ];
 
 const durations = [
-  { minutes: 45, label: "45 Minutes", desc: "Targeted focus (Express)", multiplier: 0.8 },
-  { minutes: 60, label: "60 Minutes", desc: "Classic full session", multiplier: 1.0 },
-  { minutes: 90, label: "90 Minutes", desc: "Deep unhurried immersion", multiplier: 1.4 },
-  { minutes: 120, label: "120 Minutes", desc: "Complete head-to-toe escape", multiplier: 1.8 },
+  { minutes: 45, label: "45 Minutes", desc: "Targeted focus (Express)" },
+  { minutes: 60, label: "60 Minutes", desc: "Classic full session" },
+  { minutes: 90, label: "90 Minutes", desc: "Deep unhurried immersion" },
+  { minutes: 120, label: "120 Minutes", desc: "Complete head-to-toe escape" },
 ];
 
 const pressures = [
@@ -76,10 +70,6 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
   const [selectedGoal, setSelectedGoal] = useState(goals[0]);
   const [selectedDuration, setSelectedDuration] = useState(durations[1]);
   const [selectedPressure, setSelectedPressure] = useState(pressures[1]);
-
-  const estimatedPrice = Math.round(
-    selectedGoal.basePrice * (selectedDuration.minutes / 60)
-  );
 
   const handleNext = () => {
     trackEvent("configurator_step", { step: step + 1 });
@@ -341,10 +331,10 @@ export function SessionConfigurator({ onOpenBooking }: SessionConfiguratorProps)
                     </div>
                     <div>
                       <span className="text-slate-500 block uppercase tracking-wider text-[10px] font-bold font-sans">
-                        Approx. Price
+                        Care Level
                       </span>
-                      <span className="font-bold text-[#c83b74] font-sans text-base">
-                        {formatPrice(estimatedPrice)}
+                      <span className="font-bold text-[#c83b74] font-sans text-sm sm:text-base">
+                        Personalized
                       </span>
                     </div>
                   </div>

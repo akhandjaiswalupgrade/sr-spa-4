@@ -24,7 +24,11 @@ export function ExperienceSelector({ onOpenBooking }: ExperienceSelectorProps) {
   const filteredTreatments =
     activeCategory === "ALL"
       ? treatmentsData
-      : treatmentsData.filter((t) => t.category === activeCategory);
+      : treatmentsData.filter(
+          (t) =>
+            t.category === activeCategory ||
+            (activeCategory === "SPECIALISED" && t.category === "COUPLES")
+        );
 
   const handleCategoryChange = (category: TreatmentCategory) => {
     setActiveCategory(category);

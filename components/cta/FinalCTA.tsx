@@ -52,7 +52,7 @@ export function FinalCTA({ onOpenBooking }: FinalCTAProps) {
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 font-sans leading-relaxed max-w-xl mx-auto text-pretty font-medium">
-            Take an hour or two for yourself in our private Neknampur sanctuary.
+            Take an hour or two for yourself in our private Gachibowli sanctuary.
             Walk in carrying the day, leave feeling completely restored.
           </p>
 
@@ -91,7 +91,7 @@ export function FinalCTA({ onOpenBooking }: FinalCTAProps) {
           </div>
 
           <p className="text-xs text-slate-600 pt-2 font-sans font-semibold">
-            Open daily 10:00 AM – 9:30 PM · Single Suites · Neknampur, Hyderabad
+            Open daily 10:00 AM – 9:00 PM · Single & Couple Suites · Gachibowli, Hyderabad
           </p>
         </motion.div>
       </div>

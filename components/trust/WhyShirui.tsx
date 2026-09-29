@@ -52,7 +52,7 @@ const trustCards: TrustCard[] = [
     icon: Receipt,
     title: "Clear Experience",
     description:
-      "Transparent duration options, inclusions, and fixed pricing with zero hidden fees or rushed handoffs.",
+      "Transparent duration options, dedicated inclusions, and attentive care with zero rushed handoffs.",
   },
 ];
 

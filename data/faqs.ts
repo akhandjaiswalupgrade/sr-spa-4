@@ -69,7 +69,7 @@ export const faqsData: FAQItem[] = [
     category: "Booking & Visit",
     question: "Where is Shirui Spa located and is there parking?",
     answer:
-      "We are located on Main Road, Neknampur, Hyderabad (near Alkapur Township). Convenient complimentary dedicated four-wheeler and two-wheeler parking is available directly on premises for spa guests.",
+      "We are located at Plot 16, First Floor, KK Pride, Gachibowli, Hyderabad. Convenient dedicated four-wheeler and two-wheeler parking is available directly on premises for spa guests.",
   },
   {
     id: "faq-10",

@@ -17,7 +17,7 @@ export interface WhatsAppMessageParams {
 }
 
 export function getWhatsAppUrl(params?: WhatsAppMessageParams): string {
-  const number = businessConfig.whatsappNumber || "919876543210";
+  const number = businessConfig.whatsappNumber || "918125937788";
 
   let text = "Hi Shirui Wellness Spa, I would like to enquire about a session.";
 
@@ -65,13 +65,13 @@ export function getWhatsAppUrl(params?: WhatsAppMessageParams): string {
 }
 
 export function getCallUrl(): string {
-  const phone = businessConfig.phone || "+919876543210";
+  const phone = businessConfig.phone || "+91 81259 37788";
   return `tel:${phone.replace(/\s+/g, "")}`;
 }
 
 export function getDirectionsUrl(): string {
   return (
     businessConfig.googleMapsUrl ||
-    "https://maps.google.com/?q=Shirui+Wellness+Spa+Neknampur+Hyderabad"
+    "https://maps.google.com/?q=KK+Pride+Gachibowli+Hyderabad"
   );
 }

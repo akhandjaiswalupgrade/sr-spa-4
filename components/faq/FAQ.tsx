@@ -50,7 +50,7 @@ export function FAQ() {
           </h2>
           <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
             Everything you need to know about our therapies, therapist standards,
-            booking policies, and facilities in Neknampur.
+            booking policies, and facilities in Gachibowli.
           </p>
         </div>
 

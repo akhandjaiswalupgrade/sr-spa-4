@@ -49,7 +49,7 @@ export function Hero({ onOpenBooking }: HeroProps) {
       >
         <Image
           src="/images/shirui-hero-spa-room.jpg"
-          alt="Shirui Wellness Spa Luxury Treatment Suite in Neknampur Hyderabad"
+          alt="Shirui Wellness Spa Luxury Treatment Suite in Gachibowli Hyderabad"
           fill
           priority
           sizes="100vw"
@@ -74,7 +74,7 @@ export function Hero({ onOpenBooking }: HeroProps) {
           >
             <span className="w-2 h-2 rounded-full bg-rose animate-pulse" />
             <span className="text-[11px] sm:text-xs uppercase tracking-[0.22em] font-sans font-bold text-slate-800">
-              Premium Wellness · Neknampur, Hyderabad
+              Premium Wellness · Gachibowli, Hyderabad
             </span>
           </motion.div>
 

@@ -1,20 +1,19 @@
 /**
  * Treatment catalog for Shirui Wellness Spa
- * Note: Verify actual service availability & pricing before production launch.
+ * Extracted directly from official business brochure.
+ * All 17 services are listed without price indicators.
  */
 
 export type TreatmentCategory =
   | "ALL"
-  | "RELAX"
-  | "RESTORE"
-  | "RELEASE"
-  | "REJUVENATE"
-  | "RECOVER"
+  | "MASSAGE"
+  | "SPECIALISED"
+  | "EXPRESS"
+  | "FACIAL"
   | "COUPLES";
 
 export interface TreatmentDurationOption {
   minutes: number;
-  price: number;
 }
 
 export interface Treatment {
@@ -26,7 +25,6 @@ export interface Treatment {
   shortDescription: string;
   longDescription: string;
   durations: TreatmentDurationOption[];
-  priceFrom: number;
   image: string;
   pressure: number; // 1 (Light) to 5 (Firm)
   pressureLabel: "Light" | "Medium" | "Firm" | "Customizable";
@@ -38,242 +36,360 @@ export interface Treatment {
 }
 
 export const treatmentCategories: { id: TreatmentCategory; label: string; description: string }[] = [
-  { id: "ALL", label: "All Experiences", description: "Explore the complete wellness collection" },
-  { id: "RELAX", label: "Relax", description: "Gentle, flowing rhythmic therapies to calm the nervous system" },
-  { id: "RELEASE", label: "Release", description: "Focused deep pressure for chronic muscular knots and stiffness" },
-  { id: "RESTORE", label: "Restore", description: "Balancing, harmonious palm and acupressure bodywork" },
-  { id: "REJUVENATE", label: "Rejuvenate", description: "Full-body signature rituals with botanical aromatic oils" },
-  { id: "RECOVER", label: "Recover", description: "Targeted tension relief for active lifestyles and desk fatigue" },
-  { id: "COUPLES", label: "Couples", description: "Side-by-side synchronized relaxation in our private suite" },
+  { id: "ALL", label: "All Rituals", description: "Explore the complete collection of 17 wellness rituals" },
+  { id: "MASSAGE", label: "Premium Massages", description: "Classic therapeutic and restorative full-body therapies" },
+  { id: "SPECIALISED", label: "Specialised Care", description: "Targeted bodywork for active recovery, lymph drainage & couples" },
+  { id: "EXPRESS", label: "Express Wellness", description: "Focused 30–60 min treatments for head, neck, feet & body scrubs" },
+  { id: "FACIAL", label: "Facial & Skin", description: "Nourishing, glow-enhancing botanical and brightening facial rituals" },
+  { id: "COUPLES", label: "Couples Suite", description: "Synchronized dual therapy in our private soundproof suite" },
 ];
 
 export const treatmentsData: Treatment[] = [
+  // 1. Premium Massage Therapies (Brochure Page 4)
   {
-    id: "swedish-relaxation",
-    slug: "swedish-relaxation",
-    name: "Swedish Relaxation Massage",
-    tagline: "Gentle, continuous gliding strokes to quiet the mind",
-    category: "RELAX",
+    id: "swedish-massage",
+    slug: "swedish-massage",
+    name: "Swedish Massage",
+    tagline: "Gentle, soothing care for everyday relaxation",
+    category: "MASSAGE",
     shortDescription:
-      "A classic therapeutic full-body massage using long, soothing strokes and light-to-medium pressure to promote overall body relaxation.",
+      "A classic full-body therapy using smooth, gliding strokes and gentle kneads to release daily tension and improve circulation.",
     longDescription:
-      "Designed for complete ease and stress relief, our Swedish massage utilizes warmed botanical oils and classic effleurage strokes. Your therapist works systematically across muscle groups to encourage circulatory flow and ease daily tension.",
-    durations: [
-      { minutes: 60, price: 2499 },
-      { minutes: 90, price: 3499 },
-    ],
-    priceFrom: 2499,
+      "The timeless Swedish massage is crafted for complete calm. Your therapist glides across muscle groups with warm organic oils using long, rhythmic effleurage movements that quiet mental static and release physical fatigue.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-swedish.jpg",
     pressure: 2,
     pressureLabel: "Light",
-    tags: ["Full Body", "Stress Relief", "Gentle"],
-    recommendedFor: ["First-time visitors", "Mental fatigue", "Overall light relaxation", "Gentle stress release"],
+    tags: ["Full Body", "Stress Relief", "Gentle Care", "Circulation"],
+    recommendedFor: ["First-time visitors", "Daily fatigue", "Gentle unwind", "Calming the nervous system"],
     featured: true,
     idealForMuscleZones: ["neck-shoulders", "upper-back", "legs"],
     inclusions: ["Warmed herbal oil blend", "Full-body flowing strokes", "Warm towel compress finish"],
   },
   {
-    id: "deep-tissue",
+    id: "deep-tissue-massage",
     slug: "deep-tissue-massage",
-    name: "Deep Tissue Muscle Therapy",
-    tagline: "Intensive targeted work on persistent muscular tightness",
-    category: "RELEASE",
+    name: "Deep Tissue Massage",
+    tagline: "Focused pressure for stubborn tension & persistent knots",
+    category: "MASSAGE",
     shortDescription:
-      "Controlled firm pressure and slow, deliberate friction targeting deeper muscular layers and common postural tension points.",
+      "Slow, deliberate friction and concentrated pressure reaching deeper muscle layers to alleviate persistent tightness.",
     longDescription:
-      "Focused on releasing chronic muscular knots caused by prolonged sitting, driving, or intense physical activity. Your therapist applies measured forearm and thumb pressure along shoulder blades, lower back, and hips to help loosen tight bands of muscle tissue.",
-    durations: [
-      { minutes: 60, price: 2799 },
-      { minutes: 90, price: 3899 },
-      { minutes: 120, price: 4999 },
-    ],
-    priceFrom: 2799,
+      "Targeted at persistent knots and chronic postural strain from prolonged desk work or travel. Your therapist employs slow, firm strokes and targeted finger and forearm pressure to dissolve tightness and restore functional mobility.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-deep-tissue.jpg",
     pressure: 4,
     pressureLabel: "Firm",
-    tags: ["Deep Pressure", "Muscle Knots", "Desk Fatigue"],
-    recommendedFor: ["Desk workers", "Athletes & gym goers", "Persistent shoulder stiffness", "Lower back fatigue"],
+    tags: ["Deep Pressure", "Muscle Knots", "Desk Fatigue", "Firm"],
+    recommendedFor: ["Desk workers", "Severe muscle knots", "Persistent back stiffness", "Deep release seekers"],
     featured: true,
     idealForMuscleZones: ["neck-shoulders", "upper-back", "mid-back", "lower-back"],
     inclusions: ["Targeted trigger point work", "Slow myofascial friction", "Therapeutic warming compress"],
   },
   {
-    id: "aromatherapy",
+    id: "aromatherapy-massage",
     slug: "aromatherapy-massage",
-    name: "Aromatherapy Botanical Massage",
-    tagline: "Sensory restoration blending essential botanical extracts",
-    category: "RELAX",
+    name: "Aromatherapy Massage",
+    tagline: "Sensory restoration blending pure essential botanicals",
+    category: "MASSAGE",
     shortDescription:
-      "Light, rhythmic massage paired with cold-pressed natural essential oils selected to inspire a calm, grounded emotional state.",
+      "Rhythmic, soothing strokes paired with pure botanical essential oils chosen to balance your emotions and calm the mind.",
     longDescription:
-      "An immersive multi-sensory experience pairing gentle full-body strokes with your choice of pure essential oils—such as grounding sandalwood, calming lavender, or refreshing bergamot—warmed to release natural botanical essences.",
-    durations: [
-      { minutes: 60, price: 2699 },
-      { minutes: 90, price: 3699 },
-    ],
-    priceFrom: 2699,
+      "A sensorial sanctuary pairing gentle full-body massage with steam-distilled pure botanical oils—such as soothing lavender, grounding sandalwood, or revitalizing citrus. The natural essences enter through inhalation and skin absorption to ease mental unrest.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-aromatherapy.jpg",
     pressure: 2,
     pressureLabel: "Light",
-    tags: ["Essential Oils", "Calm", "Sensory"],
-    recommendedFor: ["Sensory unwinding", "Sleep improvement", "Gentle restoration", "Mild stress"],
+    tags: ["Essential Oils", "Emotional Balance", "Sensory Unwind", "Calm"],
+    recommendedFor: ["Stress & overwhelm", "Sleep improvement", "Sensory restoration", "Mindful unwinding"],
     featured: false,
     idealForMuscleZones: ["neck-shoulders", "feet", "upper-back"],
-    inclusions: ["Custom botanical oil choice", "Gentle lymphatic stimulation", "Inhalation ritual"],
+    inclusions: ["Custom botanical essential oil selection", "Gentle inhalation ritual", "Warm towel finish"],
   },
   {
-    id: "balinese",
+    id: "balinese-massage",
     slug: "balinese-massage",
-    name: "Balinese Acupressure & Palm Massage",
-    tagline: "Rhythmic palm pressure and gentle meridian stretches",
-    category: "RESTORE",
+    name: "Balinese Massage",
+    tagline: "Harmonious stretch, acupressure & rhythmic palm strokes",
+    category: "MASSAGE",
     shortDescription:
-      "A traditional blend of gentle stretching, long palm glides, and skin-rolling techniques to restore harmony and natural energy.",
+      "An ancient holistic therapy combining palm pressure, skin rolling, gentle acupressure, and warm oils to restore vitality.",
     longDescription:
-      "Balinese bodywork harmoniously combines acupressure, gentle mobility stretches, and firm rhythmic palm kneading. It is particularly effective for releasing sluggishness and restoring balanced full-body vitality.",
-    durations: [
-      { minutes: 60, price: 2699 },
-      { minutes: 90, price: 3799 },
-    ],
-    priceFrom: 2699,
+      "Rooted in Indonesian healing traditions, Balinese massage harmonizes gentle mobility stretches with rhythmic palm kneading and acupressure along energy pathways. It stimulates micro-circulation and leaves you feeling deeply grounded and refreshed.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-balinese.jpg",
     pressure: 3,
     pressureLabel: "Medium",
-    tags: ["Acupressure", "Palm Pressure", "Vitality"],
-    recommendedFor: ["General fatigue", "Circulatory sluggishness", "Whole-body balance", "Mid-level pressure preference"],
+    tags: ["Acupressure", "Palm Pressure", "Meridian Energy", "Harmony"],
+    recommendedFor: ["General fatigue", "Sluggish circulation", "Whole-body harmony", "Balanced medium pressure"],
     featured: false,
     idealForMuscleZones: ["upper-back", "mid-back", "legs"],
-    inclusions: ["Acupressure point therapy", "Rhythmic palm kneading", "Warm towel wipe-down"],
+    inclusions: ["Acupressure point therapy", "Rhythmic palm kneading", "Warm floral towel compress"],
   },
   {
-    id: "thai-assisted",
-    slug: "thai-assisted-bodywork",
-    name: "Thai Assisted Mobility Bodywork",
-    tagline: "Active assisted stretches and pressure along energy lines",
-    category: "RECOVER",
+    id: "thai-massage",
+    slug: "thai-massage",
+    name: "Thai Massage",
+    tagline: "Assisted yoga stretching & rhythmic energy line pressure",
+    category: "MASSAGE",
     shortDescription:
-      "Dry therapy performed in comfortable spa attire incorporating passive yoga stretches, rhythmic rocking, and deep compression.",
+      "Dry assisted bodywork incorporating passive yoga stretches, rhythmic rocking, and deep compression in comfortable linen attire.",
     longDescription:
-      "Unlike oil massages, Thai bodywork is conducted while you wear loose, comfortable linen attire on a supportive floor or low platform. Your therapist guides you through gentle assisted spinal twists, hamstring lengthening, and chest openings.",
-    durations: [
-      { minutes: 60, price: 2899 },
-      { minutes: 90, price: 3999 },
-    ],
-    priceFrom: 2899,
+      "Performed oil-free in comfortable loose linen attire on a supportive low platform. Your therapist guides your limbs through passive yoga stretches, gentle spinal twists, and rhythmic thumb and palm compression along the body's 'Sen' energy lines.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-thai.jpg",
     pressure: 4,
     pressureLabel: "Firm",
-    tags: ["Assisted Stretch", "Flexibility", "No Oil"],
-    recommendedFor: ["Joint stiffness", "Limited mobility", "Pre/post workout recovery", "Active individuals"],
+    tags: ["Assisted Stretch", "Flexibility", "No Oil", "Dry Bodywork"],
+    recommendedFor: ["Joint stiffness", "Limited mobility", "Yoga enthusiasts", "Post-travel restoration"],
     featured: false,
     idealForMuscleZones: ["legs", "lower-back", "neck-shoulders"],
-    inclusions: ["Loose linen spa attire provided", "Assisted full-body stretching", "Joint mobility release"],
+    inclusions: ["Comfortable spa linens provided", "Assisted full-body stretching", "Joint mobility decompression"],
   },
   {
-    id: "signature-shirui",
-    slug: "signature-shirui-massage",
-    name: "Signature Shirui 90-Minute Immersion",
-    tagline: "Our flagship holistic experience tailored to your exact comfort",
-    category: "REJUVENATE",
+    id: "shirui-signature-massage",
+    slug: "shirui-signature-massage",
+    name: "Shirui Signature Massage",
+    tagline: "Our premier holistic journey curated to your exact comfort",
+    category: "MASSAGE",
     shortDescription:
-      "A seamless fusion of customized pressure, warmed organic herbal compresses, and dedicated back-and-shoulder tension release.",
+      "A seamless fusion of customized pressure, warmed herbal compresses, and dedicated tension release for ultimate tranquility.",
     longDescription:
-      "Our premier 90-minute flagship experience. Beginning with an attentive consultation regarding your pressure and tension focus areas, this bespoke ritual merges Swedish glide, deep tissue precision on high-tension areas, and warm herbal compress applications.",
-    durations: [
-      { minutes: 90, price: 4299 },
-      { minutes: 120, price: 5499 },
-    ],
-    priceFrom: 4299,
+      "Our flagship holistic experience. Beginning with a personal consultation regarding your pressure and tension focus areas, this bespoke ritual merges Swedish glide, deep tissue precision, warm steamed herbal poultices, and a restorative head-and-foot finish.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-signature-treatment.jpg",
     pressure: 3,
     pressureLabel: "Customizable",
-    tags: ["Flagship", "Custom Pressure", "90-Min Immersion", "Herbal Compress"],
-    recommendedFor: ["Ultimate relaxation", "Full sensory escape", "Complex tension areas", "Gifting & special occasions"],
+    tags: ["Flagship", "Custom Pressure", "Herbal Compress", "Signature Ritual"],
+    recommendedFor: ["Complete head-to-toe renewal", "Full sensory escape", "Special celebrations", "Excellence in bodywork"],
     featured: true,
     idealForMuscleZones: ["neck-shoulders", "upper-back", "lower-back", "feet"],
-    inclusions: [
-      "Personalized pressure adaptation",
-      "Full-body therapeutic massage",
-      "Warm herbal compress on shoulders",
-      "Foot reflexology finish",
-      "Herbal tea infusion service",
-    ],
+    inclusions: ["Personalized pressure calibration", "Warm herbal compress therapy", "Foot reflexology finish", "Artisanal herbal tea infusion"],
+  },
+
+  // 2. Specialised Care (Brochure Page 5)
+  {
+    id: "sports-gym-massage",
+    slug: "sports-gym-massage",
+    name: "Sports / Gym Massage",
+    tagline: "Targeted recovery for muscle soreness, fatigue & active bodies",
+    category: "SPECIALISED",
+    shortDescription:
+      "Concentrated muscular recovery addressing delayed-onset muscle soreness (DOMS), tight tendons, and joint stiffness.",
+    longDescription:
+      "Designed for active athletes, fitness enthusiasts, and gym-goers. Your therapist applies firm, deep myofascial release, cross-fiber friction, and assisted passive stretching to break down metabolic buildup, relieve soreness, and restore muscular elasticity.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
+    image: "/images/shirui-anatomy-muscles.jpg",
+    pressure: 5,
+    pressureLabel: "Firm",
+    tags: ["Sports Recovery", "Gym Goers", "DOMS Relief", "Firm Pressure"],
+    recommendedFor: ["Workout soreness", "Athletes & fitness lovers", "Heavy lifters & runners", "Muscular stiffness"],
+    featured: true,
+    idealForMuscleZones: ["legs", "lower-back", "upper-back", "neck-shoulders"],
+    inclusions: ["Cross-fiber friction", "Myofascial tension release", "Recovery cooling botanical balm"],
   },
   {
-    id: "couples-experience",
-    slug: "couples-wellness-experience",
-    name: "Couples Private Sanctuary Experience",
-    tagline: "Shared serene relaxation in our private double treatment suite",
+    id: "lymphatic-drainage-massage",
+    slug: "lymphatic-drainage-massage",
+    name: "Lymphatic Drainage Massage",
+    tagline: "Gentle rhythmic stimulation for natural lymph flow & lightness",
+    category: "SPECIALISED",
+    shortDescription:
+      "Subtle, rhythmic pumping motions supporting the body's natural lymph circulation to diminish fluid retention and heaviness.",
+    longDescription:
+      "A delicate, highly specialized technique using very gentle, precise directional skin-stretching strokes along the lymph channels. Encourages natural lymph fluid drainage, aids the body in releasing accumulated metabolic fluids, reduces puffiness, and leaves a profound sensation of lightness.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
+    image: "/images/shirui-experience-touch.jpg",
+    pressure: 1,
+    pressureLabel: "Light",
+    tags: ["Detoxification", "Fluid Relief", "Gentle Rhythmic", "Lightness"],
+    recommendedFor: ["Fluid retention & puffiness", "Post-travel sluggishness", "Immunity support", "Gentle healing seekers"],
+    featured: false,
+    idealForMuscleZones: ["legs", "arms", "neck-shoulders"],
+    inclusions: ["Specialized directional stroke mapping", "Light lymph node activation", "Soothing herbal hydration"],
+  },
+  {
+    id: "couples-massage",
+    slug: "couples-massage",
+    name: "Couples Massage",
+    tagline: "Side-by-side synchronized relaxation in our private double suite",
     category: "COUPLES",
     shortDescription:
-      "Two side-by-side synchronized treatments in our soundproof, softly illuminated couple's suite with personalized therapist pairing.",
+      "Two synchronized treatments in our soundproof, softly illuminated couples suite with personalized therapist pairing.",
     longDescription:
-      "Step into a private haven built for two. Both guests select their own preferred massage style and pressure—whether one desires deep tissue and the other gentle aromatherapy—synchronized simultaneously by two experienced therapists in an atmosphere of complete quiet.",
-    durations: [
-      { minutes: 60, price: 5199 },
-      { minutes: 90, price: 6999 },
-      { minutes: 120, price: 8999 },
-    ],
-    priceFrom: 5199,
+      "Enter an intimate sanctuary designed for two. Both guests select their preferred massage style and pressure—whether one desires deep tissue and the other gentle aromatherapy—conducted simultaneously by two skilled therapists in total serenity.",
+    durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
     image: "/images/shirui-treatment-couples.jpg",
     pressure: 3,
     pressureLabel: "Customizable",
-    tags: ["Couples", "Private Suite", "Synchronized"],
-    recommendedFor: ["Anniversaries", "Shared quiet time", "Relaxing with partner or friend", "Special occasions"],
+    tags: ["Couples", "Private Suite", "Synchronized", "Celebration"],
+    recommendedFor: ["Anniversaries & dates", "Shared quiet time", "Relaxing with partner or friend", "Special gift"],
     featured: true,
     idealForMuscleZones: ["neck-shoulders", "upper-back", "legs"],
-    inclusions: [
-      "Private VIP suite with dual tables",
-      "Individualized massage selection per guest",
-      "Post-treatment herbal tea service",
-    ],
+    inclusions: ["Private double sanctuary suite", "Individual therapy preferences per guest", "Aromatic towel compress", "Post-treatment tea service"],
   },
-  {
-    id: "head-neck-shoulder",
-    slug: "head-neck-shoulder-relief",
-    name: "Head, Neck & Shoulder Focus",
-    tagline: "Concentrated express tension release for screen and desk fatigue",
-    category: "RELEASE",
-    shortDescription:
-      "A focused session dedicated specifically to the upper trapezius, cervical spine, occipital base, and deltoids.",
-    longDescription:
-      "Tailored for individuals experiencing tight neck muscles, computer-screen fatigue, or upper back tension. The therapist zeroes in on the trapezius, levator scapulae, and occipital ridges using targeted friction and soothing acupressure.",
-    durations: [
-      { minutes: 45, price: 1899 },
-      { minutes: 60, price: 2399 },
-    ],
-    priceFrom: 1899,
-    image: "/images/shirui-treatment-neck-shoulder.jpg",
-    pressure: 4,
-    pressureLabel: "Firm",
-    tags: ["Targeted", "Neck & Shoulders", "Express"],
-    recommendedFor: ["Laptop/phone strain", "Midday tension break", "Frequent commuters", "Upper back stiffness"],
-    featured: false,
-    idealForMuscleZones: ["neck-shoulders", "upper-back"],
-    inclusions: ["Focused cervical & trapezius work", "Scalp acupressure release", "Warm neck compress"],
-  },
+
+  // 3. Express Wellness (Brochure Page 6)
   {
     id: "foot-reflexology",
-    slug: "foot-relaxation-therapy",
-    name: "Restorative Foot & Lower Leg Care",
-    tagline: "Revitalizing acupressure for tired feet and heavy calves",
-    category: "RECOVER",
+    slug: "foot-reflexology",
+    name: "Foot Reflexology",
+    tagline: "Restores balance & lightness through targeted pressure points",
+    category: "EXPRESS",
     shortDescription:
-      "Stimulating pressure-point therapy across foot zones combined with soothing upward calf strokes to relieve heavy legs.",
+      "Stimulating acupressure on foot reflex zones combined with upward calf strokes to melt fatigue and revive tired feet.",
     longDescription:
-      "Resting in a deeply cushioned lounger, experience a warm herbal foot soak followed by precise pressure point manipulation on soles and arches. Upward lymphatic glides along the calves encourage lightness after prolonged standing or walking.",
-    durations: [
-      { minutes: 45, price: 1799 },
-      { minutes: 60, price: 2299 },
-    ],
-    priceFrom: 1799,
+      "Resting in a deeply cushioned lounger, experience a warm herbal soak followed by focused thumb acupressure along reflex zones that correspond to full-body wellness. Releases heavy-leg sensations after prolonged standing or commuting.",
+    durations: [{ minutes: 30 }, { minutes: 60 }],
     image: "/images/shirui-treatment-foot.jpg",
     pressure: 3,
     pressureLabel: "Medium",
-    tags: ["Foot Care", "Acupressure", "Heavy Legs"],
-    recommendedFor: ["Standing professionals", "Travelers", "Shoe fatigue", "Quick rejuvenation"],
+    tags: ["Foot Care", "Acupressure", "Heavy Legs", "Express Relief"],
+    recommendedFor: ["Standing professionals", "Commuters & travelers", "Foot fatigue", "Quick midday relief"],
     featured: false,
     idealForMuscleZones: ["feet", "legs"],
     inclusions: ["Warm botanical foot bath", "Reflex point acupressure", "Calf soothing massage"],
+  },
+  {
+    id: "head-massage",
+    slug: "head-massage",
+    name: "Head Massage",
+    tagline: "Traditional cranial champi releasing scalp tension & mental fatigue",
+    category: "EXPRESS",
+    shortDescription:
+      "Concentrated scalp, temple, and crown bodywork designed to melt away mental exhaustion, headaches, and screen strain.",
+    longDescription:
+      "Rooted in traditional Indian champi rituals, this focused therapy uses soothing rhythmic finger strokes across the scalp, occipital base, and temples with warmed botanical oils. Perfect for releasing persistent mental fog and screen-induced tension.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-treatment-neck-shoulder.jpg",
+    pressure: 3,
+    pressureLabel: "Medium",
+    tags: ["Scalp Therapy", "Mental Clarity", "Migraine Relief", "Express"],
+    recommendedFor: ["Mental stress & overthinking", "Screen-induced eye strain", "Headaches & tension", "Quick rejuvenation"],
+    featured: false,
+    idealForMuscleZones: ["neck-shoulders", "scalp"],
+    inclusions: ["Warm herbal oil scalp therapy", "Temple & crown acupressure", "Warm towel neck wrap"],
+  },
+  {
+    id: "head-neck-shoulder",
+    slug: "head-neck-shoulder",
+    name: "Head, Neck & Shoulder Massage",
+    tagline: "Concentrated express relief for desk stiffness & tech-neck",
+    category: "EXPRESS",
+    shortDescription:
+      "A focused session targeting the trapezius, cervical spine, and shoulder blades to dissolve stubborn desk posture tightness.",
+    longDescription:
+      "Tailored specifically for laptop strain and commuting stiffness. Your therapist zeroes in on the upper trapezius, levator scapulae, and base of the neck, releasing acute muscular knots and restoring pain-free neck mobility.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-treatment-neck-shoulder.jpg",
+    pressure: 4,
+    pressureLabel: "Firm",
+    tags: ["Desk Fatigue", "Tech Neck", "Upper Back", "Targeted Express"],
+    recommendedFor: ["IT professionals & desk workers", "Neck stiffness", "Shoulder tightness", "Short respite"],
+    featured: false,
+    idealForMuscleZones: ["neck-shoulders", "upper-back"],
+    inclusions: ["Focused trapezius friction", "Cervical spine release", "Warm herbal compress"],
+  },
+  {
+    id: "body-scrub",
+    slug: "body-scrub",
+    name: "Body Scrub",
+    tagline: "Nourishing botanical exfoliation for polished, refreshed skin",
+    category: "EXPRESS",
+    shortDescription:
+      "A rejuvenating full-body scrub using gentle botanical salts and nourishing oils to polish away dull skin cells.",
+    longDescription:
+      "Gentle natural sea crystals and botanical extracts are worked in sweeping circular motions across the skin. Buffs away dead cellular layers, stimulates micro-circulation, and deeply hydrates for an extraordinarily soft, velvety finish.",
+    durations: [{ minutes: 30 }, { minutes: 60 }],
+    image: "/images/shirui-experience-ritual.jpg",
+    pressure: 3,
+    pressureLabel: "Medium",
+    tags: ["Exfoliation", "Silky Skin", "Botanical Polish", "Body Care"],
+    recommendedFor: ["Dull skin texture", "Pre-event preparation", "Deep skin hydration", "Silky renewal"],
+    featured: false,
+    idealForMuscleZones: ["arms", "legs", "back"],
+    inclusions: ["All-natural botanical exfoliant", "Warm rinse preparation", "Nourishing moisture seal"],
+  },
+
+  // 4. Facial & Skin Rituals (Brochure Page 7)
+  {
+    id: "fruit-facial",
+    slug: "fruit-facial",
+    name: "Fruit Facial",
+    tagline: "Natural antioxidant nourishment for fresh, radiant skin",
+    category: "FACIAL",
+    shortDescription:
+      "Infuses the skin with fresh fruit enzymes, vitamins, and botanical extracts to restore youthful, dewy vitality.",
+    longDescription:
+      "A delicious, natural treat for stressed skin. Fresh fruit extracts rich in alpha-hydroxy acids, vitamins, and antioxidants gently cleanse, exfoliate, and deeply replenish moisture, leaving your complexion soft, vibrant, and glowing.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-experience-care.jpg",
+    pressure: 1,
+    pressureLabel: "Light",
+    tags: ["Natural Enzymes", "Dewy Glow", "Antioxidants", "Gentle Facial"],
+    recommendedFor: ["Sensitive or tired skin", "Natural skincare lovers", "Gentle glow", "Everyday nourishment"],
+    featured: false,
+    idealForMuscleZones: ["face", "neck-shoulders"],
+    inclusions: ["Botanical fruit cleanse", "Gentle fruit enzyme mask", "Hydrating serum finish"],
+  },
+  {
+    id: "gold-facial",
+    slug: "gold-facial",
+    name: "Gold Facial",
+    tagline: "Luxurious cell-renewing ritual for deep illumination & glow",
+    category: "FACIAL",
+    shortDescription:
+      "An opulent facial combining fine gold-infused serums and lifting massage to revitalize collagen and restore radiant glow.",
+    longDescription:
+      "Indulge in royal pampering. Fine cosmetic gold particles, peptides, and botanical oils stimulate cellular metabolism, improve skin elasticity, and impart an unmistakably luminous, reflective sheen to your face.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-experience-after.jpg",
+    pressure: 1,
+    pressureLabel: "Light",
+    tags: ["Luxury Care", "Gold Infusion", "Radiance", "Firming"],
+    recommendedFor: ["Special occasions & celebrations", "Dull complexion", "Anti-aging & firming", "Royal pampering"],
+    featured: true,
+    idealForMuscleZones: ["face", "neck-shoulders"],
+    inclusions: ["Pure gold leaf serum infusion", "Lymphatic face contouring", "Luminous mask finish"],
+  },
+  {
+    id: "de-tan-pack",
+    slug: "de-tan-pack",
+    name: "De-Tan Pack",
+    tagline: "Revives sun-exposed skin, corrects pigmentation & evens tone",
+    category: "FACIAL",
+    shortDescription:
+      "A soothing botanical formulation designed to reverse sun damage, soothe heat sensitivity, and restore even skin tone.",
+    longDescription:
+      "Specially formulated for intense sun exposure. Natural cooling clays and brightening botanical actives gently draw out impurities, reduce melanin buildup from UV rays, and soothe sun-stressed dermal layers.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-about-experience.jpg",
+    pressure: 1,
+    pressureLabel: "Light",
+    tags: ["Sun Damage Relief", "Skin Brightening", "Cooling Pack", "Even Tone"],
+    recommendedFor: ["Sun exposure & tanning", "Uneven skin tone", "Outdoor athletes & commuters", "Heat calming"],
+    featured: false,
+    idealForMuscleZones: ["face", "neck-shoulders", "arms"],
+    inclusions: ["Cooling herbal cleanse", "Targeted brightening de-tan mask", "Calming SPF hydration barrier"],
+  },
+  {
+    id: "o3-whitening-facial",
+    slug: "o3-whitening-facial",
+    name: "O3 Whitening Facial",
+    tagline: "Oxygenating brightening ritual for clarified, illuminated skin",
+    category: "FACIAL",
+    shortDescription:
+      "Advanced oxygen-infused therapy that clarifies pores, addresses hyperpigmentation, and imparts a crystal-clear complexion.",
+    longDescription:
+      "Powered by advanced oxygenating actives and potent botanical brighten-complexes, this ritual purifies pores deeply, combats dark spots, and revitalizes oxygen-deprived skin cells for an exceptionally bright, clear, and uniform radiance.",
+    durations: [{ minutes: 30 }, { minutes: 45 }],
+    image: "/images/shirui-gallery-treatment-detail.jpg",
+    pressure: 1,
+    pressureLabel: "Light",
+    tags: ["Oxygenating Care", "Brightening", "Clear Skin", "Pigmentation Relief"],
+    recommendedFor: ["Dull or tired complexion", "Hyperpigmentation", "Pollution-exposed skin", "Deep luminosity"],
+    featured: false,
+    idealForMuscleZones: ["face", "neck-shoulders"],
+    inclusions: ["Oxygenating clarifying wash", "Deep pore micro-exfoliation", "O3 brightening infusion mask"],
   },
 ];

@@ -1,8 +1,10 @@
 # Shirui Wellness Spa — Version 4 (`sr-spa-4`)
 
-A production-ready, ultra-premium single-page website for **Shirui Wellness Spa** located in Neknampur, Hyderabad. Designed with an airy, calming **Light Theme** aesthetic featuring tactile **3D elevation** and **high color contrast**.
+A production-ready, ultra-premium single-page website for **Shirui Wellness Spa** located in KK Pride, Gachibowli, Hyderabad. Designed with an airy, calming **Light Theme** aesthetic featuring tactile **3D elevation** and **high color contrast**.
 
 ## Key Features in Version 4
+- **Complete Brochure Catalog**: All 17 wellness rituals (Premium Massages, Specialised Care, Express Wellness, and Facial & Skin Rituals) without pricing displays.
+- **Accurate Business Profile**: Updated address (Plot 16, First Floor, KK Pride, Gachibowli, Hyderabad 500032), phone (+91 81259 37788), and operational hours (10:00 AM – 9:00 PM Open Daily, No Off Days).
 - **Light Theme Design System**: Alternating pure white (`#ffffff`) and warm alabaster stone (`#f5f0eb`), vibrant rose gradients (`#df548f` → `#c83b74` → `#a81d52`), deep near-black headings (`#0a0f1d`), and crisp slate body typography (`#1e293b`).
 - **Tactile 3D Depth System**: Multi-layered ambient occlusion shadows (`shadow-3d`, `shadow-3d-hover`), beveled buttons with top reflection highlights (`border-t border-white/35`) and click depression (`active:translate-y-0.5`).
 - **Interactive Anatomy Experience**: 4-phase muscle reveal slider with grooved track (`shadow-inset-groove`), 3D tactile dial handle (`shadow-dial-3d`), interactive pinpoint muscle zones, and educational disclaimer.
@@ -11,7 +13,7 @@ A production-ready, ultra-premium single-page website for **Shirui Wellness Spa*
 - **Regenerated Logo**: Crisp Slate-900 typography, soft rose lotus mark, and organic Shirui Lily flower optimized for light backgrounds.
 - **Draggable Spa Gallery & Fullscreen Lightbox**: Horizontal swipe strip with tactile 3D scroll buttons and keyboard navigation.
 - **Guest Testimonials & Reviews**: Verified review carousel and 4.9★ Google rating card.
-- **Location, Map & Scheduling**: Neknampur location guide, hours, and light-themed Google Maps embed.
+- **Location, Map & Scheduling**: Gachibowli location guide, hours, and light-themed Google Maps embed.
 - **Appointment Request Modal**: Validated with React Hook Form and Zod with instant WhatsApp confirmation handoff.
 - **Mobile Persistent Conversion Bar**: Floating conversion dock for instant Call, WhatsApp, and Direction actions.
 
