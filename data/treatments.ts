@@ -179,7 +179,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Designed for active athletes, fitness enthusiasts, and gym-goers. Your therapist applies firm, deep myofascial release, cross-fiber friction, and assisted passive stretching to break down metabolic buildup, relieve soreness, and restore muscular elasticity.",
     durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
-    image: "/images/shirui-anatomy-muscles.jpg",
+    image: "/images/shirui-treatment-sports.jpg",
     pressure: 5,
     pressureLabel: "Firm",
     tags: ["Sports Recovery", "Gym Goers", "DOMS Relief", "Firm Pressure"],
@@ -199,7 +199,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "A delicate, highly specialized technique using very gentle, precise directional skin-stretching strokes along the lymph channels. Encourages natural lymph fluid drainage, aids the body in releasing accumulated metabolic fluids, reduces puffiness, and leaves a profound sensation of lightness.",
     durations: [{ minutes: 60 }, { minutes: 90 }, { minutes: 120 }],
-    image: "/images/shirui-experience-touch.jpg",
+    image: "/images/shirui-treatment-lymphatic.jpg",
     pressure: 1,
     pressureLabel: "Light",
     tags: ["Detoxification", "Fluid Relief", "Gentle Rhythmic", "Lightness"],
@@ -261,7 +261,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Rooted in traditional Indian champi rituals, this focused therapy uses soothing rhythmic finger strokes across the scalp, occipital base, and temples with warmed botanical oils. Perfect for releasing persistent mental fog and screen-induced tension.",
     durations: [{ minutes: 30 }, { minutes: 45 }],
-    image: "/images/shirui-treatment-neck-shoulder.jpg",
+    image: "/images/shirui-treatment-head.jpg",
     pressure: 3,
     pressureLabel: "Medium",
     tags: ["Scalp Therapy", "Mental Clarity", "Migraine Relief", "Express"],
@@ -301,7 +301,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Gentle natural sea crystals and botanical extracts are worked in sweeping circular motions across the skin. Buffs away dead cellular layers, stimulates micro-circulation, and deeply hydrates for an extraordinarily soft, velvety finish.",
     durations: [{ minutes: 30 }, { minutes: 60 }],
-    image: "/images/shirui-experience-ritual.jpg",
+    image: "/images/shirui-treatment-body-scrub.jpg",
     pressure: 3,
     pressureLabel: "Medium",
     tags: ["Exfoliation", "Silky Skin", "Botanical Polish", "Body Care"],
@@ -323,7 +323,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "A delicious, natural treat for stressed skin. Fresh fruit extracts rich in alpha-hydroxy acids, vitamins, and antioxidants gently cleanse, exfoliate, and deeply replenish moisture, leaving your complexion soft, vibrant, and glowing.",
     durations: [{ minutes: 30 }, { minutes: 45 }],
-    image: "/images/shirui-experience-care.jpg",
+    image: "/images/shirui-treatment-fruit-facial.jpg",
     pressure: 1,
     pressureLabel: "Light",
     tags: ["Natural Enzymes", "Dewy Glow", "Antioxidants", "Gentle Facial"],
@@ -343,7 +343,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Indulge in royal pampering. Fine cosmetic gold particles, peptides, and botanical oils stimulate cellular metabolism, improve skin elasticity, and impart an unmistakably luminous, reflective sheen to your face.",
     durations: [{ minutes: 30 }, { minutes: 45 }],
-    image: "/images/shirui-experience-after.jpg",
+    image: "/images/shirui-treatment-gold-facial.jpg",
     pressure: 1,
     pressureLabel: "Light",
     tags: ["Luxury Care", "Gold Infusion", "Radiance", "Firming"],
@@ -363,7 +363,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Specially formulated for intense sun exposure. Natural cooling clays and brightening botanical actives gently draw out impurities, reduce melanin buildup from UV rays, and soothe sun-stressed dermal layers.",
     durations: [{ minutes: 30 }, { minutes: 45 }],
-    image: "/images/shirui-about-experience.jpg",
+    image: "/images/shirui-treatment-detan.jpg",
     pressure: 1,
     pressureLabel: "Light",
     tags: ["Sun Damage Relief", "Skin Brightening", "Cooling Pack", "Even Tone"],
@@ -383,7 +383,7 @@ export const treatmentsData: Treatment[] = [
     longDescription:
       "Powered by advanced oxygenating actives and potent botanical brighten-complexes, this ritual purifies pores deeply, combats dark spots, and revitalizes oxygen-deprived skin cells for an exceptionally bright, clear, and uniform radiance.",
     durations: [{ minutes: 30 }, { minutes: 45 }],
-    image: "/images/shirui-gallery-treatment-detail.jpg",
+    image: "/images/shirui-treatment-o3-facial.jpg",
     pressure: 1,
     pressureLabel: "Light",
     tags: ["Oxygenating Care", "Brightening", "Clear Skin", "Pigmentation Relief"],
